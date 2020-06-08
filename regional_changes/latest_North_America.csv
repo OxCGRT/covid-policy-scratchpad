@@ -1,4 +1,5 @@
 countryname,countrycode,region,startdate,enddate,policytype,policyvalue,flag,new_level,prev_level,initialnote
+Bermuda,BMU,North_America,20200529,,E2: Debt/contract relief,1,.,1.,,"According to BELCO's Press Release, customers who have applied for and been approved to receive the Bermuda Government COVID-19 Unemployment Benefit will be able to defer their electricity bills for as long as they are receiving the Bermuda Government COVID-19 Unemployment Benefit. BELCO  is the sole supplier of electricity in Bermuda.     https://web.archive.org/web/20200607215337/https://www.belco.bm/media/belco-bill-deferment-42020.html"
 ,,,,,,,,,,
-Note: Data from 06 Jun 2020. Individual countries may be several days older.,,,,,,,,,,
+Note: Data from 07 Jun 2020. Individual countries may be several days older.,,,,,,,,,,
 Source: Oxford COVID-19 Government Response Tracker. More at: github.com/OxCGRT/covid-policy-tracker or bsg.ox.ac.uk/covidtracker,,,,,,,,,,
