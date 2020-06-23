@@ -1,7 +1,5 @@
 countryname,countrycode,region,startdate,enddate,policytype,policyvalue,flag,new_level,prev_level,initialnote
-Honduras,HND,Latin_America_Caribbean,20200614,,C6: Stay at home requirements,2,1,2G,3G,"The previously announced lockdown was slated to end on June 14, but the government has extended it until at least June 28. There is a curfew in place, and people are allowed to go outside between 7AMÂ and 5PM on one weekday depending on the last digit of their ID card. Total confinement is required on weekends.     https://archive.vn/pL3Nz"
-Trinidad and Tobago,TTO,Latin_America_Caribbean,20200609,,C7: Restrictions on internal movement,1,1,1G,2G,Domestic flights resumed as of June 8th (The specific date of this could not be found). Source: https://web.archive.org/web/20200619230137/https://www.worldaware.com/covid-19-alert-trinidad-tobago-continues-relaxing-business-restrictions-through-june
 Trinidad and Tobago,TTO,Latin_America_Caribbean,20200611,,C3: Cancel public events,1,1,1G,2G,Opening of houses of worship to allow for Corpus Christi celebrations. Source: http://archive.fo/ZpCaR
 ,,,,,,,,,,
-Note: Data from 21 Jun 2020. Individual countries may be several days older.,,,,,,,,,,
+Note: Data from 22 Jun 2020. Individual countries may be several days older.,,,,,,,,,,
 Source: Oxford COVID-19 Government Response Tracker. More at: github.com/OxCGRT/covid-policy-tracker or bsg.ox.ac.uk/covidtracker,,,,,,,,,,
