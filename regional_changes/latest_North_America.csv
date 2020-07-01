@@ -1,4 +1,7 @@
-countryname,countrycode,region,startdate,enddate,policytype,policyvalue,flag,new_level,prev_level,initialnote
-,,,,,,,,,,
-Note: Data from 30 Jun 2020. Individual countries may be several days older.,,,,,,,,,,
-Source: Oxford COVID-19 Government Response Tracker. More at: github.com/OxCGRT/covid-policy-tracker or bsg.ox.ac.uk/covidtracker,,,,,,,,,,
+countryname,countrycode,region,date,policytype,policyvalue,flag,new_level,prev_level,notes
+Bermuda,BMU,North_America,20200618,C2: Workplace closing,2,1,2G,2G,"Stage 3b goes into effect, personal services such as massages allowed to reopen, but bars and nightclubs remain closed.    Phase 3b guidance:  https://web.archive.org/web/20200618213747/https://www.gov.bm/sites/default/files/Phase-3B.pdf  "
+Bermuda,BMU,North_America,20200618,E1: Income support,2,0,2F,2F,Application period ends June 30  https://web.archive.org/web/20200618215107/https://www.gov.bm/articles/minister-hayward-covid-19-update-june-16
+Canada,CAN,North_America,20200618,C4: Restrictions on gatherings,4,0,4T,4T,Nova Scotia:  From 18th June on:  -Family household bubbles are replaced with a 10-person gathering limit without social distancing  -Gathering limit increased to 50 people for indoor and outdoor gatherings with social distancing    https://web.archive.org/web/20200623164319/https://novascotia.ca/coronavirus/restriction-updates/
+,,,,,,,,,
+Note: Data from 30 Jun 2020. Individual countries may be several days older.,,,,,,,,,
+Source: Oxford COVID-19 Government Response Tracker. More at: github.com/OxCGRT/covid-policy-tracker or bsg.ox.ac.uk/covidtracker,,,,,,,,,
