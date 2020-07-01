@@ -2,5 +2,5 @@ countryname,countrycode,region,startdate,enddate,policytype,policyvalue,flag,new
 Morocco,MAR,Middle_East_North_Africa,20200621,,C7: Restrictions on internal movement,2,0,2T,2G,"""Passenger traffic will resume between Moroccan cities except Marrakech, Tangier, Asilah, Larache and Kenitra where lockdown is stricter.    Domestic flights and railways will start operating as well as commercial centers, beaches in full respect of precautionary measures to prevent the coronavirus from spreading, the ministries said.""    https://web.archive.org/web/20200628154229/https://northafricapost.com/41890-covid-19-moroccan-cafes-hotels-to-reopen-at-half-capacity-as-lockdown-loosens.html"
 Tunisia,TUN,Middle_East_North_Africa,20200627,,C8: International travel controls,3,.,3.,4.,Ban on some regions.  https://web.archive.org/web/20200629100007/https://covid-19.tn/fr/blog/classification-des-pays-en-fonction-du-niveau-de-risque/  https://web.archive.org/web/20200629095219/https://www.france24.com/fr/20200627-covid-19-la-tunisie-rouvre-ses-fronti%C3%A8res
 ,,,,,,,,,,
-Note: Data from 29 Jun 2020. Individual countries may be several days older.,,,,,,,,,,
+Note: Data from 30 Jun 2020. Individual countries may be several days older.,,,,,,,,,,
 Source: Oxford COVID-19 Government Response Tracker. More at: github.com/OxCGRT/covid-policy-tracker or bsg.ox.ac.uk/covidtracker,,,,,,,,,,
