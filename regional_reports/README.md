@@ -5,238 +5,240 @@ This folder contains PDF summaries of 7 regions and changes (based on The Wolrd 
 # Countries in each region- from World Bank
 
 # Latin America/ Caribbean (42)
-Antigua and Barbuda
-Argentina	
-Aruba	
+Antigua and Barbuda,
+Argentina,
+Aruba,
 Bahamas, 
-Barbados	
-Belize	
-Bolivia	
-Brazil	
-British Virgin Islands	
-Cayman Islands
-Chile	
-Colombia	
-Costa Rica	
-Cuba	
-Curacao	
-Dominica	
-Dominican Republic	
-Ecuador	
-El Salvador	
-Grenada	
-Guatemala	
-Guyana	
-Haiti	
-Honduras	
-Jamaica	
-Mexico	Uruguay
-Nicaragua	
-Panama	
-Paraguay
-Peru
-Puerto Rico
-Sint Maarten (Dutch part)
-St. Kitts and Nevis
-St. Lucia
-St. Martin (French part)
-St. Vincent and the Grenadines
-Suriname
-Trinidad and Tobago
-Turks and Caicos Islands
-Venezuela, RB
+Barbados,	
+Belize,	
+Bolivia,	
+Brazil,	
+British Virgin Islands,	
+Cayman Islands,
+Chile,	
+Colombia,	
+Costa Rica,	
+Cuba,	
+Curacao,	
+Dominica,	
+Dominican Republic,	
+Ecuador,	
+El Salvador,	
+Grenada,	
+Guatemala,	
+Guyana,	
+Haiti,	
+Honduras,	
+Jamaica,	
+Mexico,	
+Uruguay,
+Nicaragua,	
+Panama,	
+Paraguay,
+Peru,
+Puerto Rico,
+Saint Maarten (Dutch part),
+St. Kitts and Nevis,
+St. Lucia,
+St. Martin (French part),
+St. Vincent and the Grenadines,
+Suriname,
+Trinidad and Tobago,
+Turks and Caicos Islands,
+Venezuela, RB,
 Virgin Islands (U.S.)
 
 # East Asia and Pacific (38)
-American Samoa	
-Australia	
-Brunei Darussalam	
-Cambodia	
-China	
-Fiji
-French Polynesia	
-Guam	
-Hong Kong SAR, China	
-Indonesia	
-Japan	
-Kiribati
-Korea, Dem. People's Rep.
-Korea, Rep.	
-Lao PDR	
-Macao SAR, China	
-Malaysia	
-Marshall Islands	
-Micronesia, Fed. Sts.	
-Mongolia	
-Myanmar	
-Nauru	
-New Caledonia	
-New Zealand	
-Northern Mariana Islands	
-Palau	
-Papua New Guinea
-Philippines
-Samoa
-Singapore
-Solomon Islands
-Taiwan, China
-Thailand
-Timor-Leste
-Tonga
-Tuvalu
-Vanuatu
+American Samoa,	
+Australia,	
+Brunei Darussalam,	
+Cambodia,	
+China,	
+Fiji,
+French Polynesia,	
+Guam,	
+Hong Kong SAR China,	
+Indonesia,	
+Japan,	
+Kiribati,
+Korea, Dem. People's Rep,
+Korea, Rep,
+Lao PDR,
+Macao SAR China,	
+Malaysia,	
+Marshall Islands,	
+Micronesia Fed. Sts.,	
+Mongolia,	
+Myanmar,	
+Nauru,	
+New Caledonia,	
+New Zealand,	
+Northern Mariana Islands,	
+Palau,	
+Papua New Guinea,
+Philippines,
+Samoa,
+Singapore,
+Solomon Islands,
+Taiwan China,
+Thailand,
+Timor-Leste,
+Tonga,
+Tuvalu,
+Vanuatu,
 Vietnam
 
 # Europe and Central Asia (58)
 
-Albania
-Andorra	
-Armenia	
-Austria
-Azerbaijan	
-Belarus	
-Belgium	
-Bosnia and Herzegovina	
-Bulgaria	
-Channel Islands	
-Croatia	
-Cyprus
-Czech Republic	
-Denmark	
-Estonia	
-Faroe Islands	
-Finland	
-France	
-Georgia	
-Germany	
-Gibraltar
-Greece	
-Greenland	
-Hungary	
-Iceland
-Ireland	
-Isle of Man
-Italy	
-Kazakhstan	
-Kosovo	
-Kyrgyz Republic	
-Latvia	
-Liechtenstein	
-Lithuania	
-Luxembourg	
-Moldova	
-Monaco	
-Montenegro	
-Netherlands	
-North Macedonia	
-Norway
-Poland
-Portugal
-Romania
-Russian Federation
-San Marino
-Serbia
-Slovak Republic
-Slovenia
-Spain
-Sweden
-Switzerland
-Tajikistan
-Turkey
-Turkmenistan
-Ukraine
-United Kingdom
+Albania,
+Andorra,
+Armenia,	
+Austria,
+Azerbaijan,	
+Belarus,	
+Belgium,	
+Bosnia and Herzegovina,	
+Bulgaria,	
+Channel Islands,	
+Croatia,	
+Cyprus,
+Czech Republic,	
+Denmark,	
+Estonia,	
+Faroe Islands,	
+Finland,	
+France,	
+Georgia,	
+Germany,	
+Gibraltar,
+Greece,	
+Greenland,	
+Hungary,	
+Iceland,
+Ireland,	
+Isle of Man,
+Italy,	
+Kazakhstan,	
+Kosovo,	
+Kyrgyz Republic,	
+Latvia,	
+Liechtenstein,	
+Lithuania,	
+Luxembourg,	
+Moldova,
+Monaco,	
+Montenegro,	
+Netherlands,	
+North Macedonia,	
+Norway,
+Poland,
+Portugal,
+Romania,
+Russian Federation,
+San Marino,
+Serbia,
+Slovak Republic,
+Slovenia,
+Spain,
+Sweden,
+Switzerland,
+Tajikistan,
+Turkey,
+Turkmenistan,
+Ukraine,
+United Kingdom,
 Uzbekistan
 
 # Middle East and North Africa (21)
 
-Algeria	
-Bahrain	
-Djibouti	
-Egypt, Arab Rep.	
-Iran, Islamic Rep.	
-Iraq	
-Israel	
-Jordan	
-Kuwait	
-Lebanon	
-Libya	Tunisia
-Malta	
-Morocco	
-Oman	
-Qatar
-Saudi Arabia
-Syrian Arab Republic
-United Arab Emirates
-West Bank and Gaza
+Algeria,	
+Bahrain,	
+Djibouti,	
+Egypt, Arab Rep.,	
+Iran, Islamic Rep.,	
+Iraq,	
+Israel,	
+Jordan,	
+Kuwait,	
+Lebanon,	
+Libya,
+Tunisia,
+Malta,	
+Morocco,	
+Oman,	
+Qatar,
+Saudi Arabia,
+Syrian Arab Republic,
+United Arab Emirates,
+West Bank and Gaza,
 Yemen, Rep.
 
 
 # North America (3)
-Bermuda
-Canada
+Bermuda,
+Canada,
 United States
 
 
 # South Asia (8)
 
-Afghanistan
-Bangladesh
-Bhutan
-India
-Maldives
-Nepal
-Pakistan
+Afghanistan,
+Bangladesh,
+Bhutan,
+India,
+Maldives,
+Nepal,
+Pakistan,
 Sri Lanka
 
 
 # Sub Saharan Africa (48)
 
-Angola	
-Benin	
-Botswana	
-Burkina Faso	
-Burundi	
-Cabo Verde	
-Cameroon	
-Central African Republic	
-Chad	
-Comoros	
-Congo, Dem. Rep.	
-Congo, Rep	
-Côte d'Ivoire	
-Equatorial Guinea	
-Eritrea	
-Eswatini	
-Ethiopia	
-Gabon	
-Gambia
-Ghana	
-Guinea	
-Guinea-Bissau	
-Kenya	
-Lesotho	
-Liberia	
-Madagascar	
-Malawi	
-Mali	
-Mauritania	
-Mauritius	
-Mozambique	
-Namibia	
-Niger
-Nigeria
-Rwanda
-São Tomé and Principe
-Senegal
-Seychelles
-Sierra Leone
-Somalia
-South Africa
-South Sudan
-Sudan
-Tanzania
-Togo
-Uganda
-Zambia
+Angola,	
+Benin,
+Botswana,	
+Burkina Faso,	
+Burundi,	
+Cabo Verde,	
+Cameroon,	
+Central African Republic,	
+Chad,	
+Comoros,	
+Congo, Dem. Rep.	,
+Congo, Rep,	
+Côte d'Ivoire,	
+Equatorial Guinea,	
+Eritrea,	
+Eswatini,	
+Ethiopia,	
+Gabon,
+Gambia,
+Ghana,	
+Guinea,	
+Guinea-Bissau,	
+Kenya,	
+Lesotho,	
+Liberia,	
+Madagascar,	
+Malawi,	
+Mali,	
+Mauritania,	
+Mauritius,	
+Mozambique,	
+Namibia,	
+Niger,
+Nigeria,
+Rwanda,
+São Tomé and Principe,
+Senegal,
+Seychelles,
+Sierra Leone,
+Somalia,
+South Africa,
+South Sudan,
+Sudan,
+Tanzania,
+Togo,
+Uganda,
+Zambia,
 Zimbabwe
