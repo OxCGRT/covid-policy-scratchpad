@@ -1,5 +1,4 @@
 countryname,countrycode,region,date,policytype,policyvalue,flag,new_level,prev_level,notes
-Bangladesh,BGD,South_Asia,20200712,C3: Cancel public events,2,1,2G,2G,"Bangladesh on Sunday (July 12th) barred congregational prayers on the Muslim festival of Eid al-Adha on traditionally-designated open grounds to prevent the spread of the novel coronavirus, according to senior officials.  https://web.archive.org/web/20200716150425/https://www.aa.com.tr/en/asia-pacific/bangladesh-restricts-public-eid-prayers-amid-pandemic/1908129"
 Bangladesh,BGD,South_Asia,20200716,C1: School closing,3,1,3G,3G,No change in policy. Source: http://archive.fo/R3pI3
 Bangladesh,BGD,South_Asia,20200716,C2: Workplace closing,3,0,3T,1G,"In red zones under lockdown e.g. Wari:  - The residents are not allowed to move around except for essential work  - ""Also due to this lockdown, I won't get paid this month for not being able to go to my workplace. But it's not just me, I personally know quite a few people who are facing this sort of economic hardship,""     Source: http://archive.fo/5fpjF#selection-773.0-773.214"
 Bangladesh,BGD,South_Asia,20200716,C3: Cancel public events,2,0,2T,2G,
@@ -31,5 +30,5 @@ Sri Lanka,LKA,South_Asia,20200714,C8: International travel controls,4,.,4.,4.,"S
 Pakistan,PAK,South_Asia,20200717,C3: Cancel public events,2,0,2T,2T,"With the upcoming Eid-ul-Adha celebrations on 30 July, the Prime Minister emphasized adherence to nationwide SOPs on public gathering, and encouraged marking the holiday with ""simplicity"":  ""Prime Minister Imran Khan has once again urged the nation to observe standard operating procedures (SOPs) on Eidul Azha to avoid a spike in Covid-19 cases in the country.""  http://archive.fo/fOZ9b"
 Pakistan,PAK,South_Asia,20200722,C6: Stay at home requirements,2,0,2T,2T,"New ""smart lockdowns"" are set to be implemented from 25 July within the Taxila and Wah localities of Rawalpindi based on rising COVID-19 cases in these residential zones, among various other smart lockdowns in localities across the country.  http://archive.fo/rLfBT"
 ,,,,,,,,,
-Note: Data from 24 Jul 2020. Individual countries may be several days older.,,,,,,,,,
+Note: Data from 25 Jul 2020. Individual countries may be several days older.,,,,,,,,,
 Source: Oxford COVID-19 Government Response Tracker. More at: github.com/OxCGRT/covid-policy-tracker or bsg.ox.ac.uk/covidtracker,,,,,,,,,
