@@ -4,9 +4,9 @@ This folder contains PDF summaries of 7 regions and changes (based on The Wolrd 
 
 Regional reports provide a snapshot of shifts government responses to COVID-19 in a two-week period. They summarize selected major changes in government responses across the 12 indicators captured in the Oxford COVID-19 Government Response Tracker’s Containment and Health Index. These summaries provide a high-level overview of shifts in government policy in all major world regions, identifying trends and facilitating comparison.   
 
-# Countries in each region- from World Bank
+## Countries in each region - from [World Bank](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
 
-# Latin America/ Caribbean (42)
+### Latin America/ Caribbean (42)
 Antigua and Barbuda,
 Argentina,
 Aruba,
@@ -50,7 +50,7 @@ Turks and Caicos Islands,
 Venezuela, RB,
 Virgin Islands (U.S.)
 
-# East Asia and Pacific (38)
+### East Asia and Pacific (38)
 American Samoa,	
 Australia,	
 Brunei Darussalam,	
@@ -90,7 +90,7 @@ Tuvalu,
 Vanuatu,
 Vietnam
 
-# Europe and Central Asia (58)
+### Europe and Central Asia (58)
 
 Albania,
 Andorra,
@@ -151,7 +151,7 @@ Ukraine,
 United Kingdom,
 Uzbekistan
 
-# Middle East and North Africa (21)
+### Middle East and North Africa (21)
 
 Algeria,	
 Bahrain,	
@@ -176,13 +176,13 @@ West Bank and Gaza,
 Yemen, Rep.
 
 
-# North America (3)
+### North America (3)
 Bermuda,
 Canada,
 United States
 
 
-# South Asia (8)
+### South Asia (8)
 
 Afghanistan,
 Bangladesh,
@@ -194,7 +194,7 @@ Pakistan,
 Sri Lanka
 
 
-# Sub Saharan Africa (48)
+### Sub Saharan Africa (48)
 
 Angola,	
 Benin,
