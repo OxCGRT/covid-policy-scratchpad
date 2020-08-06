@@ -23,7 +23,7 @@ We combine this with:
 
 From this information, we construct an Openness Risk Index, defined below, which roughly describes the risk of not having closure and containment measures in place, in light of four of the six WHO recommendations. The data is made available in a time series, which makes it possible to see how risk has evolved over time, as the pandemic evolved.
 
-### Brief Overview of the Index Calculation
+## Brief Overview of the Index Calculation
 
 | WHO Recommendation | Data Sources | Index Calculation | Formula |
 |--------------------|:------------:|:-----------------:|:-------:|
@@ -32,7 +32,13 @@ From this information, we construct an Openness Risk Index, defined below, which
 | Manage risk of exporting and importing cases | OxCGRT: C8 (international travel restrictions) | `manage imported cases` <br /> A metric between 0 and 1 based on the stringency of the country’s restrictions on travel arrivals (does not measure risk of exporting cases)|
 |Communities understanding and behaviour change|OxCGRT: H1 (public information campaigns) <br /><br />  Travel and mobility data from Apple and Google <br /><br />  Daily cases and deaths <br />(from European CDC via Our World in Data) |`community` <br />A metric between 0 and 1 based on whether a country has a public information campaign and the level of mobility reduction, weighted for current transmission risk.|
 
-### Visualising the Openness Risk Index
+## Visualising the Openness Risk Index
+
+Through ORI visualisations, we hope to interpret three main facets of information: 
+* Where are countries placed at present with regard to relaxing Stringency restrictions and the risk they face in doing so? 
+* How have countries evolved their Stringency restrictions in the past as opposed to the risk they've faced?
+
+To address the first concern, we produce a line of plots that reflect the scenario in the countries at present. A second set of figures casts a retrospective lens on the evolution of this index over time. 
 
 ![Detailed scatter latest](./graphs/new-score/detail_scatterSIroll_latest.png)
 
