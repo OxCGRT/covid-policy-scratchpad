@@ -61,6 +61,7 @@ The unadjusted *Openness Risk Index* for the country is calculated as:
  <img src="https://latex.codecogs.com/gif.latex?ORI_{Unadjusted}&space;=&space;Mean(casescontrolled,&space;testingandtracing,manageimportedcases,community)" title="ORI_{Unadjusted} = Mean(casescontrolled, testingandtracing,manageimportedcases,community)" /> 
   <br/><br/>
  And the final ORI score is calculated as:
+  <br/><br/>
 <img src="https://latex.codecogs.com/gif.latex?ORI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(1-ORI_{unadjusted})" title="ORI_{final} = EndemicFactor + (1-EndemicFactor)(1-ORI_{unadjusted})" />
  
 
@@ -74,45 +75,62 @@ Through ORI visualisations, we hope to interpret three main facets of informatio
 
 To address the first concern, we produce a line of plots that reflect the scenario in the countries at present. A second set of figures casts a retrospective lens on the evolution of this index over time. 
 
+#### A snapshot of how countries compare on the Openness Risk Index as of the last fortnight. 
+_Top Right Quadrant_: High Openness Risk, High Stringency  
+_Top Left Quadrant_: Low Openness Risk, High Stringency  
+_Bottom Right Quadrant_: __High Openness Risk, Low Stringency__**  
+_Bottom Left Quadrant_: Low Openness Risk, Low Stringency  
+
 ![Detailed scatter latest](./graphs/new-score/detail_scatterSIroll_latest.png)
 
 <!---[Scatter SI vs Rollback](/graphs/summary_scatterSIroll2020-06-28.png)--->
 
+#### A snapshot of how countries compare on the Openness Risk Index over the last quarter.
+
+__Interpretation__: Collective movement across ORI v.s. Stringency space
+
 ![Detailed scatter latest](./graphs/new-score/summary_scatterSIroll_latest.png)
 
-## Line plots of Stringency Index and Openness Risk
+#### Line plots of Stringency Index and Openness Risk
+
+__Interpretation__: Targeted visualisation of each country's movement across ORI v.s. Stringency space
 
 ![Lineplots of key countries](./graphs/new-score/lineplot_latest.png)
 
-![Lineplots .gif](./temp/lineplot_fps2.gif)
+<!---![Lineplots .gif](./temp/lineplot_fps2.gif)--->
 
-## Heatmaps of rollback scores of countries over time 
-#### East Asia and Pacific 
+#### Heatmaps of rollback scores of countries over time 
+
+__Interpretation__: Visual cue of a region's ORI evolution  
+
+##### East Asia and Pacific 
 ![Tile map East Asia Pacific](./graphs/new-score/tilemap_latest_East_Asia_Pacific.png)
 
-#### Europe and Central Asia
+##### Europe and Central Asia
 ![Tile map Europe Central Asia](./graphs/new-score/tilemap_latest_Europe_Central_Asia.png)
 
-#### Latin America and Carribean
+##### Latin America and Carribean
 ![Tile map LatAm Carribean](./graphs/new-score/tilemap_latest_Latin_America_Caribbean.png)
 
-#### Middle East and North Africa
+##### Middle East and North Africa
 ![Tile map MENA](./graphs/new-score/tilemap_latest_Middle_East_North_Africa.png)
 
-#### North America
+##### North America
 ![Tile map N.America](./graphs/new-score/tilemap_latest_North_America.png)
 
-#### South Asia
+##### South Asia
 ![Tile map South Asia](./graphs/new-score/tilemap_latest_South_Asia.png)
 
-#### Sub-Saharan Africa
+##### Sub-Saharan Africa
 ![Tile map Subsaharan Africa](./graphs/new-score/tilemap_latest_sub_Saharan_Africa.png)
 
-### Tile maps of rollback scores of countries (latest)
+#### Tile maps of each country's ORI scores    
+__Interpretation__: Breakup of each country's most recent score in terms of it's sub-indices  
 
 ![Chloropleth maps of rollback](./graphs/new-score/dailytilemap_latest.png)
 
-### Chloropleth maps of rollback scores of countries over time
+#### Chloropleth maps of ORI scores over the last quarter
+__Interpretation__: Worldwide variation in ORI scores over the past quarter
 
 ![Chloropleth maps of rollback](./graphs/new-score/chloropleth_latest.png)
 
