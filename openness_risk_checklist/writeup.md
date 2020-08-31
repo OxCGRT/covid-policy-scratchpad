@@ -88,8 +88,6 @@ _Bottom Left Quadrant_: Low Openness Risk, Low Stringency
 
 <!---[Scatter SI vs Rollback](/graphs/summary_scatterSIroll2020-06-28.png)--->
 
-![Detailed scatter latest](./graphs/new-score/summary_scatterSIroll_latest.png)
-
 #### A snapshot of how countries compare on the Openness Risk Index over the last quarter.
 
 __Interpretation__: Collective movement across ORI v.s. Stringency space
