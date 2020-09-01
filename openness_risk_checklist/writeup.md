@@ -60,12 +60,11 @@ A country's openness risk isn't completely reflected by the mean of these four i
 #### Final Index 
 The unadjusted *Openness Risk Index* for the country is calculated as:
  <br/><br/>
- <img src="https://latex.codecogs.com/gif.latex?ORI_{Unadjusted}&space;=&space;Mean(casescontrolled,&space;testingandtracing,manageimportedcases,community)" title="ORI_{Unadjusted} = Mean(casescontrolled, testingandtracing,manageimportedcases,community)" /> 
-  <br/><br/>
+ <img src="https://latex.codecogs.com/gif.latex?RoOI_{unadjusted}&space;=&space;Mean(casescontrolled,&space;testingandtracing,manageimportedcases,community)" title="RoOI_{unadjusted} = Mean(casescontrolled, testingandtracing,manageimportedcases,community)" /> <br/><br/>
  And the final ORI score is calculated as:
   <br/><br/>
-<img src="https://latex.codecogs.com/gif.latex?ORI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(1-ORI_{unadjusted})" title="ORI_{final} = EndemicFactor + (1-EndemicFactor)(1-ORI_{unadjusted})" />
- 
+
+<img src="https://latex.codecogs.com/gif.latex?RoOI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(1-RoOI_{unadjusted})" title="RoOI_{final} = EndemicFactor + (1-EndemicFactor)(1-RoOI_{unadjusted})" /> 
 
 
 
