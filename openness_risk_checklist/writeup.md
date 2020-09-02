@@ -99,11 +99,12 @@ Through ORI visualisations, we hope to interpret three main facets of informatio
 To address the first concern, we produce a line of plots that reflect the scenario in the countries at present. A second set of figures casts a retrospective lens on the evolution of this index over time. 
 
 #### A snapshot of how countries compare on the Openness Risk Index as of the last fortnight. 
-_Top Right Quadrant_: High Openness Risk, High Stringency  
-_Top Left Quadrant_: Low Openness Risk, High Stringency  
-_Bottom Right Quadrant_: __High Openness Risk, Low Stringency__**  
-_Bottom Left Quadrant_: Low Openness Risk, Low Stringency  
+_Top Right Quadrant (Group 1)_: High Openness Risk, High Stringency  
+_Bottom Right Quadrant (Group 2)_: __High Openness Risk, Low Stringency__**  
+_Top Left Quadrant (Group 3)_: Low Openness Risk, High Stringency  
+_Bottom Left Quadrant (Group 3)_: Low Openness Risk, Low Stringency  
 
+For more information about the interpretations of the Groups with regard to policy stances, see working paper. 
 
 ![Detailed scatter latest](./graphs/new-score/detail_scatterSIroll_latest.png)
 
@@ -156,6 +157,6 @@ __Interpretation__: Breakup of each country's most recent score in terms of it's
 #### Chloropleth maps of ORI scores over the last quarter
 __Interpretation__: Worldwide variation in ORI scores over the past quarter
 
-
 ![Chloropleth maps of rollback](./graphs/new-score/chloropleth_latest.png)
 
+*This is a project from the [Blavatnik School of Government](https://github.com/OxCGRT/covid-policy-tracker/blob/master/www.bsg.ox.ac.uk). More information on the OxCGRT is available on the school's website: https://www.bsg.ox.ac.uk/covidtracker.*
