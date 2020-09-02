@@ -1,75 +1,96 @@
 ##
 
-# Openness Risk Index 
-#### Derived from the Oxford COVID-19 Government Response Tracker 
+# Risk of Openness Index (RoOI)
+#### Derived from the Oxford COVID-19 Government Response Tracker (OxCGRT)
 
 Since the outbreak of the COVID-19 pandemic, countries have used a wide array of closure and containment policies such as school and workplace closings, travel restrictions, and stay-at-home orders to try to break the chain of infection. They have also rapidly deployed test-trace-isolate procedures to seek to detect and isolate transmission as soon as possible. As the disease has spread around the world, these policies have waxed and waned in many jurisdictions. For example, some have rolled back ‘lockdown’ measures following a reduction in community transmission. Others are seeing a a rise and fall of containment measures as small outbreaks occur. And others still are seeing large surges and responding with agreesive containment policies.  As governments seek to calibrate policy to risk, how and when do they know it is safe to opennen up, and when must they instead close down?
 
-The Oxford COVID-19 Government Response Tracker (OxCGRT) provides a cross-national overview of the risk and response of different countries as they tighten and relax physical distancing measures. The Openness Risk Index (ORI) is based on the recommendations set out by the World Health Organisation’s (WHO) of the measures that should be put in place before Covid-19 response policies can be safely relaxed. Considering that many countries have already started to lift measures, the ORI is a reviewed version of our previous ‘Lockdown rollback checklist’.
+The [Oxford COVID-19 Government Response Tracker (OxCGRT)](https://github.com/OxCGRT/covid-policy-tracker) provides a cross-national overview of the risk and response of different countries as they tighten and relax physical distancing measures. The _Risk of Openness Index (RoOI)_ is based on the recommendations set out by the World Health Organisation’s (WHO) of the measures that should be put in place before Covid-19 response policies can be safely relaxed. Considering that many countries have already started to lift measures, the ORI is a reviewed version of our previous ‘Lockdown rollback checklist’.
 
 While the OxCGRT data cannot say precisely the risk faced by each country, it does provide for a rough comparison across nations. Even this “high level” view reveals that many countries are still facing considerable risks as they ease the stringency of policies.
 
 ## Methodology 
 
-Computing risk of opening up isn't straightforward - there's a lot of heterogeniety between countries each of which face different sorts of risk. In April 2020, the WHO [outlined six categories](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf) of measures governments need to have in place to diminish the risks of easing measures. For more detail on these, read [here](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf). 
+Computing risk of relaxing stringency measures isn't straightforward - there's considerable risk heterogeneity among countries each of which face risks in different dimensions. In April 2020, the WHO [outlined six categories](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf) of measures governments need to have in place to diminish the risks of easing measures. For more detail on these, read [here](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf).  
 
-OxCGRT currently provides information relevant to three of these recommendations related to: 
-* Health capacities and controlling the outbreak 
-* Managing the risk of exporting and imported cases
-* Community engagement and behaviour change
+This forms the base of our methodology and we model our RoOI to follow WHO recommendations as closely as possible. Since this is an evolving base, we expect to make 
+changes to our methodology upon updates to the official WHO recommendations.  
+
+OxCGRT currently provides information relevant to three of the six recommendations related to: 
+* _Health capacities and controlling the outbreak_ (Recommendation 1) 
+* _Managing the risk of exporting and imported cases_ (Recommendation 5)
+* _Community engagement and behaviour change_ (Recomendation 6)
 
 We combine this with:
-* epidemiological data from the European Centre for Disease Control on cases and deaths, provided by [Our World in Data](https://ourworldindata.org/coronavirus), which address recommendation 1
-* data collected by Our World in Data on the number of tests conducted in each country, which further addresses recommendation 2
-* data from [Apple](https://www.apple.com/covid19/mobility) and [Google](https://www.google.com/covid19/mobility/) on travel and mobility, which further address recommendation 6
+* epidemiological data from the [European Centre for Disease Prevention and Control (ECDC)](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) on cases and deaths, provided by [Our World in Data](https://ourworldindata.org/coronavirus), which signals information related to __Recommendation 1__
+* data collected by [Our World in Data](https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/testing/covid-testing-all-observations.csv) on the number of tests conducted in each country, which further addresses __Recommendation 2__
+* data from [Apple](https://www.apple.com/covid19/mobility) and [Google](https://www.google.com/covid19/mobility/) on travel and mobility, which we use to address __Recommendation 6__
 
-From this information, we construct an Openness Risk Index, defined below, which roughly describes the risk of not having closure and containment measures in place, in light of four of the six WHO recommendations. The data is made available in a time series, which makes it possible to see how risk has evolved over time, as the pandemic evolved.
+From this information, we construct a _Risk of Openness Index (RoOI)_, defined below, which roughly describes the risk of not having closure and containment measures in place, in light of four of the six WHO recommendations. The data is made available in a time series, which makes it possible to see how risk has evolved over time, as the pandemic evolved.
+
+__Which WHO recommendations are not captured by OxCGRT RoOI Index?__  
+The two recommendations OxCGRT is unable to track/find reliable data on are: 
+* Outbreak risks in high-vulnerability settings are minimized
+* Preventive measures are established in workplaces 
+
+The Methodology will be updated if we are able to track these recommendations using secondary data sources, or in a representative manner through our own data. 
+
 
 ## Brief Overview of the Index Calculation
 
-| WHO Recommendation | Data Sources | Index Calculation 
+The detailed calculations and logic of the formulae are in the RoOI Working Paper. The table below provides a brief description of the calculation for each 
+of the sub-indices that constitute RoOI. 
+
+| WHO Recommendation | Data Sources | Sub-Index Description | 
 |--------------------|:------------:|:-----------------:|
 | Transmission Controlled|<p>_No OxCGRT indicators_ <br /> <br /> Daily cases and Deaths <br /> (from European CDC via Our World in Data) </p>|  `cases controlled` <br />A metric between 0 and 1 based on new cases confirmed each day|
 | Test / trace / isolate| <p> OxCGRT: H2 (testing policy) <br /> OxCGRT: H3 (contact tracing policy)<br /> <br />  Testing data from Our World in Data </p>| `test and trace` <br /> A metric between 0 and 1, half based on testing and contact tracing policy, and half based on the number of tests-per-case a country has conducted (does not measure isolation)|
 | Manage risk of exporting and importing cases | OxCGRT: C8 (international travel restrictions) | `manage imported cases` <br /> A metric between 0 and 1 based on the stringency of the country’s restrictions on travel arrivals (does not measure risk of exporting cases)|
 |Communities understanding and behaviour change|OxCGRT: H1 (public information campaigns) <br /><br />  Travel and mobility data from Apple and Google <br /><br />  Daily cases and deaths <br />(from European CDC via Our World in Data) |`community` <br />A metric between 0 and 1 based on whether a country has a public information campaign and the level of mobility reduction, weighted for current transmission risk.|
 
-### Calculating the Endemic Factor 
-
 Each of the sub-indices are calculated as: 
 
-#### Cases Controlled
+`cases controlled`  
 
 <img src="https://latex.codecogs.com/gif.latex?casescontrolled&space;=&space;\frac{50&space;-\Delta&space;cases_{t}}{50}" title="casescontrolled = \frac{50 -\Delta cases_{t}}{50}" />
 
-#### Testing and Tracing
+`test and trace`  
+
 <img src="https://latex.codecogs.com/gif.latex?testing&space;and&space;tracing&space;=&space;0.25(\frac{H2}{3})&space;&plus;&space;0.25(\frac{H3}{2})&space;&plus;&space;0.5(\frac{ln(tests)&space;-&space;ln(tests_{global\_min})}{ln(tests_{global\_max})&space;-&space;ln(tests_{global\_min})})" title="testing and tracing = 0.25(\frac{H2}{3}) + 0.25(\frac{H3}{2}) + 0.5(\frac{ln(tests) - ln(tests_{global\_min})}{ln(tests_{global\_max}) - ln(tests_{global\_min})})" /> 
 
 
-#### Manage imported cases
+`manage imported cases`    
+
 <img src="https://latex.codecogs.com/gif.latex?manage\:imported\:cases&space;=&space;\left\{\begin{matrix}&space;0&space;&&space;if&space;&&space;C8&space;=&space;0&space;\\&space;0.25&space;&&space;if&space;&&space;C8&space;=&space;1\\&space;0.5&space;&&space;if&space;&&space;C8&space;=&space;2\\&space;1&space;&&space;if&space;&&space;C8&space;=&space;\{3,4\}&space;\end{matrix}\right." title="manage\:imported\:cases = \left\{\begin{matrix} 0 & if & C8 = 0 \\ 0.25 & if & C8 = 1\\ 0.5 & if & C8 = 2\\ 1 & if & C8 = \{3,4\} \end{matrix}\right." />
 
-#### Community
+`community`  
+
 <img src="https://latex.codecogs.com/gif.latex?community&space;=&space;0.5(casescontrolled)&space;&plus;&space;(1-0.5(casescontrolled))(\frac{120-mob}{100})" title="community = 0.5(casescontrolled) + (1-0.5(casescontrolled))(\frac{120-mob}{100})" />
 
-#### Endemic Factor
-A country's openness risk isn't completely reflected by the mean of these four indices. In particular, if a country has a very high case count over the past week, we deem it to be 'high risk' to reopening, although this isn't effectively captured by the four indices above (note that cases controlled by itself is a measure to alert for transmission outbreaks in a country). The *endemic factor* acts as a measure of this risk that requires a longer-term control, and is calculated as:
+### Calculating the Endemic Factor 
+
+A country's risk of openness isn't completely reflected by the mean of these four sub-indices. In particular, if a country has a very high level of transmission over the past week, we deem it to be 'high risk' to reopening, although this isn't effectively captured by the four indices above. Note that cases controlled by itself is a measure to alert for transmission outbreaks in a country; it reaches maximum risk at relatively low levels (50 new cases per day) and does not give an indication of countries where the virus is truly endemic. The __endemic factor__ acts as a measure of this risk where there are not just a handful of new cases, but rather population-scale transmission. When this is the case, it effectively creates a ‘floor’ on the risk level no matter how good the other sub-components are. The endemic factor is calculated as:
 
 <img src="https://latex.codecogs.com/gif.latex?EndemicFactor&space;=&space;\left\{\begin{matrix}&space;0&space;&&space;if&space;&&space;newcases-per-million&space;<&space;50\\&space;1&space;&&space;if&space;&&space;newcases-per-million&space;>&space;200\\&space;(newcases-50)/150&space;&&space;if&space;&&space;50&space;<&space;newcases-per-million&space;<&space;200&space;\end{matrix}\right." title="EndemicFactor = \left\{\begin{matrix} 0 & if & newcases-per-million < 50\\ 1 & if & newcases-per-million > 200\\ (newcases-50)/150 & if & 50 < newcases-per-million < 200 \end{matrix}\right." />
 
-#### Final Index 
-The unadjusted *Openness Risk Index* for the country is calculated as:
+#### Unadjusted Index 
+The unadjusted *Risk of Openness Index* for the country is calculated as:
  <br/><br/>
- <img src="https://latex.codecogs.com/gif.latex?ORI_{Unadjusted}&space;=&space;Mean(casescontrolled,&space;testingandtracing,manageimportedcases,community)" title="ORI_{Unadjusted} = Mean(casescontrolled, testingandtracing,manageimportedcases,community)" /> 
+ <img src="https://latex.codecogs.com/gif.latex?RoOI_{unadjusted}&space;=&space;Mean(casescontrolled,&space;testingandtracing,manageimportedcases,community)" title="RoOI_{unadjusted} = Mean(casescontrolled, testingandtracing,manageimportedcases,community)" /> <br/><br/> 
+#### Final RoOI Index
+And the final *Risk of Openness Index* is calculated as:
   <br/><br/>
- And the final ORI score is calculated as:
-  <br/><br/>
-<img src="https://latex.codecogs.com/gif.latex?ORI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(1-ORI_{unadjusted})" title="ORI_{final} = EndemicFactor + (1-EndemicFactor)(1-ORI_{unadjusted})" />
- 
 
+<img src="https://latex.codecogs.com/gif.latex?RoOI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(1-RoOI_{unadjusted})" title="RoOI_{final} = EndemicFactor + (1-EndemicFactor)(1-RoOI_{unadjusted})" /> 
 
+## Using the Risk of Openness Index 
 
-## Visualising the Openness Risk Index
+RoOI data is represented in a longitudinal format with a single index value for each country in the OxCGRT database. The data is 
+presented in a CSV format in [/data/output/ORI_timeseries_latest.csv](https://raw.githubusercontent.com/OxCGRT/covid-policy-scratchpad/ORI_draft/openness_risk_checklist/data/output/ORI_timeseries2020-08-31.csv).  
+
+Since a key data dependency is the OxCGRT Database, the general conditions around data quality relevant to OxCGRT apply here as well. Read more about these [here](https://github.com/OxCGRT/covid-policy-tracker#data-quality).
+
+## Visualising the Risk of Openness Index  
 
 Through ORI visualisations, we hope to interpret three main facets of information: 
 * Where are countries placed at present with regard to relaxing Stringency restrictions and the risk they face in doing so? 
