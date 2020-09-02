@@ -50,18 +50,18 @@ of the sub-indices that constitute RoOI.
 
 Each of the sub-indices are calculated as: 
 
-#### Cases Controlled
+`Cases Controlled`
 
 <img src="https://latex.codecogs.com/gif.latex?casescontrolled&space;=&space;\frac{50&space;-\Delta&space;cases_{t}}{50}" title="casescontrolled = \frac{50 -\Delta cases_{t}}{50}" />
 
-#### Testing and Tracing
+`Testing and Tracing`
 <img src="https://latex.codecogs.com/gif.latex?testing&space;and&space;tracing&space;=&space;0.25(\frac{H2}{3})&space;&plus;&space;0.25(\frac{H3}{2})&space;&plus;&space;0.5(\frac{ln(tests)&space;-&space;ln(tests_{global\_min})}{ln(tests_{global\_max})&space;-&space;ln(tests_{global\_min})})" title="testing and tracing = 0.25(\frac{H2}{3}) + 0.25(\frac{H3}{2}) + 0.5(\frac{ln(tests) - ln(tests_{global\_min})}{ln(tests_{global\_max}) - ln(tests_{global\_min})})" /> 
 
 
-#### Manage imported cases
+`Manage imported cases`
 <img src="https://latex.codecogs.com/gif.latex?manage\:imported\:cases&space;=&space;\left\{\begin{matrix}&space;0&space;&&space;if&space;&&space;C8&space;=&space;0&space;\\&space;0.25&space;&&space;if&space;&&space;C8&space;=&space;1\\&space;0.5&space;&&space;if&space;&&space;C8&space;=&space;2\\&space;1&space;&&space;if&space;&&space;C8&space;=&space;\{3,4\}&space;\end{matrix}\right." title="manage\:imported\:cases = \left\{\begin{matrix} 0 & if & C8 = 0 \\ 0.25 & if & C8 = 1\\ 0.5 & if & C8 = 2\\ 1 & if & C8 = \{3,4\} \end{matrix}\right." />
 
-#### Community
+`Community`
 <img src="https://latex.codecogs.com/gif.latex?community&space;=&space;0.5(casescontrolled)&space;&plus;&space;(1-0.5(casescontrolled))(\frac{120-mob}{100})" title="community = 0.5(casescontrolled) + (1-0.5(casescontrolled))(\frac{120-mob}{100})" />
 
 ### Calculating the Endemic Factor 
@@ -70,12 +70,12 @@ A country's risk of openness isn't completely reflected by the mean of these fou
 
 <img src="https://latex.codecogs.com/gif.latex?EndemicFactor&space;=&space;\left\{\begin{matrix}&space;0&space;&&space;if&space;&&space;newcases-per-million&space;<&space;50\\&space;1&space;&&space;if&space;&&space;newcases-per-million&space;>&space;200\\&space;(newcases-50)/150&space;&&space;if&space;&&space;50&space;<&space;newcases-per-million&space;<&space;200&space;\end{matrix}\right." title="EndemicFactor = \left\{\begin{matrix} 0 & if & newcases-per-million < 50\\ 1 & if & newcases-per-million > 200\\ (newcases-50)/150 & if & 50 < newcases-per-million < 200 \end{matrix}\right." />
 
-#### Final Index 
+#### Unadjusted Index 
 The unadjusted *Risk of Openness Index* for the country is calculated as:
  <br/><br/>
- <img src="https://latex.codecogs.com/gif.latex?RoOI_{unadjusted}&space;=&space;Mean(casescontrolled,&space;testingandtracing,manageimportedcases,community)" title="RoOI_{unadjusted} = Mean(casescontrolled, testingandtracing,manageimportedcases,community)" /> <br/><br/>
-
-And the final RoOI score is calculated as:
+ <img src="https://latex.codecogs.com/gif.latex?RoOI_{unadjusted}&space;=&space;Mean(casescontrolled,&space;testingandtracing,manageimportedcases,community)" title="RoOI_{unadjusted} = Mean(casescontrolled, testingandtracing,manageimportedcases,community)" /> <br/><br/> 
+#### Final RoOI Index
+And the final *Risk of Openness Index* is calculated as:
   <br/><br/>
 
 <img src="https://latex.codecogs.com/gif.latex?RoOI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(1-RoOI_{unadjusted})" title="RoOI_{final} = EndemicFactor + (1-EndemicFactor)(1-RoOI_{unadjusted})" /> 
