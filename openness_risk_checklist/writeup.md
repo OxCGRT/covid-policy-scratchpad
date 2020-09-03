@@ -43,10 +43,10 @@ of the sub-indices that constitute RoOI.
 
 | WHO Recommendation | Data Sources | Sub-Index Description | 
 |--------------------|:------------:|:-----------------:|
-| Transmission Controlled|<p>_No OxCGRT indicators_ <br /> <br /> Daily cases and Deaths <br /> (from European CDC via Our World in Data) </p>|  `cases controlled` <br />A metric between 0 and 1 based on new cases confirmed each day|
-| Test / trace / isolate| <p> OxCGRT: H2 (testing policy) <br /> OxCGRT: H3 (contact tracing policy)<br /> <br />  Testing data from Our World in Data </p>| `test and trace` <br /> A metric between 0 and 1, half based on testing and contact tracing policy, and half based on the number of tests-per-case a country has conducted (does not measure isolation)|
+| Transmission Controlled|<p>_No OxCGRT indicators_ <br /> <br /> Daily cases and Deaths <br /> (from [European CDC via Our World in Data](https://opendata.ecdc.europa.eu/covid19/casedistribution/)) </p>|  `cases controlled` <br />A metric between 0 and 1 based on new cases confirmed each day|
+| Test / trace / isolate| <p> OxCGRT: H2 (testing policy) <br /> OxCGRT: H3 (contact tracing policy)<br /> <br />  [Testing data from Our World in Data](https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/testing/covid-testing-all-observations.csv) </p>| `test and trace` <br /> A metric between 0 and 1, half based on testing and contact tracing policy, and half based on the number of tests-per-case a country has conducted (does not measure isolation)|
 | Manage risk of exporting and importing cases | OxCGRT: C8 (international travel restrictions) | `manage imported cases` <br /> A metric between 0 and 1 based on the stringency of the country’s restrictions on travel arrivals (does not measure risk of exporting cases)|
-|Communities understanding and behaviour change|OxCGRT: H1 (public information campaigns) <br /><br />  Travel and mobility data from Apple and Google <br /><br />  Daily cases and deaths <br />(from European CDC via Our World in Data) |`community` <br />A metric between 0 and 1 based on whether a country has a public information campaign and the level of mobility reduction, weighted for current transmission risk.|
+|Communities understanding and behaviour change|OxCGRT: H1 (public information campaigns) <br /><br />  Travel and mobility data from [Apple](https://www.apple.com/covid19/mobility) and [Google](https://www.google.com/covid19/mobility/) <br /><br />  Daily cases and deaths <br />(from [European CDC via Our World in Data](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide)) |`community` <br />A metric between 0 and 1 based on whether a country has a public information campaign and the level of mobility reduction, weighted for current transmission risk.|
 
 Each of the sub-indices are calculated as: 
 
@@ -56,8 +56,7 @@ Each of the sub-indices are calculated as:
 
 `test and trace`  
 
-<img src="https://latex.codecogs.com/gif.latex?testing&space;and&space;tracing&space;=&space;0.25(\frac{H2}{3})&space;&plus;&space;0.25(\frac{H3}{2})&space;&plus;&space;0.5(\frac{ln(tests)&space;-&space;ln(tests_{global\_min})}{ln(tests_{global\_max})&space;-&space;ln(tests_{global\_min})})" title="testing and tracing = 0.25(\frac{H2}{3}) + 0.25(\frac{H3}{2}) + 0.5(\frac{ln(tests) - ln(tests_{global\_min})}{ln(tests_{global\_max}) - ln(tests_{global\_min})})" /> 
-
+<img src="https://latex.codecogs.com/gif.latex?testing&space;and&space;tracing&space;=&space;0.25(\frac{H2}{3})&space;&plus;&space;0.25(\frac{H3}{2})&space;&plus;&space;0.5(\frac{ln(tests)&space;-&space;ln(tests_{global\_min})}{ln(tests_{global\_max})&space;-&space;ln(tests_{global\_min})})" title="testing and tracing = 0.25(\frac{H2}{3}) + 0.25(\frac{H3}{2}) + 0.5(\frac{ln(tests) - ln(tests_{global\_min})}{ln(tests_{global\_max}) - ln(tests_{global\_min})})" />   
 
 `manage imported cases`    
 
@@ -76,7 +75,8 @@ A country's risk of openness isn't completely reflected by the mean of these fou
 #### Unadjusted Index 
 The unadjusted *Risk of Openness Index* for the country is calculated as:
  <br/><br/>
- <img src="https://latex.codecogs.com/gif.latex?RoOI_{unadjusted}&space;=&space;Mean(casescontrolled,&space;testingandtracing,manageimportedcases,community)" title="RoOI_{unadjusted} = Mean(casescontrolled, testingandtracing,manageimportedcases,community)" /> <br/><br/> 
+ <img src="https://latex.codecogs.com/gif.latex?RoOI_{unadjusted}&space;=&space;Mean(casescontrolled,&space;testingandtracing,manageimportedcases,community)" title="RoOI_{unadjusted} = Mean(casescontrolled, testingandtracing,manageimportedcases,community)" />  
+ 
 #### Final RoOI Index
 And the final *Risk of Openness Index* is calculated as:
   <br/><br/>
@@ -85,16 +85,24 @@ And the final *Risk of Openness Index* is calculated as:
 
 ## Using the Risk of Openness Index 
 
-RoOI data is represented in a longitudinal format with a single index value for each country in the OxCGRT database. The data is 
-presented in a CSV format in [/data/output/ORI_timeseries_latest.csv](https://raw.githubusercontent.com/OxCGRT/covid-policy-scratchpad/ORI_draft/openness_risk_checklist/data/output/ORI_timeseries2020-08-31.csv).  
+### Availability
+RoOI data is represented in a longitudinal format with unique country-date index values. The country identifiers are ISO-3 countrycodes, which can be used as merge identifiers for joins with [OxCGRT National Indicators dataset](https://github.com/OxCGRT/covid-policy-tracker). The data is 
+presented in a CSV format in [/data/output/ORI_timeseries_latest.csv](https://raw.githubusercontent.com/OxCGRT/covid-policy-scratchpad/ORI_draft/openness_risk_checklist/data/output/ORI_timeseries2020-08-31.csv). The data and it's associated plots will be updated on a daily basis.  
 
-Since a key data dependency is the OxCGRT Database, the general conditions around data quality relevant to OxCGRT apply here as well. Read more about these [here](https://github.com/OxCGRT/covid-policy-tracker#data-quality).
+### Quality
+Since a key data dependency is the OxCGRT Database, the general conditions around data quality relevant to OxCGRT apply here as well. Read more about these [here](https://github.com/OxCGRT/covid-policy-tracker#data-quality).  
+
+Note also that by definition, a 'Risk of Openness' is undefined until a country observes any cases and implements containment policies. Therefore, the RoOI Index timeseries for a country only starts when its confirmed cases count exceeds 0, until which it is defined as `NA`.  
+
+Additionally, since the testing and mobility data dependencies themselves often have gaps (eg. no testing or mobility data on certain dates), there are measures taken to impute missing values with best approximations. See Technical Appendix A in the working paper for more details on this. 
 
 ## Visualising the Risk of Openness Index  
 
-Through ORI visualisations, we hope to interpret three main facets of information: 
+A key objective of the Risk of Openness Index is to observe the stances in policy when faced with a certain ordinal risk measure, and the evolution of this stance over time compared to the evolution of the risk measure. We use the Stringency Index to map government containtment policy, although other [OxCGRT Indices](https://github.com/OxCGRT/covid-policy-tracker#policy-indices) could be appropriate based on the context of the response being observed.  
+
+Through ORI visualisations, we hope to interpret two main facets of information: 
 * Where are countries placed at present with regard to relaxing Stringency restrictions and the risk they face in doing so? 
-* How have countries evolved their Stringency restrictions in the past as opposed to the risk they've faced?
+* How have countries evolved their Stringency restrictions in the past given the contemporaneous risk observed?
 
 To address the first concern, we produce a line of plots that reflect the scenario in the countries at present. A second set of figures casts a retrospective lens on the evolution of this index over time. 
 
