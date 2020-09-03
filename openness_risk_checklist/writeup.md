@@ -108,7 +108,7 @@ To address the first concern, we produce a line of plots that reflect the scenar
 
 #### A snapshot of how countries compare on the Openness Risk Index as of the last fortnight. 
 _Top Right Quadrant (Group 1)_: High Openness Risk, High Stringency  
-_Bottom Right Quadrant (Group 2)_: __High Openness Risk, Low Stringency__**  
+_Bottom Right Quadrant (__Group 2__)_: __High Openness Risk, Low Stringency__**  
 _Top Left Quadrant (Group 3)_: Low Openness Risk, High Stringency  
 _Bottom Left Quadrant (Group 3)_: Low Openness Risk, Low Stringency  
 
