@@ -132,6 +132,11 @@ __Interpretation__: Targeted visualisation of each country's movement across ORI
 
 <!---![Lineplots .gif](./temp/lineplot_fps2.gif)--->
 
+#### Chloropleth maps of ORI scores over the last quarter
+__Interpretation__: Worldwide variation in ORI scores over the past quarter
+
+![Chloropleth maps of rollback](./graphs/new-score/chloropleth_latest.png)
+
 #### Heatmaps of rollback scores of countries over time 
 
 __Interpretation__: Visual cue of a region's ORI evolution  
@@ -162,9 +167,5 @@ __Interpretation__: Breakup of each country's most recent score in terms of it's
 
 ![Chloropleth maps of rollback](./graphs/new-score/dailytilemap_latest.png)
 
-#### Chloropleth maps of ORI scores over the last quarter
-__Interpretation__: Worldwide variation in ORI scores over the past quarter
-
-![Chloropleth maps of rollback](./graphs/new-score/chloropleth_latest.png)
 
 *This is a project from the [Blavatnik School of Government](https://github.com/OxCGRT/covid-policy-tracker/blob/master/www.bsg.ox.ac.uk). More information on the OxCGRT is available on the school's website: https://www.bsg.ox.ac.uk/covidtracker.*
