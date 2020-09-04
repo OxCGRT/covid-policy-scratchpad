@@ -137,7 +137,7 @@ __Interpretation__: Worldwide variation in RoOI scores over the past quarter
 
 ![Chloropleth maps of rollback](./graphs/new-score/chloropleth_latest.png)
 
-#### Heatmaps of rollback scores of countries over time 
+#### Heatmaps of RoOI indices of countries over time 
 
 __Interpretation__: Visual cue of a region's RoOI evolution  
 
