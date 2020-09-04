@@ -5,7 +5,7 @@
 
 Since the outbreak of the COVID-19 pandemic, countries have used a wide array of closure and containment policies such as school and workplace closings, travel restrictions, and stay-at-home orders to try to break the chain of infection. They have also rapidly deployed test-trace-isolate procedures to seek to detect and isolate transmission as soon as possible. As the disease has spread around the world, these policies have waxed and waned in many jurisdictions. For example, some have rolled back ‘lockdown’ measures following a reduction in community transmission. Others are seeing a a rise and fall of containment measures as small outbreaks occur. And others still are seeing large surges and responding with agreesive containment policies.  As governments seek to calibrate policy to risk, how and when do they know it is safe to opennen up, and when must they instead close down?
 
-The [Oxford COVID-19 Government Response Tracker (OxCGRT)](https://github.com/OxCGRT/covid-policy-tracker) provides a cross-national overview of the risk and response of different countries as they tighten and relax physical distancing measures. The _Risk of Openness Index (RoOI)_ is based on the recommendations set out by the World Health Organisation’s (WHO) of the measures that should be put in place before Covid-19 response policies can be safely relaxed. Considering that many countries have already started to lift measures, the ORI is a reviewed version of our previous ‘Lockdown rollback checklist’.
+The [Oxford COVID-19 Government Response Tracker (OxCGRT)](https://github.com/OxCGRT/covid-policy-tracker) provides a cross-national overview of the risk and response of different countries as they tighten and relax physical distancing measures. The _Risk of Openness Index (RoOI)_ is based on the recommendations set out by the World Health Organisation’s (WHO) of the measures that should be put in place before Covid-19 response policies can be safely relaxed. Considering that many countries have already started to lift measures, the RoOI is a reviewed version of our previous ‘Lockdown rollback checklist’.
 
 While the OxCGRT data cannot say precisely the risk faced by each country, it does provide for a rough comparison across nations. Even this “high level” view reveals that many countries are still facing considerable risks as they ease the stringency of policies.
 
@@ -100,7 +100,7 @@ Additionally, since the testing and mobility data dependencies themselves often 
 
 A key objective of the Risk of Openness Index is to observe the stances in policy when faced with a certain ordinal risk measure, and the evolution of this stance over time compared to the evolution of the risk measure. We use the Stringency Index to map government containtment policy, although other [OxCGRT Indices](https://github.com/OxCGRT/covid-policy-tracker#policy-indices) could be appropriate based on the context of the response being observed.  
 
-Through ORI visualisations, we hope to interpret two main facets of information: 
+Through RoOI visualisations, we hope to interpret two main facets of information: 
 * Where are countries placed at present with regard to relaxing Stringency restrictions and the risk they face in doing so? 
 * How have countries evolved their Stringency restrictions in the past given the contemporaneous risk observed?
 
@@ -120,26 +120,26 @@ For more information about the interpretations of the Groups with regard to poli
 
 #### A snapshot of how countries compare on the Openness Risk Index over the last quarter.
 
-__Interpretation__: Collective movement across ORI v.s. Stringency space
+__Interpretation__: Collective movement across RoOI v.s. Stringency space
 
 ![Detailed scatter latest](./graphs/new-score/summary_scatterSIroll_latest.png)
 
 #### Line plots of Stringency Index and Openness Risk
 
-__Interpretation__: Targeted visualisation of each country's movement across ORI v.s. Stringency space
+__Interpretation__: Targeted visualisation of each country's movement across RoOI v.s. Stringency space
 
 ![Lineplots of key countries](./graphs/new-score/lineplot_latest.png)
 
 <!---![Lineplots .gif](./temp/lineplot_fps2.gif)--->
 
-#### Chloropleth maps of ORI scores over the last quarter
-__Interpretation__: Worldwide variation in ORI scores over the past quarter
+#### Chloropleth maps of RoOI scores over the last quarter
+__Interpretation__: Worldwide variation in RoOI scores over the past quarter
 
 ![Chloropleth maps of rollback](./graphs/new-score/chloropleth_latest.png)
 
 #### Heatmaps of rollback scores of countries over time 
 
-__Interpretation__: Visual cue of a region's ORI evolution  
+__Interpretation__: Visual cue of a region's RoOI evolution  
 
 ##### East Asia and Pacific 
 ![Tile map East Asia Pacific](./graphs/new-score/tilemap_latest_East_Asia_Pacific.png)
@@ -162,7 +162,7 @@ __Interpretation__: Visual cue of a region's ORI evolution
 ##### Sub-Saharan Africa
 ![Tile map Subsaharan Africa](./graphs/new-score/tilemap_latest_sub_Saharan_Africa.png)
 
-#### Tile maps of each country's ORI scores    
+#### Tile maps of each country's RoOI scores    
 __Interpretation__: Breakup of each country's most recent score in terms of it's sub-indices  
 
 ![Chloropleth maps of rollback](./graphs/new-score/dailytilemap_latest.png)
