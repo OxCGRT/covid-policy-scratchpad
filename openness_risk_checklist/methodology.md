@@ -2,6 +2,9 @@
 
 #### Risk of Openness Index (RoOI) derived from the Oxford COVID-19 Government Response Tracker (OxCGRT)
 
+_**Methodology version 1.0**_  
+_**6th September, 2020**_
+
 The index draws itself from a combination of OxCGRT indicators and data on COVID-19 testing and cases from verified sources. RoOI is a composed of four sub-indices, 
 each of which provide the alignment of a relevant policy to the WHO recommendations. 
 
