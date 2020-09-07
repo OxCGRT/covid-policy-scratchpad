@@ -11,9 +11,15 @@ While the OxCGRT data cannot say precisely the risk faced by each country, it do
 
 ## Methodology 
 
-Computing risk of relaxing stringency measures isn't straightforward - there's considerable risk heterogeneity among countries each of which face risks in different dimensions. In April 2020, the WHO [outlined six categories](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf) of measures governments need to have in place to diminish the risks of easing measures. For more detail on these, read [here](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf).  
+Computing risk of relaxing stringency measures isn't straightforward - there's considerable risk heterogeneity among countries each of which face risks in different dimensions. In April 2020, the WHO [outlined six categories](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf) of measures governments need to have in place to diminish the risks of easing measures. Briefly, the recommendations are: 
+1. COVID-19 transmission is controlled to a level of sporadic cases and clusters of cases
+2. Sufficient public health workforce and health system capacities are in place
+3. Outbreak risks in high-vulnerability settings are minimized
+4. Preventive measures are established in workplaces
+5. Manage the risk of exporting and importing cases from communities with high risks of transmission
+6. Communities are fully engaged (refer [WHO documentation](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf) for specifications)  
 
-This forms the base of our methodology and we model our RoOI to follow WHO recommendations as closely as possible. Since this is an evolving base, we expect to make 
+For more detail on these, read [here](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf). This forms the base of our methodology and we model our RoOI to follow WHO recommendations as closely as possible. Since this is an evolving base, we expect to make 
 changes to our methodology upon updates to the official WHO recommendations.  
 
 OxCGRT currently provides information relevant to three of the six recommendations related to: 
@@ -42,7 +48,7 @@ The detailed calculations and logic of the formulae are in the RoOI Working Pape
 of the sub-indices that constitute RoOI. 
 
 | WHO Recommendation | Data Sources | Sub-Index Description | 
-|--------------------|:------------:|:-----------------:|
+|--------------------|:------------|:-----------------|
 | Transmission Controlled|<p>_No OxCGRT indicators_ <br /> <br /> Daily cases and Deaths <br /> (from [European CDC via Our World in Data](https://opendata.ecdc.europa.eu/covid19/casedistribution/) and [John Hopkins University CSSE COVID-19 Data Repository](https://github.com/CSSEGISandData/COVID-19)) </p>|  `cases controlled` <br />A metric between 0 and 1 based on new cases confirmed each day|
 | Test / trace / isolate| <p> OxCGRT: H2 (testing policy) <br /> OxCGRT: H3 (contact tracing policy)<br /> <br />  [Testing data from Our World in Data](https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/testing/covid-testing-all-observations.csv) </p>| `test and trace` <br /> A metric between 0 and 1, half based on testing and contact tracing policy, and half based on the number of tests-per-case a country has conducted (does not measure isolation)|
 | Manage risk of exporting and importing cases | OxCGRT: C8 (international travel restrictions) | `manage imported cases` <br /> A metric between 0 and 1 based on the stringency of the country’s restrictions on travel arrivals (does not measure risk of exporting cases)|
