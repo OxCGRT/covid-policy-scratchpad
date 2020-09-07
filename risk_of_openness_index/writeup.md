@@ -79,11 +79,11 @@ Through RoOI visualisations, we hope to interpret two main facets of information
 
 To address the first concern, we produce a line of plots that reflect the scenario in the countries at present. A second set of figures casts a retrospective lens on the evolution of this index over time. 
 
-#### A snapshot of how countries compare on the Openness Risk Index as of the last fortnight. 
-_Top Right Quadrant (Group 1)_: High Openness Risk, High Stringency  
-_Bottom Right Quadrant (__Group 2__)_: __High Openness Risk, Low Stringency__**  
-_Top Left Quadrant (Group 3)_: Low Openness Risk, High Stringency  
-_Bottom Left Quadrant (Group 3)_: Low Openness Risk, Low Stringency  
+#### A snapshot of how countries compare on the Risk of Openness Index as of the last fortnight. 
+_Top Right Quadrant (Group 1)_: High Risk of Openness, High Stringency  
+_Bottom Right Quadrant (__Group 2__)_: __High Risk of Openness, Low Stringency__**  
+_Top Left Quadrant (Group 3)_: Low Risk of Openness, High Stringency  
+_Bottom Left Quadrant (Group 3)_: Low Risk of Openness, Low Stringency  
 
 For more information about the interpretations of the Groups with regard to policy stances, see working paper. 
 
@@ -91,13 +91,13 @@ For more information about the interpretations of the Groups with regard to poli
 
 <!---[Scatter SI vs Rollback](/graphs/summary_scatterSIroll2020-06-28.png)--->
 
-#### A snapshot of how countries compare on the Openness Risk Index over the last quarter.
+#### A snapshot of how countries compare on the Risk of Openness Index over the last quarter.
 
 __Interpretation__: Collective movement across RoOI v.s. Stringency space
 
 ![Detailed scatter latest](./graphs/new-score/summary_scatterSIroll_latest.png)
 
-#### Line plots of Stringency Index and Openness Risk
+#### Line plots of Stringency Index and Risk of Openness
 
 __Interpretation__: Targeted visualisation of each country's movement across RoOI v.s. Stringency space
 
