@@ -23,7 +23,7 @@ For more detail on these, read [here](https://apps.who.int/iris/bitstream/handle
 changes to our methodology upon updates to the official WHO recommendations.  
 
 OxCGRT currently provides information relevant to three of the six recommendations related to: 
-* _Health capacities and controlling the outbreak_ (Recommendation 1) 
+* _Health capacities and controlling the outbreak_ (Recommendation 2) 
 * _Managing the risk of exporting and imported cases_ (Recommendation 5)
 * _Community engagement and behaviour change_ (Recomendation 6)
 
