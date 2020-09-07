@@ -9,6 +9,13 @@ The [Oxford COVID-19 Government Response Tracker (OxCGRT)](https://github.com/Ox
 
 While the OxCGRT data cannot say precisely the risk faced by each country, it does provide for a rough comparison across nations. Even this “high level” view reveals that many countries are still facing considerable risks as they ease the stringency of policies.
 
+---
+
+**Cite as:**  
+Thomas Hale, Toby Phillips, Anna Petherick, Beatriz Kira, Noam Angrist, Katy Aymar, Sam Webster, Saptarshi Majumdar, Laura Hallas, Helen Tatlow, Emily Cameron-Blake (2020). _Risk of Openness index: When do government responses need to be increased or maintained?_ Blavatnik School of Government.
+
+---
+
 ## Methodology 
 
 Computing risk of relaxing stringency measures isn't straightforward - there's considerable risk heterogeneity among countries each of which face risks in different dimensions. In April 2020, the WHO [outlined six categories](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf) of measures governments need to have in place to diminish the risks of easing measures. Briefly, the recommendations are: 
