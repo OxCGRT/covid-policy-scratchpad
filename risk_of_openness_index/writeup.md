@@ -135,7 +135,7 @@ __Interpretation__: Visual cue of a region's RoOI evolution
 ##### Sub-Saharan Africa
 ![Tile map Subsaharan Africa](./graphs/new-score/tilemap_latest_sub_Saharan_Africa.png)
 
-#### Tile maps of each country's RoOI scores    
+#### Heatmap of each country's RoOI scores    
 __Interpretation__: Breakup of each country's most recent score in terms of it's sub-indices  
 
 ![Chloropleth maps of rollback](./graphs/new-score/dailytilemap_latest.png)
