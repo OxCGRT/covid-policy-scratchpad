@@ -48,40 +48,13 @@ of the sub-indices that constitute RoOI.
 | Manage risk of exporting and importing cases | OxCGRT: C8 (international travel restrictions) | `manage imported cases` <br /> A metric between 0 and 1 based on the stringency of the country’s restrictions on travel arrivals (does not measure risk of exporting cases)|
 |Communities understanding and behaviour change|OxCGRT: H1 (public information campaigns) <br /><br />  Travel and mobility data from [Apple](https://www.apple.com/covid19/mobility) and [Google](https://www.google.com/covid19/mobility/) <br /><br />  Daily cases and deaths <br />(from [European CDC via Our World in Data](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide)) |`community` <br />A metric between 0 and 1 based on whether a country has a public information campaign and the level of mobility reduction, weighted for current transmission risk.|
 
-Each of the sub-indices are calculated as: 
-
-`cases controlled`  
-
-<img src="https://latex.codecogs.com/gif.latex?casescontrolled&space;=&space;\frac{50&space;-\Delta&space;cases_{t}}{50}" title="casescontrolled = \frac{50 -\Delta cases_{t}}{50}" />
-
-`test and trace`  
-
-<img src="https://latex.codecogs.com/gif.latex?testing&space;and&space;tracing&space;=&space;0.25(\frac{H2}{3})&space;&plus;&space;0.25(\frac{H3}{2})&space;&plus;&space;0.5(\frac{ln(tests)&space;-&space;ln(tests_{global\_min})}{ln(tests_{global\_max})&space;-&space;ln(tests_{global\_min})})" title="testing and tracing = 0.25(\frac{H2}{3}) + 0.25(\frac{H3}{2}) + 0.5(\frac{ln(tests) - ln(tests_{global\_min})}{ln(tests_{global\_max}) - ln(tests_{global\_min})})" />   
-
-`manage imported cases`    
-
-<img src="https://latex.codecogs.com/gif.latex?manage\:imported\:cases&space;=&space;\left\{\begin{matrix}&space;0&space;&&space;if&space;&&space;C8&space;=&space;0&space;\\&space;0.25&space;&&space;if&space;&&space;C8&space;=&space;1\\&space;0.5&space;&&space;if&space;&&space;C8&space;=&space;2\\&space;1&space;&&space;if&space;&&space;C8&space;=&space;\{3,4\}&space;\end{matrix}\right." title="manage\:imported\:cases = \left\{\begin{matrix} 0 & if & C8 = 0 \\ 0.25 & if & C8 = 1\\ 0.5 & if & C8 = 2\\ 1 & if & C8 = \{3,4\} \end{matrix}\right." />
-
-`community`  
-
-<img src="https://latex.codecogs.com/gif.latex?community&space;=&space;0.5(casescontrolled)&space;&plus;&space;(1-0.5(casescontrolled))(\frac{120-mob}{100})" title="community = 0.5(casescontrolled) + (1-0.5(casescontrolled))(\frac{120-mob}{100})" />
-
-### Calculating the Endemic Factor 
+### Endemic Factor 
 
 A country's risk of openness isn't completely reflected by the mean of these four sub-indices. In particular, if a country has a very high level of transmission over the past week, we deem it to be 'high risk' to reopening, although this isn't effectively captured by the four indices above. Note that cases controlled by itself is a measure to alert for transmission outbreaks in a country; it reaches maximum risk at relatively low levels (50 new cases per day) and does not give an indication of countries where the virus is truly endemic. The __endemic factor__ acts as a measure of this risk where there are not just a handful of new cases, but rather population-scale transmission. When this is the case, it effectively creates a ‘floor’ on the risk level no matter how good the other sub-components are. The endemic factor is calculated as:
 
-<img src="https://latex.codecogs.com/gif.latex?EndemicFactor&space;=&space;\left\{\begin{matrix}&space;0&space;&&space;if&space;&&space;newcases-per-million&space;<&space;50\\&space;1&space;&&space;if&space;&&space;newcases-per-million&space;>&space;200\\&space;\frac{(newcases-50)}{150}&space;&&space;if&space;&&space;50&space;<&space;newcases-per-million&space;<&space;200&space;\end{matrix}\right." title="EndemicFactor = \left\{\begin{matrix} 0 & if & newcases-per-million < 50\\ 1 & if & newcases-per-million > 200\\ \frac{newcases-50}{150} & if & 50 < newcases-per-million < 200 \end{matrix}\right." />
+### Calculations 
 
-#### Unadjusted Index 
-The unadjusted *Risk of Openness Index* for the country is calculated as:
- <br/><br/>
- <img src="https://latex.codecogs.com/gif.latex?RoOI_{unadjusted}&space;=&space;Mean(casescontrolled,&space;testingandtracing,manageimportedcases,community)" title="RoOI_{unadjusted} = Mean(casescontrolled, testingandtracing,manageimportedcases,community)" />  
- 
-#### Final RoOI Index
-And the final *Risk of Openness Index* is calculated as:
-  <br/><br/>
-
-<img src="https://latex.codecogs.com/gif.latex?RoOI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(1-RoOI_{unadjusted})" title="RoOI_{final} = EndemicFactor + (1-EndemicFactor)(1-RoOI_{unadjusted})" /> 
+All calculations performed for the sub-indices, endemic factor and the final index are detailed in the [methodology documentation](https://github.com/OxCGRT/covid-policy-scratchpad/blob/ORI_draft/openness_risk_checklist/methodology.md).
 
 ## Using the Risk of Openness Index 
 
