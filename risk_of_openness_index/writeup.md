@@ -118,10 +118,10 @@ __Interpretation__: Targeted visualisation of each country's movement across RoO
 
 <!---![Lineplots .gif](./temp/lineplot_fps2.gif)--->
 
-#### Chloropleth maps of RoOI scores over the last quarter
+#### Choropleth maps of RoOI scores over the last quarter
 __Interpretation__: Worldwide variation in RoOI scores over the past quarter
 
-![Chloropleth maps of rollback](./graphs/new-score/chloropleth_latest.png)
+![Choropleth maps of rollback](./graphs/new-score/chloropleth_latest.png)
 
 #### Heatmaps of RoOI indices of countries over time 
 
