@@ -17,7 +17,7 @@ recommendations, refer to the working paper.
 
 The sub-indices are calculated as: 
 
-1. `cases controlled`  
+#### `cases controlled`  
 
 <img src="https://latex.codecogs.com/gif.latex?casescontrolled&space;=&space;\frac{50&space;-\Delta&space;cases_{t}}{50}" title="casescontrolled = \frac{50 -\Delta cases_{t}}{50}" />  
 
@@ -28,7 +28,7 @@ Here _Δcases_ is the rolling average of new daily cases from the last 7 days.
 Discontinuity in case data is resolved by a linear interpolation. `cases controlled` is automatically set to 0 if _Δcases_ ≥ 50. 
   
   
-2. `test and trace`
+#### `test and trace`
 
 <img src="https://latex.codecogs.com/gif.latex?testing&space;and&space;tracing&space;=&space;0.25(\frac{H2}{3})&space;&plus;&space;0.25(\frac{H3}{2})&space;&plus;&space;0.5(\frac{ln(tests)&space;-&space;ln(tests_{global\_min})}{ln(tests_{global\_max})&space;-&space;ln(tests_{global\_min})})" title="testing and tracing = 0.25(\frac{H2}{3}) + 0.25(\frac{H3}{2}) + 0.5(\frac{ln(tests) - ln(tests_{global\_min})}{ln(tests_{global\_max}) - ln(tests_{global\_min})})" />
 
@@ -45,14 +45,14 @@ If the Our World in Data team tried to include a country in their testing databa
 
 _*global average prior to imputation_
 
-3. `manage imported cases`
+#### `manage imported cases`
 
 <img src="https://latex.codecogs.com/gif.latex?manage\:imported\:cases&space;=&space;\left\{\begin{matrix}&space;0&space;&&space;if&space;&&space;C8&space;=&space;0&space;\\&space;0.25&space;&&space;if&space;&&space;C8&space;=&space;1\\&space;0.5&space;&&space;if&space;&&space;C8&space;=&space;2\\&space;1&space;&&space;if&space;&&space;C8&space;=&space;\{3,4\}&space;\end{matrix}\right." title="manage\:imported\:cases = \left\{\begin{matrix} 0 & if & C8 = 0 \\ 0.25 & if & C8 = 1\\ 0.5 & if & C8 = 2\\ 1 & if & C8 = \{3,4\} \end{matrix}\right." />
 
 ##### **`NA` Handling**
 In certain cases, there may be gaps in OxCGRT indicator data. We perform a simple 'carryforward' operation to fill such gaps.
 
-4. `community`  
+#### `community`  
 
 <img src="https://latex.codecogs.com/gif.latex?community&space;=&space;0.5(casescontrolled)&space;&plus;&space;(1-0.5(casescontrolled))(\frac{120-mob}{100})" title="community = 0.5(casescontrolled) + (1-0.5(casescontrolled))(\frac{120-mob}{100})" />
 
