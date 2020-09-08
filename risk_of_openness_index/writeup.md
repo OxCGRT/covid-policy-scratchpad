@@ -67,13 +67,13 @@ A country's risk of openness isn't completely reflected by the mean of these fou
 
 ### Calculations 
 
-All calculations performed for the sub-indices, endemic factor and the final index are detailed in the [methodology documentation](https://github.com/OxCGRT/covid-policy-scratchpad/blob/ORI_draft/openness_risk_checklist/methodology.md).
+All calculations performed for the sub-indices, endemic factor and the final index are detailed in the [methodology documentation](./methodology.md).
 
 ## Using the Risk of Openness Index 
 
 ### Availability
 RoOI data is represented in a longitudinal format with unique country-date index values. The country identifiers are ISO-3 countrycodes, which can be used as merge identifiers for joins with [OxCGRT National Indicators dataset](https://github.com/OxCGRT/covid-policy-tracker). The data is 
-presented in a CSV format in [/data/output/ORI_timeseries_latest.csv](https://raw.githubusercontent.com/OxCGRT/covid-policy-scratchpad/ORI_draft/openness_risk_checklist/data/output/ORI_timeseries2020-08-31.csv). The data and it's associated plots will be updated on a daily basis.  
+presented in a CSV format in [/data/output/ORI_timeseries_latest.csv](./data/output/ORI_timeseries_latest.csv). The data and it's associated plots will be updated on a daily basis.  
 
 ### Quality
 Since a key data dependency is the OxCGRT Database, the general conditions around data quality relevant to OxCGRT apply here as well. Read more about these [here](https://github.com/OxCGRT/covid-policy-tracker#data-quality).  
