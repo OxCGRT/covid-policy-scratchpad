@@ -3,9 +3,9 @@
 # Risk of Openness Index (RoOI)
 #### Derived from the Oxford COVID-19 Government Response Tracker (OxCGRT)
 
-Since the outbreak of the COVID-19 pandemic, countries have used a wide array of closure and containment policies such as school and workplace closings, travel restrictions, and stay-at-home orders to try to break the chain of infection. They have also rapidly deployed test-trace-isolate procedures to seek to detect and isolate transmission as soon as possible. As the disease has spread around the world, these policies have waxed and waned in many jurisdictions. For example, some have rolled back ‘lockdown’ measures following a reduction in community transmission. Others are seeing a a rise and fall of containment measures as small outbreaks occur. And others still are seeing large surges and responding with agreesive containment policies.  As governments seek to calibrate policy to risk, how and when do they know it is safe to opennen up, and when must they instead close down?
+Since the outbreak of the COVID-19 pandemic, countries have used a wide array of closure and containment policies such as school and workplace closings, travel restrictions, and stay-at-home orders to try to break the chain of infection. They have also rapidly deployed test-trace-isolate procedures to seek to detect and isolate transmission as soon as possible. As the disease has spread around the world, these policies have waxed and waned in many jurisdictions. For example, some have rolled back ‘lockdown’ measures following a reduction in community transmission. Others are seeing a a rise and fall of containment measures as small outbreaks occur. And others still are seeing large surges and responding with agreesive containment policies.  As governments seek to calibrate policy to risk, how and when do they know it is safe to open up, and when must they instead close down?
 
-The [Oxford COVID-19 Government Response Tracker (OxCGRT)](https://github.com/OxCGRT/covid-policy-tracker) provides a cross-national overview of the risk and response of different countries as they tighten and relax physical distancing measures. The _Risk of Openness Index (RoOI)_ is based on the recommendations set out by the World Health Organisation’s (WHO) of the measures that should be put in place before Covid-19 response policies can be safely relaxed. Considering that many countries have already started to lift measures, the RoOI is a reviewed version of our previous ‘Lockdown rollback checklist’.
+The [Oxford COVID-19 Government Response Tracker (OxCGRT)](https://github.com/OxCGRT/covid-policy-tracker) provides a cross-national overview of the risk and response of different countries as they tighten and relax physical distancing measures. The _Risk of Openness Index (RoOI)_ is based on the recommendations set out by the World Health Organisation (WHO) of the measures that should be put in place before Covid-19 response policies can be safely relaxed. Considering that many countries have already started to lift measures, the RoOI is a reviewed version of our previous ‘Lockdown rollback checklist’.
 
 While the OxCGRT data cannot say precisely the risk faced by each country, it does provide for a rough comparison across nations. Even this “high level” view reveals that many countries are still facing considerable risks as they ease the stringency of policies.
 
@@ -51,19 +51,19 @@ The Methodology will be updated if we are able to track these recommendations us
 
 ## Brief Overview of the Index Calculation
 
-The detailed calculations and logic of the formulae are in the RoOI Working Paper. The table below provides a brief description of the calculation for each 
+The detailed calculations and logic behind the formulae are in the Risk of Openness Index Working Paper, but the updated and version controlled source is the [methodology documentation](./methodology.md). The table below provides a brief description of the calculation for each 
 of the sub-indices that constitute RoOI. 
 
 | WHO Recommendation | Data Sources | Sub-Index Description | 
 |--------------------|:------------|:-----------------|
-| Transmission Controlled|<p>_No OxCGRT indicators_ <br /> <br /> Daily cases and Deaths <br /> (from [European CDC via Our World in Data](https://opendata.ecdc.europa.eu/covid19/casedistribution/) and [John Hopkins University CSSE COVID-19 Data Repository](https://github.com/CSSEGISandData/COVID-19)) </p>|  `cases controlled` <br />A metric between 0 and 1 based on new cases confirmed each day|
+| Transmission Controlled|<p>_No OxCGRT indicators_ <br /> <br /> Daily cases and Deaths <br /> (from [European CDC via Our World in Data](https://opendata.ecdc.europa.eu/covid19/casedistribution/) and [John Hopkins University CSSE COVID-19 Data Repository](https://github.com/CSSEGISandData/COVID-19)) </p>|  `cases controlled` <br />A metric between 0 and 1 based on new confirmed cases each day|
 | Test / trace / isolate| <p> OxCGRT: H2 (testing policy) <br /> OxCGRT: H3 (contact tracing policy)<br /> <br />  [Testing data from Our World in Data](https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/testing/covid-testing-all-observations.csv) </p>| `test and trace` <br /> A metric between 0 and 1, half based on testing and contact tracing policy, and half based on the number of tests-per-case a country has conducted (does not measure isolation)|
 | Manage risk of exporting and importing cases | OxCGRT: C8 (international travel restrictions) | `manage imported cases` <br /> A metric between 0 and 1 based on the stringency of the country’s restrictions on travel arrivals (does not measure risk of exporting cases)|
 |Communities understanding and behaviour change|OxCGRT: H1 (public information campaigns) <br /><br />  Travel and mobility data from [Apple](https://www.apple.com/covid19/mobility) and [Google](https://www.google.com/covid19/mobility/) <br /><br />  Daily cases and deaths <br />(from [European CDC via Our World in Data](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide)) |`community` <br />A metric between 0 and 1 based on whether a country has a public information campaign and the level of mobility reduction, weighted for current transmission risk.|
 
 ### Endemic Factor 
 
-A country's risk of openness isn't completely reflected by the mean of these four sub-indices. In particular, if a country has a very high level of transmission over the past week, we deem it to be 'high risk' to reopening, although this isn't effectively captured by the four indices above. Note that cases controlled by itself is a measure to alert for transmission outbreaks in a country; it reaches maximum risk at relatively low levels (50 new cases per day) and does not give an indication of countries where the virus is truly endemic. The __endemic factor__ acts as a measure of this risk where there are not just a handful of new cases, but rather population-scale transmission. When this is the case, it effectively creates a ‘floor’ on the risk level no matter how good the other sub-components are. The endemic factor is calculated as:
+A country's risk of openness isn't completely reflected by the mean of these four sub-indices. In particular, if a country has a very high level of transmission over the past week, we deem it to be 'high risk' to reopening, although this isn't effectively captured by the four indices above. Note that cases controlled by itself is a measure to alert for transmission outbreaks in a country; it reaches maximum risk at relatively low levels (50 new cases per day) and does not give an indication of countries where the virus is truly endemic. The __endemic factor__ acts as a measure of this risk where there are not just a handful of new cases, but rather population-scale transmission. When this is the case, it effectively creates a ‘floor’ on the risk level no matter how good the other sub-components are. The endemic factor is a measure between 0 and 1, and depends on the total number of new cases in a country, proportioned by population.  
 
 ### Calculations 
 
@@ -80,15 +80,15 @@ Since a key data dependency is the OxCGRT Database, the general conditions aroun
 
 Note also that by definition, a 'Risk of Openness' is undefined until a country observes any cases and implements containment policies. Therefore, the RoOI Index timeseries for a country only starts when its confirmed cases count exceeds 0, until which it is defined as `NA`.  
 
-Additionally, since the testing and mobility data dependencies themselves often have gaps (eg. no testing or mobility data on certain dates), there are measures taken to impute missing values with best approximations. See Technical Appendix A in the working paper for more details on this. 
+Additionally, since the testing and mobility data dependencies themselves often have gaps (eg. no testing or mobility data on certain dates), there are measures taken to impute missing values with best approximations. See [methodology documentation](./methodology.md) for the latest calculation on `NA` handling or Technical Appendix A in the working paper for more details on this. 
 
 ## Visualising the Risk of Openness Index  
 
 A key objective of the Risk of Openness Index is to observe the stances in policy when faced with a certain ordinal risk measure, and the evolution of this stance over time compared to the evolution of the risk measure. We use the Stringency Index to map government containtment policy, although other [OxCGRT Indices](https://github.com/OxCGRT/covid-policy-tracker#policy-indices) could be appropriate based on the context of the response being observed.  
 
 Through RoOI visualisations, we hope to interpret two main facets of information: 
-* Where are countries placed at present with regard to relaxing Stringency restrictions and the risk they face in doing so? 
-* How have countries evolved their Stringency restrictions in the past given the contemporaneous risk observed?
+* Where are countries placed **at present** with regard to relaxing Stringency restrictions and the risk they face in doing so? 
+* How have countries evolved their Stringency restrictions **in the past** given the contemporaneous risk observed?
 
 To address the first concern, we produce a line of plots that reflect the scenario in the countries at present. A second set of figures casts a retrospective lens on the evolution of this index over time. 
 
