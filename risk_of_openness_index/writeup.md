@@ -5,7 +5,7 @@
 
 Since the outbreak of the COVID-19 pandemic, countries have used a wide array of closure and containment policies such as school and workplace closings, travel restrictions, and stay-at-home orders to try to break the chain of infection. They have also rapidly deployed test-trace-isolate procedures to seek to detect and isolate transmission as soon as possible. As the disease has spread around the world, these policies have waxed and waned in many jurisdictions. For example, some have rolled back ‘lockdown’ measures following a reduction in community transmission. Others are seeing a a rise and fall of containment measures as small outbreaks occur. And others still are seeing large surges and responding with agreesive containment policies.  As governments seek to calibrate policy to risk, how and when do they know it is safe to open up, and when must they instead close down?
 
-The [Oxford COVID-19 Government Response Tracker (OxCGRT)](https://github.com/OxCGRT/covid-policy-tracker) provides a cross-national overview of the risk and response of different countries as they tighten and relax physical distancing measures. The _Risk of Openness Index (RoOI)_ is based on the recommendations set out by the World Health Organisation (WHO) of the measures that should be put in place before Covid-19 response policies can be safely relaxed. Considering that many countries have already started to lift measures, the RoOI is a reviewed version of our previous ‘Lockdown rollback checklist’.
+The [Oxford COVID-19 Government Response Tracker (OxCGRT)](https://github.com/OxCGRT/covid-policy-tracker) provides a cross-national overview of the risk and response of different countries as they tighten and relax physical distancing measures. The _Risk of Openness Index (RoOI)_ is based on the recommendations set out by the World Health Organisation (WHO) of the measures that should be put in place before Covid-19 response policies can be safely relaxed. Considering that many countries have already started to lift measures, the Risk of Openness Index is a reviewed version of our previous ‘Lockdown rollback checklist’.
 
 While the OxCGRT data cannot say precisely the risk faced by each country, it does provide for a rough comparison across nations. Even this “high level” view reveals that many countries are still facing considerable risks as they ease the stringency of policies.
 
@@ -26,7 +26,7 @@ Computing risk of relaxing stringency measures isn't straightforward - there's c
 5. Manage the risk of exporting and importing cases from communities with high risks of transmission
 6. Communities are fully engaged (refer [WHO documentation](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf) for specifications)  
 
-For more detail on these, read [here](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf). This forms the base of our methodology and we model our RoOI to follow WHO recommendations as closely as possible. Since this is an evolving base, we expect to make 
+For more detail on these, read [here](https://apps.who.int/iris/bitstream/handle/10665/331773/WHO-2019-nCoV-Adjusting_PH_measures-2020.1-eng.pdf). This forms the base of our methodology and we model our Risk index to follow WHO recommendations as closely as possible. Since this is an evolving base, we expect to make 
 changes to our methodology upon updates to the official WHO recommendations.  
 
 OxCGRT currently provides information relevant to three of the six recommendations related to: 
@@ -41,7 +41,7 @@ We combine this with:
 
 From this information, we construct a _Risk of Openness Index (RoOI)_, defined below, which roughly describes the risk of not having closure and containment measures in place, in light of four of the six WHO recommendations. The data is made available in a time series, which makes it possible to see how risk has evolved over time, as the pandemic evolved.
 
-__Which WHO recommendations are not captured by OxCGRT RoOI Index?__  
+__Which WHO recommendations are not captured by OxCGRT Risk Index?__  
 The two recommendations OxCGRT is unable to track/find reliable data on are: 
 * Outbreak risks in high-vulnerability settings are minimized
 * Preventive measures are established in workplaces 
@@ -52,7 +52,7 @@ The Methodology will be updated if we are able to track these recommendations us
 ## Brief Overview of the Index Calculation
 
 The detailed calculations and logic behind the formulae are in the Risk of Openness Index Working Paper, but the updated and version controlled source is the [methodology documentation](./methodology.md). The table below provides a brief description of the calculation for each 
-of the sub-indices that constitute RoOI. 
+of the sub-indices that constitute the Risk index. 
 
 | WHO Recommendation | Data Sources | Sub-Index Description | 
 |--------------------|:------------|:-----------------|
@@ -72,13 +72,13 @@ All calculations performed for the sub-indices, endemic factor and the final ind
 ## Using the Risk of Openness Index 
 
 ### Availability
-RoOI data is represented in a longitudinal format with unique country-date index values. The country identifiers are ISO-3 countrycodes, which can be used as merge identifiers for joins with [OxCGRT National Indicators dataset](https://github.com/OxCGRT/covid-policy-tracker). The data is 
+Risk of Openness Index data is represented in a longitudinal format with unique country-date index values. The country identifiers are ISO-3 countrycodes, which can be used as merge identifiers for joins with [OxCGRT National Indicators dataset](https://github.com/OxCGRT/covid-policy-tracker). The data is 
 presented in a CSV format in [/data/output/ORI_timeseries_latest.csv](./data/output/ORI_timeseries_latest.csv). The data and it's associated plots will be updated on a daily basis.  
 
 ### Quality
 Since a key data dependency is the OxCGRT Database, the general conditions around data quality relevant to OxCGRT apply here as well. Read more about these [here](https://github.com/OxCGRT/covid-policy-tracker#data-quality).  
 
-Note also that by definition, a 'Risk of Openness' is undefined until a country observes any cases and implements containment policies. Therefore, the RoOI Index timeseries for a country only starts when its confirmed cases count exceeds 0, until which it is defined as `NA`.  
+Note also that by definition, a 'Risk of Openness' is undefined until a country observes any cases and implements containment policies. Therefore, the Risk Index timeseries for a country only starts when its confirmed cases count exceeds 0, until which it is defined as `NA`.  
 
 Additionally, since the testing and mobility data dependencies themselves often have gaps (eg. no testing or mobility data on certain dates), there are measures taken to impute missing values with best approximations. See [methodology documentation](./methodology.md) for the latest calculation on `NA` handling or Technical Appendix A in the working paper for more details on this. 
 
@@ -86,7 +86,7 @@ Additionally, since the testing and mobility data dependencies themselves often 
 
 A key objective of the Risk of Openness Index is to observe the stances in policy when faced with a certain ordinal risk measure, and the evolution of this stance over time compared to the evolution of the risk measure. We use the Stringency Index to map government containtment policy, although other [OxCGRT Indices](https://github.com/OxCGRT/covid-policy-tracker#policy-indices) could be appropriate based on the context of the response being observed.  
 
-Through RoOI visualisations, we hope to interpret two main facets of information: 
+Through Risk Index visualisations, we hope to interpret two main facets of information: 
 * Where are countries placed **at present** with regard to relaxing Stringency restrictions and the risk they face in doing so? 
 * How have countries evolved their Stringency restrictions **in the past** given the contemporaneous risk observed?
 
@@ -106,26 +106,26 @@ For more information about the interpretations of the Groups with regard to poli
 
 #### A snapshot of how countries compare on the Risk of Openness Index over the last quarter.
 
-__Interpretation__: Collective movement across RoOI v.s. Stringency space
+__Interpretation__: Collective movement across Risk of Openness v.s. Stringency space
 
 ![Detailed scatter latest](./graphs/new-score/summary_scatterSIroll_latest.png)
 
 #### Line plots of Stringency Index and Risk of Openness
 
-__Interpretation__: Targeted visualisation of each country's movement across RoOI v.s. Stringency space
+__Interpretation__: Targeted visualisation of each country's movement across Risk of Openness v.s. Stringency space
 
 ![Lineplots of key countries](./graphs/new-score/lineplot_latest.png)
 
 <!---![Lineplots .gif](./temp/lineplot_fps2.gif)--->
 
-#### Choropleth maps of RoOI scores over the last quarter
-__Interpretation__: Worldwide variation in RoOI scores over the past quarter
+#### Choropleth maps of Risk Index scores over the last quarter
+__Interpretation__: Worldwide variation in Risk Index scores over the past quarter
 
 ![Choropleth maps of rollback](./graphs/new-score/chloropleth_latest.png)
 
-#### Heatmaps of RoOI indices of countries over time 
+#### Heatmaps of Risk Index indices of countries over time 
 
-__Interpretation__: Visual cue of a region's RoOI evolution  
+__Interpretation__: Visual cue of a region's Risk Index evolution  
 
 ##### East Asia and Pacific 
 ![Tile map East Asia Pacific](./graphs/new-score/tilemap_latest_East_Asia_Pacific.png)
@@ -148,7 +148,7 @@ __Interpretation__: Visual cue of a region's RoOI evolution
 ##### Sub-Saharan Africa
 ![Tile map Subsaharan Africa](./graphs/new-score/tilemap_latest_sub_Saharan_Africa.png)
 
-#### Heatmap of each country's RoOI scores    
+#### Heatmap of each country's Risk Index scores    
 __Interpretation__: Breakup of each country's most recent score in terms of it's sub-indices  
 
 ![Chloropleth maps of rollback](./graphs/new-score/dailytilemap_latest.png)
