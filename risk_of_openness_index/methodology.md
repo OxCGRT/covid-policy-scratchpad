@@ -99,7 +99,7 @@ a country would record case data as `NA`. As defined in the [README.md](./writeu
 
 The Final Index is computed by modulating the Unadjusted Index through the endemic factor.
 
-### Final RoOI Index
+### Final Risk Index
 
 The final *Risk of Openness Index* is calculated as:  
 
@@ -110,7 +110,7 @@ For interpretation and explanation of the logic for any of these calculation, re
 
 ## Index Methodology Changelog 
 
-* 06/09/2020 - Update RoOI index calculation including sub-indices, endemic factor, unadjusted and final RoOI Index.
+* 06/09/2020 - Update Risk of Openness index calculation including sub-indices, endemic factor, unadjusted and final Risk Index.
 
 
 
