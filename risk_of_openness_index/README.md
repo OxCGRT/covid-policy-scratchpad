@@ -73,7 +73,7 @@ All calculations performed for the sub-indices, endemic factor and the final ind
 
 ### Availability
 Risk of Openness Index data is represented in a longitudinal format with unique country-date index values. The country identifiers are ISO-3 countrycodes, which can be used as merge identifiers for joins with [OxCGRT National Indicators dataset](https://github.com/OxCGRT/covid-policy-tracker). The data is 
-presented in a CSV format in [/data/output/ORI_timeseries_latest.csv](./data/output/ORI_timeseries_latest.csv). The data and it's associated plots will be updated on a daily basis.  
+presented in a CSV format in [/data/riskindex_timeseries_latest.csv](./data/riskindex_timeseries_latest.csv). The data and it's associated plots will be updated on a daily basis.  
 
 ### Quality
 Since a key data dependency is the OxCGRT Database, the general conditions around data quality relevant to OxCGRT apply here as well. Read more about these [here](https://github.com/OxCGRT/covid-policy-tracker#data-quality).  
@@ -100,7 +100,7 @@ _Bottom Left Quadrant (Group 3)_: Low Risk of Openness, Low Stringency
 
 For more information about the interpretations of the Groups with regard to policy stances, see working paper. 
 
-![Detailed scatter latest](./graphs/new-score/detail_scatterSIroll_latest.png)
+![Detailed scatter latest](./graphs/detail_scatterSIroll_latest.png)
 
 <!---[Scatter SI vs Rollback](/graphs/summary_scatterSIroll2020-06-28.png)--->
 
@@ -108,50 +108,50 @@ For more information about the interpretations of the Groups with regard to poli
 
 __Interpretation__: Collective movement across Risk of Openness v.s. Stringency space
 
-![Detailed scatter latest](./graphs/new-score/summary_scatterSIroll_latest.png)
+![Detailed scatter latest](./graphs/summary_scatterSIroll_latest.png)
 
 #### Line plots of Stringency Index and Risk of Openness
 
 __Interpretation__: Targeted visualisation of each country's movement across Risk of Openness v.s. Stringency space
 
-![Lineplots of key countries](./graphs/new-score/lineplot_latest.png)
+![Lineplots of key countries](./graphs/lineplot_latest.png)
 
 <!---![Lineplots .gif](./temp/lineplot_fps2.gif)--->
 
 #### Choropleth maps of Risk Index scores over the last quarter
 __Interpretation__: Worldwide variation in Risk Index scores over the past quarter
 
-![Choropleth maps of rollback](./graphs/new-score/chloropleth_latest.png)
+![Choropleth maps of rollback](./graphs/chloropleth_latest.png)
 
 #### Heatmaps of Risk Index indices of countries over time 
 
 __Interpretation__: Visual cue of a region's Risk Index evolution  
 
 ##### East Asia and Pacific 
-![Tile map East Asia Pacific](./graphs/new-score/tilemap_latest_East_Asia_Pacific.png)
+![Tile map East Asia Pacific](./graphs/tilemap_latest_East_Asia_Pacific.png)
 
 ##### Europe and Central Asia
-![Tile map Europe Central Asia](./graphs/new-score/tilemap_latest_Europe_Central_Asia.png)
+![Tile map Europe Central Asia](./graphs/tilemap_latest_Europe_Central_Asia.png)
 
 ##### Latin America and Carribean
-![Tile map LatAm Carribean](./graphs/new-score/tilemap_latest_Latin_America_Caribbean.png)
+![Tile map LatAm Carribean](./graphs/tilemap_latest_Latin_America_Caribbean.png)
 
 ##### Middle East and North Africa
-![Tile map MENA](./graphs/new-score/tilemap_latest_Middle_East_North_Africa.png)
+![Tile map MENA](./graphs/tilemap_latest_Middle_East_North_Africa.png)
 
 ##### North America
-![Tile map N.America](./graphs/new-score/tilemap_latest_North_America.png)
+![Tile map N.America](./graphs/tilemap_latest_North_America.png)
 
 ##### South Asia
-![Tile map South Asia](./graphs/new-score/tilemap_latest_South_Asia.png)
+![Tile map South Asia](./graphs/tilemap_latest_South_Asia.png)
 
 ##### Sub-Saharan Africa
-![Tile map Subsaharan Africa](./graphs/new-score/tilemap_latest_sub_Saharan_Africa.png)
+![Tile map Subsaharan Africa](./graphs/tilemap_latest_sub_Saharan_Africa.png)
 
 #### Heatmap of each country's Risk Index scores    
 __Interpretation__: Breakup of each country's most recent score in terms of it's sub-indices  
 
-![Chloropleth maps of rollback](./graphs/new-score/dailytilemap_latest.png)
+![Chloropleth maps of rollback](./graphs/dailytilemap_latest.png)
 
 
 *This is a project from the [Blavatnik School of Government](https://github.com/OxCGRT/covid-policy-tracker/blob/master/www.bsg.ox.ac.uk). More information on the OxCGRT is available on the school's website: https://www.bsg.ox.ac.uk/covidtracker.*
