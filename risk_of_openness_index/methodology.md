@@ -21,7 +21,7 @@ The sub-indices are calculated as:
 
 #### `cases controlled`  
 
-<img src="https://latex.codecogs.com/gif.latex?casescontrolled&space;=&space;\frac{50&space;-\Delta&space;cases_{t}}{50}" title="casescontrolled = \frac{50 -\Delta cases_{t}}{50}" />  
+<img src="https://latex.codecogs.com/gif.latex?casescontrolled&space;=&space;\frac{\Delta&space;cases_{t}}{50}" title="casescontrolled = \frac{\Delta cases_{t}}{50}" />  
 
 Here _Δcases_ is the rolling average of new daily cases from the last 7 days.
 
