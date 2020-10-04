@@ -52,7 +52,7 @@ _*global average prior to imputation_
 
 #### `manage imported cases`
 
-<img src="https://latex.codecogs.com/gif.latex?manage\:imported\:cases&space;=&space;\left\{\begin{matrix}&space;0&space;&&space;if&space;&&space;C8&space;=&space;0&space;\\&space;0.25&space;&&space;if&space;&&space;C8&space;=&space;1\\&space;0.5&space;&&space;if&space;&&space;C8&space;=&space;2\\&space;1&space;&&space;if&space;&&space;C8&space;=&space;\{3,4\}&space;\end{matrix}\right." title="manage\:imported\:cases = \left\{\begin{matrix} 0 & if & C8 = 0 \\ 0.25 & if & C8 = 1\\ 0.5 & if & C8 = 2\\ 1 & if & C8 = \{3,4\} \end{matrix}\right." />
+<img src="https://latex.codecogs.com/gif.latex?manage\:imported\:cases&space;=&space;\left\{\begin{matrix}&space;1&space;&&space;if&space;&&space;C8&space;=&space;0&space;\\&space;0.5&space;&&space;if&space;&&space;C8&space;=&space;1\\&space;0.25&space;&&space;if&space;&&space;C8&space;=&space;2\\&space;0&space;&&space;if&space;&&space;C8&space;=&space;\{3,4\}&space;\end{matrix}\right." title="manage\:imported\:cases = \left\{\begin{matrix} 1 & if & C8 = 0 \\ 0.5 & if & C8 = 1\\ 0.25 & if & C8 = 2\\ 0 & if & C8 = \{3,4\} \end{matrix}\right." />
 
 ##### **`NA` Handling**
 In certain cases, there may be gaps in OxCGRT indicator data. We perform a simple 'carryforward' operation to fill such gaps.
