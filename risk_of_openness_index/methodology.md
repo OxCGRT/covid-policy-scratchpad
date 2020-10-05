@@ -33,7 +33,7 @@ Discontinuity in case data is resolved by a linear interpolation. `cases control
 
 #### `test and trace`
 
-<img src="https://latex.codecogs.com/gif.latex?testing&space;and&space;tracing&space;=&space;0.25(\frac{H2}{3})&space;&plus;&space;0.25(\frac{H3}{2})&space;&plus;&space;0.5(\frac{ln(tests)&space;-&space;ln(tests_{global\_min})}{ln(tests_{global\_max})&space;-&space;ln(tests_{global\_min})})" title="testing and tracing = 0.25(\frac{H2}{3}) + 0.25(\frac{H3}{2}) + 0.5(\frac{ln(tests) - ln(tests_{global\_min})}{ln(tests_{global\_max}) - ln(tests_{global\_min})})" />
+<img src="https://latex.codecogs.com/gif.latex?testing&space;and&space;tracing&space;=&space;0.25(1-\frac{H2}{3})&space;&plus;&space;0.25(1-\frac{H3}{2})&space;&plus;&space;0.5(\frac{ln(tests_{global\_max})&space;-&space;ln(tests)}{ln(tests_{global\_max})&space;-&space;ln(tests_{global\_min})})" title="testing and tracing = 0.25(1 - \frac{H2}{3}) + 0.25(1 - \frac{H3}{2}) + 0.5(\frac{ln(tests_{global\_max}) - ln(tests)}{ln(tests_{global\_max}) - ln(tests_{global\_min})})" />
 
 Where:
 *	H2 is the latest value of the testing policy indicator (H2) in OxCGRT database
