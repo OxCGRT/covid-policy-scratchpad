@@ -103,7 +103,7 @@ The Final Index is computed by modulating the Unadjusted Index through the endem
 
 The final *Risk of Openness Index* is calculated as:  
 
-<img src="https://latex.codecogs.com/gif.latex?RoOI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(1-RoOI_{unadjusted})" title="RoOI_{final} = EndemicFactor + (1-EndemicFactor)(1-RoOI_{unadjusted})" /> 
+<img src="https://latex.codecogs.com/gif.latex?RoOI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(RoOI_{unadjusted})" title="RoOI_{final} = EndemicFactor + (1-EndemicFactor)(RoOI_{unadjusted})" /> 
 
 
 For interpretation and explanation of the logic for any of these calculation, refer to the working paper. 
