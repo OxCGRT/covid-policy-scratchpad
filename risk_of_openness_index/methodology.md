@@ -2,8 +2,8 @@
 
 #### Risk of Openness Index (RoOI) derived from the Oxford COVID-19 Government Response Tracker (OxCGRT)
 
-_**Methodology version 1.0**_  
-_**6th September, 2020**_
+_**Methodology version 1.1**_  
+_**5th October, 2020**_
 
 The index draws itself from a combination of OxCGRT indicators and data on COVID-19 testing and cases from verified sources. RoOI is a composed of four sub-indices, 
 each of which provide the alignment of a relevant policy to the WHO recommendations. 
@@ -21,7 +21,7 @@ The sub-indices are calculated as:
 
 #### `cases controlled`  
 
-<img src="https://latex.codecogs.com/gif.latex?casescontrolled&space;=&space;\frac{50&space;-\Delta&space;cases_{t}}{50}" title="casescontrolled = \frac{50 -\Delta cases_{t}}{50}" />  
+<img src="https://latex.codecogs.com/gif.latex?casescontrolled&space;=&space;\frac{\Delta&space;cases_{t}}{50}" title="casescontrolled = \frac{\Delta cases_{t}}{50}" />  
 
 Here _Δcases_ is the rolling average of new daily cases from the last 7 days.
 
@@ -33,7 +33,7 @@ Discontinuity in case data is resolved by a linear interpolation. `cases control
 
 #### `test and trace`
 
-<img src="https://latex.codecogs.com/gif.latex?testing&space;and&space;tracing&space;=&space;0.25(\frac{H2}{3})&space;&plus;&space;0.25(\frac{H3}{2})&space;&plus;&space;0.5(\frac{ln(tests)&space;-&space;ln(tests_{global\_min})}{ln(tests_{global\_max})&space;-&space;ln(tests_{global\_min})})" title="testing and tracing = 0.25(\frac{H2}{3}) + 0.25(\frac{H3}{2}) + 0.5(\frac{ln(tests) - ln(tests_{global\_min})}{ln(tests_{global\_max}) - ln(tests_{global\_min})})" />
+<img src="https://latex.codecogs.com/gif.latex?testing&space;and&space;tracing&space;=&space;0.25(1-\frac{H2}{3})&space;&plus;&space;0.25(1-\frac{H3}{2})&space;&plus;&space;0.5(\frac{ln(tests_{global\_max})&space;-&space;ln(tests)}{ln(tests_{global\_max})&space;-&space;ln(tests_{global\_min})})" title="testing and tracing = 0.25(1 - \frac{H2}{3}) + 0.25(1 - \frac{H3}{2}) + 0.5(\frac{ln(tests_{global\_max}) - ln(tests)}{ln(tests_{global\_max}) - ln(tests_{global\_min})})" />
 
 Where:
 *	H2 is the latest value of the testing policy indicator (H2) in OxCGRT database
@@ -52,7 +52,7 @@ _*global average prior to imputation_
 
 #### `manage imported cases`
 
-<img src="https://latex.codecogs.com/gif.latex?manage\:imported\:cases&space;=&space;\left\{\begin{matrix}&space;0&space;&&space;if&space;&&space;C8&space;=&space;0&space;\\&space;0.25&space;&&space;if&space;&&space;C8&space;=&space;1\\&space;0.5&space;&&space;if&space;&&space;C8&space;=&space;2\\&space;1&space;&&space;if&space;&&space;C8&space;=&space;\{3,4\}&space;\end{matrix}\right." title="manage\:imported\:cases = \left\{\begin{matrix} 0 & if & C8 = 0 \\ 0.25 & if & C8 = 1\\ 0.5 & if & C8 = 2\\ 1 & if & C8 = \{3,4\} \end{matrix}\right." />
+<img src="https://latex.codecogs.com/gif.latex?manage\:imported\:cases&space;=&space;\left\{\begin{matrix}&space;1&space;&&space;if&space;&&space;C8&space;=&space;0&space;\\&space;0.5&space;&&space;if&space;&&space;C8&space;=&space;1\\&space;0.25&space;&&space;if&space;&&space;C8&space;=&space;2\\&space;0&space;&&space;if&space;&&space;C8&space;=&space;\{3,4\}&space;\end{matrix}\right." title="manage\:imported\:cases = \left\{\begin{matrix} 1 & if & C8 = 0 \\ 0.5 & if & C8 = 1\\ 0.25 & if & C8 = 2\\ 0 & if & C8 = \{3,4\} \end{matrix}\right." />
 
 ##### **`NA` Handling**
 In certain cases, there may be gaps in OxCGRT indicator data. We perform a simple 'carryforward' operation to fill such gaps.
@@ -61,7 +61,7 @@ In certain cases, there may be gaps in OxCGRT indicator data. We perform a simpl
 
 #### `community`  
 
-<img src="https://latex.codecogs.com/gif.latex?community&space;=&space;0.5(casescontrolled)&space;&plus;&space;(1-0.5(casescontrolled))(\frac{120-mob}{100})" title="community = 0.5(casescontrolled) + (1-0.5(casescontrolled))(\frac{120-mob}{100})" />
+<img src="https://latex.codecogs.com/gif.latex?community&space;=&space;0.5*(casescontrolled)*(\frac{mob-20}{100})" title="community = 0.5*(casescontrolled)*(\frac{mob-20}{100})" />
 
 Where
 * _casescontrolled_ is the metric between 0 and 1 calculated in the first item above.
@@ -103,13 +103,14 @@ The Final Index is computed by modulating the Unadjusted Index through the endem
 
 The final *Risk of Openness Index* is calculated as:  
 
-<img src="https://latex.codecogs.com/gif.latex?RoOI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(1-RoOI_{unadjusted})" title="RoOI_{final} = EndemicFactor + (1-EndemicFactor)(1-RoOI_{unadjusted})" /> 
+<img src="https://latex.codecogs.com/gif.latex?RoOI_{final}&space;=&space;EndemicFactor&space;&plus;&space;(1-EndemicFactor)(RoOI_{unadjusted})" title="RoOI_{final} = EndemicFactor + (1-EndemicFactor)(RoOI_{unadjusted})" /> 
 
 
 For interpretation and explanation of the logic for any of these calculation, refer to the working paper. 
 
 ## Index Methodology Changelog 
 
+* 05/10/2020 - Sub-index formulas adjusted to relfect risk instead of inverse-risk. Thus, each sub-index is now aligned directionally with the Final index (calculation adjusted accordingly). 
 * 06/09/2020 - Update Risk of Openness index calculation including sub-indices, endemic factor, unadjusted and final Risk Index.
 
 
