@@ -21,6 +21,7 @@ jobs:
                             Rscript -e 'devtools::source_url("https://raw.githubusercontent.com/saptahash/test_repo/master/oxcgrt/codes/rollback_dataviz.r")'
                         - name: Commit changes
                           run: |
+                            ls
                             git config --local user.email "action@github.com"
                             git config --local user.name "GitHub Action"
                             git add .
