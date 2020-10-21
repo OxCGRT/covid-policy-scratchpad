@@ -27,7 +27,7 @@ Here _Δcases_ is the rolling average of new daily cases from the last 7 days.
 
 ##### **`NA` Handling** 
 
-Discontinuity in case data is resolved by a linear interpolation. `cases controlled` is automatically set to 0 if _Δcases_ ≥ 50. 
+Discontinuity in case data is resolved by a linear interpolation. `cases controlled` is automatically set to 1 if _Δcases_ ≥ 50. 
   
 ---
 
