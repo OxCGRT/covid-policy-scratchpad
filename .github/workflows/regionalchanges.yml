@@ -19,7 +19,7 @@ jobs:
                           run: | 
                             cd regional_changes
                             echo 'Starting data prep code'
-                            Rscript -e 'devtools::source_url(https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/latest_regions.R")'
+                            Rscript -e 'devtools::source_url("https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/latest_regions.R")'
                         - name: Commit changes
                           run: |
                             ls
