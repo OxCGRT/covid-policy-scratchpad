@@ -15,7 +15,7 @@ jobs:
                         - name: Install dependencies        
                           run: |
                              source <(curl -s https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/sysrequirements.sh)
-                        - name: Run data update codes
+                        - name: Run regional changes updates code
                           run: | 
                             cd regional_changes
                             ls
