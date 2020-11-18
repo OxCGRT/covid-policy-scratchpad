@@ -28,7 +28,7 @@ jobs:
                             git config --local user.email "action@github.com"
                             git config --local user.name "GitHub Action"
                             git add .
-                            git diff-index --quiet HEAD || git commit -m "Adding latest timeseries csv and images for regional changes" -a
+                            git diff-index --quiet HEAD || git commit -m "Adding latest csv and images for regional changes" -a
                         - name: Push changes
                           uses: ad-m/github-push-action@master
                           with:
