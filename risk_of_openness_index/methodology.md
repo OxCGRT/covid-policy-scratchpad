@@ -61,7 +61,8 @@ In certain cases, there may be gaps in OxCGRT indicator data. We perform a simpl
 
 #### `community`  
 
-<img src="https://latex.codecogs.com/gif.latex?community&space;=&space;0.5*(casescontrolled)*(\frac{mob-20}{100})" title="community = 0.5*(casescontrolled)*(\frac{mob-20}{100})" />
+<img src="https://latex.codecogs.com/gif.latex?community&space;=&space;0.5*casescontrolled&space;&plus;&space;(1-0.5*casescontrolled)*\frac{mob-20}{100}" />
+
 
 Where
 * _casescontrolled_ is the metric between 0 and 1 calculated in the first item above.
