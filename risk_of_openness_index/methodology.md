@@ -3,7 +3,7 @@
 #### Risk of Openness Index (RoOI) derived from the Oxford COVID-19 Government Response Tracker (OxCGRT)
 
 _**Methodology version 1.1**_  
-_**5th October, 2020**_
+_**10th December, 2020**_
 
 The index draws itself from a combination of OxCGRT indicators and data on COVID-19 testing and cases from verified sources. RoOI is a composed of four sub-indices, 
 each of which provide the alignment of a relevant policy to the WHO recommendations. 
@@ -61,7 +61,7 @@ In certain cases, there may be gaps in OxCGRT indicator data. We perform a simpl
 
 #### `community`  
 
-<img src="https://latex.codecogs.com/gif.latex?community&space;=&space;0.5*casescontrolled&space;&plus;&space;(1-0.5*casescontrolled)*\frac{mob-20}{100}" />
+<img src="https://latex.codecogs.com/gif.latex?community&space;=&space;0.5*(1&plus;casescontrolled)*\frac{mob-20}{100}" />
 
 
 Where
@@ -70,7 +70,7 @@ Where
 
 ##### **`NA` Handling**
 
-**If a country does not have a national public information campaign (that is, the OxCGRT database reports H1≠2), then the entire metric is set to 0.**  
+**If a country does not have a national public information campaign (that is, the OxCGRT database reports H1≠2), then the entire metric is set to 1 (highest risk).**  
   
 If a country has both Apple and Google mobility data, then _mob_ is set to whichever reports the greatest reduction in mobility.
 If a country has neither Apple nor Google mobility, then this metric is left blank.
@@ -111,6 +111,7 @@ For interpretation and explanation of the logic for any of these calculation, re
 
 ## Index Methodology Changelog 
 
+* 10/12/2020 - Community Understanding sub-index formula changed - new formula reflects Mobility risk modulated by cases controlled more accurately.
 * 05/10/2020 - Sub-index formulas adjusted to relfect risk instead of inverse-risk. Thus, each sub-index is now aligned directionally with the Final index (calculation adjusted accordingly). 
 * 06/09/2020 - Update Risk of Openness index calculation including sub-indices, endemic factor, unadjusted and final Risk Index.
 
