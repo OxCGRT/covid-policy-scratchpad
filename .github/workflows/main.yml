@@ -1,5 +1,5 @@
 name: An R workflow to automate risk index analysis
-on: push 
+on:
         schedule:
                 - cron: '30 1 * * *'
 
