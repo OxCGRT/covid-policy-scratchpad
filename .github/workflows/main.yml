@@ -19,11 +19,11 @@ jobs:
                           run: | 
                             cd risk_of_openness_index
                             echo 'Starting data prep code'
-                            Rscript -e 'devtools::source_url("https://raw.githubusercontent.com/saptahash/test_repo/master/oxcgrt/codes/OxCGRT_data_prep.r")'
+                            Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/oxcgrt/codes/OxCGRT_data_prep.r")'
                             echo 'Starting Risk index code'
-                            Rscript -e 'devtools::source_url("https://raw.githubusercontent.com/saptahash/test_repo/master/oxcgrt/codes/rollback_checklist.r")'
+                            Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/oxcgrt/codes/rollback_checklist.r")'
                             echo 'Starting visualisations code'
-                            Rscript -e 'devtools::source_url("https://raw.githubusercontent.com/saptahash/test_repo/master/oxcgrt/codes/rollback_dataviz.r")'
+                            Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/oxcgrt/codes/rollback_dataviz.r")'
                         - name: Commit changes
                           run: |
                             ls
