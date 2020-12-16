@@ -1,5 +1,5 @@
 name: An R workflow to automate regional changes csv and graphs
-on: push
+on:
         schedule:
                 - cron: '30 2 * * *'
 
