@@ -1,7 +1,7 @@
 name: An R workflow to automate regional changes csv and graphs
-on:
-        schedule:
-                - cron: '30 2 * * *'
+on: push
+#        schedule:
+#                - cron: '30 2 * * *'
 
 jobs: 
         build:
@@ -20,7 +20,7 @@ jobs:
                             cd regional_changes
                             ls
                             echo 'Starting data prep code'
-                            Rscript -e 'devtools::source_url("https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/latest_regions.R")'
+                            Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/latest_regions.R")'
                         - name: Commit changes
                           run: |
                             ls
