@@ -1,7 +1,7 @@
 name: An R workflow to automate regional changes csv and graphs
 on: push
-#        schedule:
-#                - cron: '30 2 * * *'
+        schedule:
+                - cron: '30 2 * * *'
 
 jobs: 
         build:
