@@ -1,4 +1,4 @@
-name: An R workflow to automate risk index analysis
+name: An R workflow to automate risk index analysis [REMEMBER TO CHANGE AFTER UPDATE]
 on: push
 #        schedule:
 #                - cron: '30 1 * * *'
