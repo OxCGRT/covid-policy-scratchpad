@@ -1,4 +1,4 @@
-name: An R workflow to automate regional changes csv and graphs
+name: An R workflow to automate regional changes outputs
 on: push
 #        schedule:
 #                - cron: '30 2 * * *'
