@@ -1,6 +1,6 @@
 # Qualitative Summaries of Regional Data
 
-This folder contains PDF summaries of 7 regions and changes (based on The Wolrd Bank Regions), updated bi-weekly. Old reports will be archived in a sub-folder. 
+This folder contains PDF summaries of 7 regions and changes (based on The Wolrd Bank Regions), updated monthly. Old reports will be archived in a sub-folder. 
 
 Regional reports provide a snapshot of shifts government responses to COVID-19 in a two-week period. They summarize selected major changes in government responses across the 12 indicators captured in the Oxford COVID-19 Government Response Tracker’s Containment and Health Index. These summaries provide a high-level overview of shifts in government policy in all major world regions, identifying trends and facilitating comparison.   
 
