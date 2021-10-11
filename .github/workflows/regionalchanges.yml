@@ -1,8 +1,8 @@
 name: An R workflow to automate regional changes outputs
 on:
-  push
-#  schedule:
-#    - cron: '30 2 * * *'
+#  push
+  schedule:
+    - cron: '30 4 * * *'
 
 jobs:
   build:
@@ -13,6 +13,12 @@ jobs:
         with:
           path: master
       - uses: r-lib/actions/setup-r@master
+      - name: Cache R packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
       - name: Install dependencies
         run: |
           ls
@@ -36,5 +42,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git diff-index --quiet HEAD || git commit -m "Automated run of latest changes" -a
+          git diff-index --quiet HEAD || git commit -m "Automated run of regional reports" -a
           git push origin master:master
