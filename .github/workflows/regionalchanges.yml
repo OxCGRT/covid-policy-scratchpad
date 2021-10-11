@@ -9,7 +9,9 @@ jobs:
     name: R github actions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
+        with:
+          path: master
       - uses: r-lib/actions/setup-r@master
       - name: Install dependencies
         run: |
@@ -37,12 +39,3 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-# source <(curl -s https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/sysrequirements.sh)
-
-#                        - name: Run regional changes updates code
-#                          run: |
-#                            cd regional_changes
-#                            ls
-#                            echo 'Starting data prep code'
-#                            Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/latest_regions.R")'
