@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: |
           ls
-          cd main
+          cd master
           ls
           chmod +x ./r-code/sysrequirements.sh
           ./r-code/sysrequirements.sh
