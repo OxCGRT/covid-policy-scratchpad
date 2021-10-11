@@ -26,8 +26,8 @@ jobs:
           cd master
           ls
           cd regional_changes
-          chmod +x './r-code/latest_regions.R'
-          Rscript './r-code/latest_regions.R'
+          chmod +x '../r-code/latest_regions.R'
+          Rscript '../r-code/latest_regions.R'
       - name: Commit changes
         run: |
           ls
