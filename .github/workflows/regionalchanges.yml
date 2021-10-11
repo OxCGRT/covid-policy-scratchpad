@@ -31,12 +31,10 @@ jobs:
       - name: Commit changes
         run: |
           ls
-          echo 'Committing output'
+          cd master
+          ls
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git diff-index --quiet HEAD || git commit -m "Adding latest csv and images for regional changes" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git diff-index --quiet HEAD || git commit -m "Automated run of latest changes" -a
+          git push origin master:master
