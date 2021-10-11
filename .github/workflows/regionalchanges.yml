@@ -23,7 +23,7 @@ jobs:
       - name: Run regional changes updates code
         run: |
           ls
-          cd regional_changes
+          cd ./regional_changes
           ls
           chmod +x './r-code/latest_regions.R'
           Rscript './r-code/latest_regions.R'
