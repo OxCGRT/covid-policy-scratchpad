@@ -1,35 +1,48 @@
 name: An R workflow to automate regional changes outputs
-on: push
-#        schedule:
-#                - cron: '30 2 * * *'
+on:
+  push
+#  schedule:
+#    - cron: '30 2 * * *'
 
-jobs: 
-        build:
-                name: R github actions
-                runs-on: ubuntu-latest
-                steps: 
-                        - uses: actions/checkout@master
-                        - uses: r-lib/actions/setup-r@master
-                          with: 
-                                  r-version: '3.5.3' # The R version to be installed 
-                        - name: Install dependencies        
-                          run: |
-                             source <(curl -s https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/sysrequirements.sh)
-                        - name: Run regional changes updates code
-                          run: | 
-                            cd regional_changes
-                            ls
-                            echo 'Starting data prep code'
-                            Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/latest_regions.R")'
-                        - name: Commit changes
-                          run: |
-                            ls
-                            echo 'Committing output'
-                            git config --local user.email "action@github.com"
-                            git config --local user.name "GitHub Action"
-                            git add .
-                            git diff-index --quiet HEAD || git commit -m "Adding latest csv and images for regional changes" -a
-                        - name: Push changes
-                          uses: ad-m/github-push-action@master
-                          with:
-                            github_token: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  build:
+    name: R github actions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: r-lib/actions/setup-r@master
+      - name: Install dependencies
+        run: |
+          ls
+          cd main
+          ls
+          chmod +x ./r-code/sysrequirements.sh
+          ./r-code/sysrequirements.sh
+      - name: Run regional changes updates code
+        run: |
+          ls
+          cd regional_changes
+          ls
+          chmod +x './r-code/latest_regions.R'
+          Rscript './r-code/latest_regions.R'
+      - name: Commit changes
+        run: |
+          ls
+          echo 'Committing output'
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Adding latest csv and images for regional changes" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+# source <(curl -s https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/sysrequirements.sh)
+
+#                        - name: Run regional changes updates code
+#                          run: |
+#                            cd regional_changes
+#                            ls
+#                            echo 'Starting data prep code'
+#                            Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/regionalchanges/latest_regions.R")'

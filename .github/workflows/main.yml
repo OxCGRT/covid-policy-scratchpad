@@ -1,22 +1,23 @@
 name: An R workflow to automate risk index analysis
-on: push
-#        schedule:
-#                - cron: '30 1 * * *'
+on:
+#  push
+  schedule:
+    - cron: '30 1 * * *'
 
-jobs: 
+jobs:
         build:
                 name: R github actions
                 runs-on: ubuntu-latest
-                steps: 
+                steps:
                         - uses: actions/checkout@master
                         - uses: r-lib/actions/setup-r@master
-                          with: 
-                                  r-version: '3.5.3' # The R version to be installed 
-                        - name: Install dependencies and system requirements       
+                          with:
+                                  r-version: '3.5.3' # The R version to be installed
+                        - name: Install dependencies and system requirements
                           run: |
                              source <(curl -s https://raw.githubusercontent.com/saptahash/test_repo/master/oxcgrt/codes/sysrequirements.sh)
                         - name: Run data update codes
-                          run: | 
+                          run: |
                             cd risk_of_openness_index
                             echo 'Starting data prep code'
                             Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/oxcgrt/codes/OxCGRT_data_prep.r")'
