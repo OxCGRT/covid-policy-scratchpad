@@ -8,17 +8,21 @@ jobs:
   build:
     name: R github actions
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@main
         with:
           path: master
+
       - uses: r-lib/actions/setup-r@master
+
       - name: Cache R packages
-        uses: actions/cache@v1
+        uses: actions/cache@main
         with:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
       - name: Install dependencies
         run: |
           ls
@@ -26,6 +30,7 @@ jobs:
           ls
           chmod +x ./r-code/sysrequirements.sh
           ./r-code/sysrequirements.sh
+
       - name: Run regional changes updates code
         run: |
           ls
@@ -34,6 +39,7 @@ jobs:
           cd regional_changes
           chmod +x '../r-code/latest_regions.R'
           Rscript '../r-code/latest_regions.R'
+
       - name: Commit changes
         run: |
           ls
