@@ -1,0 +1,52 @@
+name: An R workflow to automate a status check of OxCGRT coverage
+on:
+#  push
+  schedule:
+    - cron: '10 9 * * *'
+
+jobs:
+  build:
+    name: R github actions
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@main
+        with:
+          path: master
+
+      - uses: r-lib/actions/setup-r@master
+
+      - name: Cache R packages
+        uses: actions/cache@main
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
+      - name: Install dependencies
+        run: |
+          ls
+          cd master
+          ls
+          chmod +x ./r-code/sysrequirements.sh
+          ./r-code/sysrequirements.sh
+
+      - name: Run coverage status script
+        run: |
+          ls
+          cd master
+          ls
+          cd OxCGRT_coverage_status
+          chmod +x '../r-code/OxCGRT_coverage.R'
+          Rscript '../r-code/OxCGRT_coverage.R'
+
+      - name: Commit changes
+        run: |
+          ls
+          cd master
+          ls
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Automated run of OxCGRT coverage status" -a
+          git push origin master:master
