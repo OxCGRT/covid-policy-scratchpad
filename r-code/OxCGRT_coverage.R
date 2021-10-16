@@ -235,4 +235,4 @@ names(OxCGRT_Coding_LastDate) = c("Country", "Region", "C1: School closing", "C2
                                   "Missing days (avg.)")
 
 # Export in csv format
-write.table(OxCGRT_coverage_status, file ="OxCGRT_coerage_status.csv", row.names = F, sep = ",", na="")
+write.table(OxCGRT_coverage_status, file ="OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
