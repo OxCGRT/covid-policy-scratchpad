@@ -1,4 +1,4 @@
-# Import data
+# Import data now
 OxCGRTData <- read.csv(url("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"))
 
 # Change date format
