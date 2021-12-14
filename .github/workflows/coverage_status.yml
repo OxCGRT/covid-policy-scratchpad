@@ -1,6 +1,6 @@
 name: An R workflow to automate a status check of OxCGRT coverage
 on:
-  #push
+  push
   #schedule:
    # - cron: '10 9 * * *'
 
