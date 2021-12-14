@@ -239,20 +239,4 @@ names(OxCGRT_Coding_LastDate) = c("Country", "Region", "C1: School closing", "C2
 # Export in csv format
 write.table(OxCGRT_Coding_LastDate, file ="OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
-#####For the US tab
-
-US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "United States" )
-US_OxCGRT_Coding_LastDate <- rename(US_OxCGRT_Coding_LastDate, "Jurisdiction" = Region)
-US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2, 23:25, 3:22))
-US_OxCGRT_Coding_LastDate$ForgottenBoxes <- 0
-US_OxCGRT_Coding_LastDate$ForgottenBoxes <- (((US_OxCGRT_Coding_LastDate$`Missing days (avg.)`)-
-                        (US_OxCGRT_Coding_LastDate$`Outdated coding in days (avg.)`))*16)
-US_OxCGRT_Coding_LastDate <- separate(US_OxCGRT_Coding_LastDate, ForgottenBoxes,
-                    sep = " ", into = c("ForgottenBoxes", "days"))
-US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(1:3, 25, 5:24, 4))
-
-
-# Export US in csv format
-write.table(US_OxCGRT_Coding_LastDate, file ="US_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
-
 
