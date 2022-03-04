@@ -34,7 +34,7 @@ Indices with 4 versions- Indicators C1,C2,C3,C4,C5,C6,C7,C8,H6, and H8 have diff
 
 
 ***Calculating sub-index scores for each indicator***
-The methodology is exactly the same for this as in our existing methodology: https://github.com/OxCGRT/covid-policy-tracker/blob/master/documentation/index_methodology.md. For the 10 indicators with differentiated coding, separate values are calculated for the ‘Non-vaccinated, and the ‘Vaccinated’ values.
+The methodology is exactly the same for this as in our existing methodology: https://github.com/OxCGRT/covid-policy-tracker/blob/master/documentation/index_methodology.md. For the 10 indicators with differentiated coding, 3 separate columns are published, for 'Everyone' (if no differentiation in place), and for the ‘Non-vaccinated, and the ‘Vaccinated’ values.
 
 ***Legacy stringency index***
 This is NOT present in the differentiated vaccination coding csv. The legacy SI is however published in the main csvs [link].
