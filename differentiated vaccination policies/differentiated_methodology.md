@@ -12,3 +12,32 @@ This experimental differentiated vaccination policy csv reports four different v
 | Vaccinated | GRI_Vax | CHI_Vax | SI_Vax | 
 | Average | GRI_Avg | CHI_Avg | SI_Avg | 
 | Proportion population vaccinated | GRI_WeightAvg | CHI_WeightAvg | SI_WeightAvg | 
+
+
+The **non-vaccinated** value is the index value calculated based on policies that apply to non-vaccinated people. The **vaccinated** value is the index calculated from the policies that apply to vaccinated people. Where an certain indicator or policy area does not have a vaccine-differentiated approach, then the same value (the policy applying to everyone) is used in both indices. The **average** is the sum of the non-vaccinated and vaccinated divided by two. 
+
+**The proportion population vaccinated**  weights the index value using the non-vaccinated/vaccinated based on the proportion of the population that are vaccinated with a complete initial protocol using the data from Our World in Data repository, available here: https://ourworldindata.org/covid-vaccinations. **The proportion population vaccinated** uses the following logic:
+
+  - If no data before or equal to date -> assume 0% vaccinated
+  - If no "fully_vaccinated_per_hundred" for a specific date -> pull forward the value from the last day it was present
+
+The OxCGRT cannot guarantee the validity of data sourced externally.
+
+
+Indices with 4 versions- Indicators C1,C2,C3,C4,C5,C6,C7,C8,H6, and H8 have differentiated policies
+
+| Index name | _k_ | **C1** | **C2** | **C3** | **C4** | **C5** | **C6** | **C7** | **C8** | E1 | E2 | E3 | E4 | H1 | H2 | H3 | H4 | H5 | **H6** | H7 | **H8** | M1 |
+| --- | ---: | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- |--- |--- |
+| **Government response index** <br/>–Non vaccinated<br>–Vaccinated<br>–Average<br>–Proportion vaccinated average | 16 | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | | | `x` | `x` | `x` | | | `x` | `x` | `x` | | | |
+| **Containment and health index** <br/>–Non vaccinated<br>–Vaccinated<br>–Average<br>–Proportion vaccinated average | 14 | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | | | | | `x` | `x` | `x` | | |`x` | `x` | `x` | | | |
+| **Stringency index** <br/>–Non vaccinated<br>–Vaccinated<br>–Average<br>–Proportion vaccinated average | 9 | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | | | | | `x` | | | | | | |
+
+
+***Calculating sub-index scores for each indicator***
+The methodology is exactly the same for this as in our existing methodology: https://github.com/OxCGRT/covid-policy-tracker/blob/master/documentation/index_methodology.md. For the 10 indicators with differentiated coding, separate values are calculated for the ‘Non-vaccinated, and the ‘Vaccinated’ values.
+
+***Legacy stringency index***
+This is NOT present in the differentiated vaccination coding csv. The legacy SI is however published in the main csvs [link].
+
+
+
