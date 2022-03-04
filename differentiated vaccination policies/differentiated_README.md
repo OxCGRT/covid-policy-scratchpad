@@ -13,3 +13,5 @@ For the Government Response Index, Containment and Health Index, and Stringency 
 This csv does not publish the legacy Stringency Index like the main Github repo. 
 
 As per our main repo, the data are regularly reviewed, and are subject to change. We therefore recommend downloading the most recent data and stating the date of download if using the data.
+
+If you have feedback on this csv please contact us ____________.
