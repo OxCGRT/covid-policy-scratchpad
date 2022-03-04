@@ -6,11 +6,11 @@ This document is the codebook for the Oxford Covid-19 Government Response Tracke
 
 This document is the temporary/draft codebook for the Oxford Covid-19 Government Response Tracker (GitHub repo, university website) differentiated vaccination data demo dataset. The dataset contains 20 indicators and a miscellaneous notes field and is organised into five groups:
 
-C - containment and closure policies
-E - economic policies
-H - health system policies
-V - vaccination policies
-M - miscellaneous policies
+- [C - containment and closure policies](#containment-and-closure-policies)
+- [E - economic policies](#economic-policies)
+- [H - health system policies](#health-system-policies)
+- [V - vaccination policies](#vaccination-policies)
+- [M - miscellaneous policies](#miscellaneous-policies)
 
 The following ten indicators are split into separate variables for `non-vaccinated` people and `vaccinated` people where policies differ between these groups: C1, C2, C3, C4, C5, C6, C7, C8, H6 and H8. If there is no differentiated policy in place, we report a single variable for `everyone`.
 We define differentiated policies to mean policies where vaccinated people can access greater freedoms due to their vaccination status, and are subject to less stringent restrictions. 
