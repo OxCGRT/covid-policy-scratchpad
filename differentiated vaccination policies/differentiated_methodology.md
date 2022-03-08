@@ -16,10 +16,14 @@ This experimental differentiated vaccination policy csv reports four different v
 
 The **non-vaccinated** value is the index value calculated based on policies that apply to non-vaccinated people. The **vaccinated** value is the index calculated from the policies that apply to vaccinated people. Where an certain indicator or policy area does not have a vaccine-differentiated approach, then the same value (the policy applying to everyone) is used in both indices. The **average** is the sum of the non-vaccinated and vaccinated divided by two. 
 
-**The proportion population vaccinated**  weights the index value using the non-vaccinated/vaccinated based on the proportion of the population that are vaccinated with a complete initial protocol using the data from Our World in Data repository, available here: https://ourworldindata.org/covid-vaccinations. **The proportion population vaccinated** uses the following logic:
+**The proportion population vaccinated**  weights the index value using the non-vaccinated/vaccinated values based on the proportion of the population that are vaccinated with a complete initial protocol using the data from Our World in Data vaccination dataset's 'fullyvaccinatedperhundred' (with gaps filled) repository available here: https://ourworldindata.org/covid-vaccinations. This value is also published in the csv in a column labelled "FullyVaccinated (%)" column next to the cases/deaths columns.
 
-  - If no data before or equal to date -> assume 0% vaccinated
+**The proportion population vaccinated** uses the following logic:
+
+  - If no data available before or equal to date -> 0% vaccination is assumed
   - If no "fully_vaccinated_per_hundred" for a specific date -> pull forward the value from the last day it was present
+
+There is also a new "M" (Majority) column for each of the ten indicators with differentiated policies. If >50% of the population are fully vaccinated, it contains the vaccinated value. If <50% or there is no vaccinated value, it contains the non-vaccinated/everyone value. This "M" column ensures a continuous series of data for these ten indicators.
 
 The OxCGRT cannot guarantee the validity of data sourced externally.
 
