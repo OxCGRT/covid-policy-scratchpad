@@ -1,5 +1,5 @@
 # OxCGRT Differentiated Vaccination Policy Coding Interpretation Guide
-***Version 1.0 <br/>Date: 8 March 2022***
+***Version 1.0 <br/>Date: 11 March 2022***
 
 This guide details the interpretation of differentiated vaccination policy coding. This is in order to ensure consistency, and standardize coding across the database. 
 
