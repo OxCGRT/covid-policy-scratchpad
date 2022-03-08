@@ -1,6 +1,6 @@
 # README
 
-***Differentiated vaccination policies- OxCGRT <br/>8 March 2022***
+***Differentiated vaccination policies- OxCGRT <br/>11 March 2022***
 
 This scratchpad/ repo contains our experimental demo csv with differentiated coding based on vaccination status. The dataset begins on 1 January 2022. Information on differentiated policies on vaccinated and unvaccinated people is still being collected for 2021. 
 
