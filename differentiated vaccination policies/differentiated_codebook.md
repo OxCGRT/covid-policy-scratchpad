@@ -12,7 +12,7 @@ This document is the temporary/draft codebook for the Oxford Covid-19 Government
 - [V - vaccination policies](#vaccination-policies)
 - [M - miscellaneous policies](#miscellaneous-policies)
 
-The following ten indicators are split into separate variables for `non-vaccinated` people and `vaccinated` people where policies differ between these groups: C1, C2, C3, C4, C5, C6, C7, C8, H6 and H8. If there is no differentiated policy in place, we report a single variable for `everyone`.
+The following ten indicators are split into separate variables for `non-vaccinated`(NV) people and `vaccinated` (V) people where policies differ between these groups: C1, C2, C3, C4, C5, C6, C7, C8, H6 and H8. If there is no differentiated policy in place, we report a single variable for `everyone`(E).
 We define differentiated policies to mean policies where vaccinated people can access greater freedoms due to their vaccination status, and are subject to less stringent restrictions. 
 For more detailed guidance about the codebook and how we interpret the indicators, see the draft coding interpretation guide. This ensures consistency, and standardizes coding across the database.
 Updates to this demo codebook are recorded in the changelog below.
