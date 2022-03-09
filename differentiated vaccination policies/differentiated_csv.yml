@@ -12,10 +12,8 @@ jobs:
           fetch-depth: 1
       - name: Download raw csv from OxCGRT database
         run: |
-          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_preview'
-          awk -F "," 'NR==1 {header=$0}; NF>1 && NR>1 {year=substr($6,1,4); if(! files[year]) {print header > ("data/differentiated_csv_" year ".csv"); files[year]=1}; print $0 > ("data/OxCGRT_withnotes_" year ".csv")}' 'data/OxCGRT_withnotes.csv'
-          rm 'data/OxCGRT_withnotes.csv'
-
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_preview' -s -f -o 'data/OxCGRT_differentiated.csv'
+        
       - name: Commit changes
         run: |
          git config --local user.email "action@github.com"
