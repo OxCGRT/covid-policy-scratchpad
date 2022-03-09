@@ -4,7 +4,7 @@
 
 This document is the codebook for the Oxford Covid-19 Government Response Tracker's experimental differentiated vaccination policy coding csv ([GitHub repo](https://github.com/OxCGRT/covid-policy-tracker), [university website](https://www.bsg.ox.ac.uk/covidtracker)). 
 
-This document is the temporary/draft codebook for the Oxford Covid-19 Government Response Tracker (GitHub repo, university website) differentiated vaccination data demo dataset. The dataset contains 20 indicators and a miscellaneous notes field and is organised into five groups:
+This document is the temporary/draft codebook for the Oxford Covid-19 Government Response Tracker (GitHub repo, university website) differentiated vaccination data demo dataset. The dataset contains 21 live indicators, 3 retired fiscal indicators and a miscellaneous notes field and is organised into five groups:
 
 - [C - containment and closure policies](#containment-and-closure-policies)
 - [E - economic policies](#economic-policies)
