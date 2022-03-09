@@ -1,0 +1,30 @@
+name: Data link to OxCGRT
+on:
+  push
+  #schedule:
+    - #cron: '1 2-23 * * *'
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: Download raw csv from OxCGRT database
+        run: |
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_preview' -s -f -o 'data/OxCGRT_differentiated.csv'
+        
+      - name: Commit changes
+        run: |
+         git config --local user.email "action@github.com"
+         git config --local user.name "GitHub Action"
+         git add .
+         git diff-index --quiet HEAD || git commit -m "OxCGRT Data Update" -a
+         git push origin master:master
+
+#      - name: Push changes
+#        uses: ad-m/github-push-action@master
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          branch: patch-1
