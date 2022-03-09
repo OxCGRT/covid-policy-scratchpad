@@ -9,7 +9,7 @@ Updates to this coding interpretation are recorded in the [changelog](#different
 
 - For each indicator, we record the most stringent policy in place anywhere in the country/region/territory.
 - For indicators that could have differentiation based on vaccination status: 
-  - If there are is no policy differentiation related to vaccination status, we just record one policy which applies to everyone
+  - If there is no policy differentiation related to vaccination status, we just record one policy which applies to everyone
   - If there are different policies for people based on vaccination status, we record:
       - ‘Non-vaccinated’ - the policy for people without a vaccination
       - ‘Vaccinated’- the policy for people with a vaccination
@@ -18,7 +18,7 @@ Updates to this coding interpretation are recorded in the [changelog](#different
 - We record a differentiated policy when someone is able to access different freedoms within a jurisdiction based on their vaccination status (e.g. access to events). 
 - We do not record how this is enforced, or make judgements about whether the rules are being implemented effectively. 
 - There does not need to be a vaccine “pass”  in place for us to record a differentiated policy. Some jurisdictions have vaccine passes of different kinds (eg. paper, digital certificate, sign-in app) but some countries do not actively enforce their vaccine requirements. We simply record the level of restrictions granted through being vaccinated in that place. If countries distinguish between one, two, three or more vaccinations and there are different vaccination related freedoms granted based on the number of doses, we code the freedoms given for the highest number of doses.
-- We accept each jurisdictions’ decision on which vaccine brand, or number of doses, make vaccinated people eligible for less restrictive policies, following an ‘as defined locally’ logic
+- We accept each jurisdictions’ decision on which vaccine brand, or number of doses makes vaccinated people eligible for less restrictive policies, following an ‘as defined locally’ logic
 - We record in the notes if vaccination freedoms are granted for less than the full course of doses for each vaccine brand
 - If vaccinated people are also required to present a negative PCR test, we code this as a closure (2 or 3) to vaccinated people, to reflect the stringency of this measure. We record policies in both the non-vaccinated, and vaccinated columns here, to reflect the existence of two different policies for each group.
 
@@ -37,10 +37,18 @@ Updates to this coding interpretation are recorded in the [changelog](#different
 - Here we only code a closure if attendees are required to provide proof of vaccination to enter, not staff
 - If staff are required to be vaccinated we code this as an occupational vaccine mandate in V4
 
+### C4- Restrictions on gatherings
+
+- We record C4 as a closure if there are restrictions on gathering size based on vaccination status
+
 ### C5- Public Transportation
 
 - Here we only code a closure if passengers are required to provide proof of vaccination to enter, not staff
 - If staff are required to be vaccinated we code this as a requirement to be vaccinated due to occupation in V4
+
+### C6- Stay at home requirements
+
+- We record C6 as a closure if non-vaccinated people are required to stay at home
 
 ### C8-  International Travel Controls
 
@@ -48,7 +56,7 @@ Updates to this coding interpretation are recorded in the [changelog](#different
 - If vaccinated people do not have to quarantine- we code this as a 1, and if non vaccinated can ‘test out’ of quarantine, we also code this as a 1. This is the one exception to the logic described elsewhere. If non-vaccinated people must present evidence of a test to arrive in a country, this is therefore a 1. If they must present a test and also quarantine, this is coded as a 2.
 - If non-vaccinated people cannot enter from any country at all, we code this as a 4, total closure to non-vaccinated 
 - If non-vaccinated people are banned from some countries, we code this as a 3
-- If non-vaccinated foreign nationals are allowed to enter the country, we do not consider this in the coding. This is in line with the interpretation guidance which states that we do not consider the repatriation of foreign nationals when considering border closures. 
+- If non-vaccinated nationals are allowed to enter the country, we do not consider this in the coding. This is in line with the interpretation guidance which states that we do not consider the repatriation of nationals when considering border closures. 
 - If vaccination status is still used to approve vaccinated people's arrival and exempt them from quarantine, this is still a form of screening, and is coded as a 1. We only code this as a 0 if vaccination status is not factored in and there is no kind of screening in place at all (equivalent to pre-covid times), and non-vaccinated and vaccinated people are subject to the same policies.
 
 ### H8-  Protection of elderly people
