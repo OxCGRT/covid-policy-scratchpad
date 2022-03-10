@@ -1,8 +1,8 @@
 name: Data link to OxCGRT
 on:
-  push
-  #schedule:
-   # - cron: '1 2-23 * * *'
+ # push
+  schedule:
+   - cron: '0 0 * * * * 
 
 jobs:
   build:
