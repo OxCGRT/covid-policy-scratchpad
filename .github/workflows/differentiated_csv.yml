@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 1
       - name: Download raw csv from OxCGRT database
         run: |
-          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_preview' -s -f -o 'data/OxCGRT_differentiated.csv'
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_preview' -s -f -o 'differentiated vaccination policies/OxCGRT_differentiated.csv'
         
       - name: Commit changes
         run: |
