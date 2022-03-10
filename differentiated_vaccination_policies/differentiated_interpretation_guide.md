@@ -1,7 +1,7 @@
 # OxCGRT Differentiated Vaccination Policy Coding Interpretation Guide
 ***Version 1.0 <br/>Date: 11 March 2022***
 
-This interpretation guide is an addition to the core [coding interpretation guide](documentation/interpretation_guide.md) for the Oxford Covid-19 Government Response Tracker, and explains the key differences and considerations relevant to the experimental differentiated vaccination policy coding csv ([GitHub repo](https://github.com/OxCGRT/covid-policy-tracker), [university website](https://www.bsg.ox.ac.uk/covidtracker)). 
+This interpretation guide is an addition to the core [coding interpretation guide](https://github.com/OxCGRT/covid-policy-tracker/blob/master/documentation/interpretation_guide.md) for the Oxford Covid-19 Government Response Tracker, and explains the key differences and considerations relevant to the experimental differentiated vaccination policy coding csv ([GitHub repo](https://github.com/OxCGRT/covid-policy-tracker), [university website](https://www.bsg.ox.ac.uk/covidtracker)). 
 
 Updates to this coding interpretation are recorded in the [changelog](#differentiated_interpretation_guide-changelog) below.
 
