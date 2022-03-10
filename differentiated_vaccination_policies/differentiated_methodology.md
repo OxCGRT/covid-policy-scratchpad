@@ -2,6 +2,8 @@
 
 ***Differentiated methodology version 1.0 <br/>11 March 2022***
 
+This methodology document is an addition to the core [index methodology](documentation/index_methodology.md) for the Oxford Covid-19 Government Response Tracker, and explains the key differences and considerations relevant to the experimental differentiated vaccination policy coding csv ([GitHub repo](https://github.com/OxCGRT/covid-policy-tracker), [university website](https://www.bsg.ox.ac.uk/covidtracker)). 
+
 The Oxford Covid-19 Government Response Tracker ([GitHub repo](https://github.com/OxCGRT/covid-policy-tracker), [university website](https://www.bsg.ox.ac.uk/covidtracker)) tracks individual policy measures across 21 indicators, with 3 retired fiscal indicators and a miscellaneous notes field. We also calculate several indices to give an overall impression of government activity, and this page describes how these indices are calculated. Changes to this methodology are recorded in the [changelog](#index-methodology-changelog) below.
 
 This experimental differentiated vaccination policy csv reports four different versions of each index:
