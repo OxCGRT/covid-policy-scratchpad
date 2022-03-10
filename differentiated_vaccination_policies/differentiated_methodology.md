@@ -13,14 +13,14 @@ This experimental differentiated vaccination policy csv reports four different v
 | Non-Vaccinated | GRI_Nonvax | CHI_Nonvax | SI_Nonvax | 
 | Vaccinated | GRI_Vax | CHI_Vax | SI_Vax | 
 | Average | GRI_Avg | CHI_Avg | SI_Avg | 
-| Proportion population vaccinated | GRI_WeightAvg | CHI_WeightAvg | SI_WeightAvg | 
+| Population-weighted average | GRI_WeightAvg | CHI_WeightAvg | SI_WeightAvg | 
 
 
 The **non-vaccinated** value is the index value calculated based on policies that apply to non-vaccinated people. The **vaccinated** value is the index calculated from the policies that apply to vaccinated people. Where an certain indicator or policy area does not have a vaccine-differentiated approach, then the same value (the policy applying to everyone) is used in both indices. The **average** is the sum of the non-vaccinated and vaccinated divided by two. 
 
-**The proportion population vaccinated**  weights the index value using the non-vaccinated/vaccinated values based on the proportion of the population that are vaccinated with a complete initial protocol using the data from Our World in Data vaccination dataset's 'fullyvaccinatedperhundred' (with gaps filled) repository available here: https://ourworldindata.org/covid-vaccinations. This value is also published in the csv in a column labelled "FullyVaccinated (%)" column next to the cases/deaths columns.
+**The population-weighted average**  weights the index value using the non-vaccinated/vaccinated values based on the proportion of the population that are vaccinated with a complete initial protocol using the data from Our World in Data vaccination dataset's 'fullyvaccinatedperhundred' (with gaps filled) repository available here: https://ourworldindata.org/covid-vaccinations. This value is also published in the csv in a column labelled "FullyVaccinated (%)" column next to the cases/deaths columns.
 
-**The proportion population vaccinated** uses the following logic:
+**The population-weighted average** uses the following logic:
 
   - If no data available before or equal to date -> 0% vaccination is assumed
   - If no "fully_vaccinated_per_hundred" for a specific date -> pull forward the value from the last day it was present
@@ -34,9 +34,9 @@ Indices with 4 versions- Indicators C1,C2,C3,C4,C5,C6,C7,C8,H6, and H8 have diff
 
 | Index name | _k_ | **C1** | **C2** | **C3** | **C4** | **C5** | **C6** | **C7** | **C8** | E1 | E2 | E3 | E4 | H1 | H2 | H3 | H4 | H5 | **H6** | H7 | **H8** | M1 |
 | --- | ---: | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |--- |--- |--- |
-| **Government response index** <br/>–Non vaccinated<br>–Vaccinated<br>–Average<br>–Proportion vaccinated average | 16 | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | | | `x` | `x` | `x` | | | `x` | `x` | `x` | | | |
-| **Containment and health index** <br/>–Non vaccinated<br>–Vaccinated<br>–Average<br>–Proportion vaccinated average | 14 | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | | | | | `x` | `x` | `x` | | |`x` | `x` | `x` | | | |
-| **Stringency index** <br/>–Non vaccinated<br>–Vaccinated<br>–Average<br>–Proportion vaccinated average | 9 | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | | | | | `x` | | | | | | |
+| **Government response index** <br/>–Non vaccinated<br>–Vaccinated<br>–Average<br>–Population-weighted average | 16 | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | | | `x` | `x` | `x` | | | `x` | `x` | `x` | | | |
+| **Containment and health index** <br/>–Non vaccinated<br>–Vaccinated<br>–Average<br>–Population-weighted average | 14 | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | | | | | `x` | `x` | `x` | | |`x` | `x` | `x` | | | |
+| **Stringency index** <br/>–Non vaccinated<br>–Vaccinated<br>–Average<br>–Population-weighted average | 9 | `x` | `x` | `x` | `x` | `x` | `x` | `x` | `x` | | | | | `x` | | | | | | |
 
 
 ***Calculating sub-index scores for each indicator***
