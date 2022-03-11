@@ -18,7 +18,7 @@ This experimental differentiated vaccination policy csv reports four different v
 
 The **non-vaccinated** value is the index value calculated based on policies that apply to non-vaccinated people. The **vaccinated** value is the index calculated from the policies that apply to vaccinated people. Where an certain indicator or policy area does not have a vaccine-differentiated approach, then the same value (the policy applying to everyone) is used in both indices. The **average** is the sum of the non-vaccinated and vaccinated divided by two. 
 
-**The population-weighted average**  weights the index value using the non-vaccinated/vaccinated values based on the proportion of the population that are vaccinated with a complete initial protocol using the data from Our World in Data vaccination dataset's 'fullyvaccinatedperhundred' (with gaps filled) repository available here: https://ourworldindata.org/covid-vaccinations. This value is also published in the csv in a column labelled "FullyVaccinated (%)" column next to the cases/deaths columns.
+**The population-weighted average**  weights the index value using the non-vaccinated/vaccinated values based on the proportion of the population that are vaccinated with a complete initial protocol using the data from Our World in Data vaccination dataset's 'fullyvaccinatedperhundred' (with gaps filled) repository available here: https://ourworldindata.org/covid-vaccinations. This value is also published in the csv in a column labelled "Vaccinated (%)" column next to the cases/deaths columns.
 
 **The population-weighted average** uses the following logic:
 
