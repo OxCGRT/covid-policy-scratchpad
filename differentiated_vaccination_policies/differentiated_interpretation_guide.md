@@ -20,7 +20,7 @@ Updates to this coding interpretation are recorded in the [changelog](#different
 - There does not need to be a vaccine “pass”  in place for us to record a differentiated policy. Some jurisdictions have vaccine passes of different kinds (eg. paper, digital certificate, sign-in app) but some countries do not actively enforce their vaccine requirements. We simply record the level of restrictions granted through being vaccinated in that place. If countries distinguish between one, two, three or more vaccinations and there are different vaccination related freedoms granted based on the number of doses, we code the freedoms given for the highest number of doses.
 - We accept each jurisdictions’ decision on which vaccine brand, or number of doses makes vaccinated people eligible for less restrictive policies, following an ‘as defined locally’ logic
 - We record in the notes if vaccination freedoms are granted for less than the full course of doses for each vaccine brand
-- If vaccinated people are also required to present a negative PCR test, we code this as a closure (2 or 3) to vaccinated people, to reflect the stringency of this measure. We record policies in both the non-vaccinated, and vaccinated columns here, to reflect the existence of two different policies for each group.
+- If vaccinated people are also required to present a negative PCR test, we code this as a closure (2 or 3) to vaccinated people, to reflect the stringency of this measure. We record policies in both the non-vaccinated and vaccinated columns here, to reflect the existence of two different policies for each group.
 
 ### C1 - School Closures
 
