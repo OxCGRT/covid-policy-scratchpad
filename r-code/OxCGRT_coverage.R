@@ -103,7 +103,7 @@ file_path_subnat <- paste0("https://oxcgrtportal.azurewebsites.net/api/statscsv?
 flagSubNat <- read.csv(file_path_subnat, header = TRUE, sep = ",")
 flagSubNat$flagcount <-rowSums(flagSubNat[c(4:13, 16:18, 21:23)], na.rm = TRUE)
 
-flagSubNat <- subset(flagSubNat, Country %in% c("BRA", "CAN", "CHN", "GBR", "USA"))
+flagSubNat <- subset(flagSubNat, Country %in% c("BRA", "CAN", "CHN", "GBR", "USA", "AUS", "IND"))
 flagSubNat <- select(flagSubNat, c(2,28))
 names(flagSubNat) = c("RegionCode", "Flagged data")
 flagSubNat <- flagSubNat%>%group_by(RegionCode)%>%summarise_all(funs(sum))
@@ -300,5 +300,13 @@ US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "United S
 US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:27))
 write.table(US_OxCGRT_Coding_LastDate, file ="US_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
+### For the Australia tab
+US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "Australia" )
+US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:27))
+write.table(US_OxCGRT_Coding_LastDate, file ="AUS_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
+### For the India tab
+US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "India" )
+US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:27))
+write.table(US_OxCGRT_Coding_LastDate, file ="IND_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
