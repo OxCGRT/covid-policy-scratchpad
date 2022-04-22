@@ -10,7 +10,7 @@ This dataset is incomplete, however will be integrated into our main dataset onc
 
 For the Government Response Index, Containment and Health Index, and Stringency Index, there are four versions: `Non-vaccinated Index`, `Vaccinated Index`, `Average Index`, and `Population-weighted average` (based on the proportion of the population vaccinated). If there is no differentiation in a policy, then the same `everyone` value is used for all indices. The `Average Index` is calculated from the ‘Non vaccinated’ + ‘Vaccinated’, divided by two. Population weighted average weights the index value using the proportion of the population that are vaccinated with a complete initial vaccination protocol using the data from Our World in Data: https://ourworldindata.org/covid-vaccinations.
 
-Access the codebook and methodology for the differentiated vaccination policy data here.
+Access the [codebook](https://github.com/OxCGRT/covid-policy-scratchpad/blob/master/differentiated_vaccination_policies/differentiated_codebook.md) and [methodology](https://github.com/OxCGRT/covid-policy-scratchpad/blob/master/differentiated_vaccination_policies/differentiated_methodology.md) for the differentiated vaccination policy data here.
 
 This csv does not publish the legacy Stringency Index like the main Github repo. 
 
