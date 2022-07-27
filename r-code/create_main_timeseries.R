@@ -17,9 +17,9 @@ oxcgrt_nat_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-poli
                        col_types = cols(RegionName = col_character(), 
                                         RegionCode = col_character()))
 #AUS Dataset:
-#oxcgrt_aus_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/Australia/OxCGRT_AUS_latest.csv", 
-#                            col_types = cols(RegionName = col_character(), 
-#                                             RegionCode = col_character()))
+oxcgrt_aus_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/Australia/OxCGRT_AUS_latest.csv", 
+                            col_types = cols(RegionName = col_character(), 
+                                             RegionCode = col_character()))
 #CAN Dataset:
 oxcgrt_can_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/Canada/OxCGRT_CAN_latest.csv", 
                             col_types = cols(RegionName = col_character(), 
@@ -43,9 +43,9 @@ oxcgrt_usa_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-poli
 
 #Remove NAT_TOTAL from Subnational data:
 
-#oxcgrt_aus_data <- 
-#  oxcgrt_aus_data %>% 
-#  filter(Jurisdiction == "STATE_TOTAL")
+oxcgrt_aus_data <- 
+  oxcgrt_aus_data %>% 
+  filter(Jurisdiction == "STATE_TOTAL")
 
 oxcgrt_can_data <- 
   oxcgrt_can_data %>% 
@@ -64,7 +64,7 @@ oxcgrt_usa_data <-
   filter(Jurisdiction == "STATE_TOTAL")
 
 #oxcgrtdata <- rbind(oxcgrt_nat_data, oxcgrt_aus_data, oxcgrt_can_data, oxcgrt_chn_data, oxcgrt_gbr_data, oxcgrt_usa_data)
-oxcgrtdata <- rbind(oxcgrt_nat_data, oxcgrt_can_data, oxcgrt_gbr_data, oxcgrt_usa_data)
+oxcgrtdata <- rbind(oxcgrt_nat_data, oxcgrt_aus_data, oxcgrt_can_data, oxcgrt_gbr_data, oxcgrt_usa_data)
   
 oxcgrtdata <- 
   oxcgrtdata %>% 
