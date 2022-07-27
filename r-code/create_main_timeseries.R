@@ -6,8 +6,6 @@ library(here)
 library(ggplot2)
 library(scales)
 library(sf)
-library(rnaturalearth)
-library(rnaturalearthdata)
 library(ggthemes)
 library(zoo)
 library(rgeos)
@@ -23,7 +21,7 @@ oxcgrt_aus_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-poli
                             col_types = cols(RegionName = col_character(), 
                                              RegionCode = col_character()))
 #CAN Dataset:
-oxcgrt_can_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/Canada/OxCGRT_nat_latest.csv", 
+oxcgrt_can_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/Canada/OxCGRT_CAN_latest.csv", 
                             col_types = cols(RegionName = col_character(), 
                                              RegionCode = col_character()))
 #CHN Dataset:
@@ -31,11 +29,11 @@ oxcgrt_chn_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-poli
                             col_types = cols(RegionName = col_character(), 
                                              RegionCode = col_character()))
 #GBR Dataset:
-oxcgrt_gbr_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/United Kingdom/OxCGRT_GBR_latest.csv", 
+oxcgrt_gbr_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/United%20Kingdom/OxCGRT_GBR_latest.csv", 
                             col_types = cols(RegionName = col_character(), 
                                              RegionCode = col_character()))
 #USA Dataset:
-oxcgrt_usa_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/United States/OxCGRT_USA_latest.csv", 
+oxcgrt_usa_data <- read_csv("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/United%20States/OxCGRT_USA_latest.csv", 
                             col_types = cols(RegionName = col_character(), 
                                              RegionCode = col_character()))
 
