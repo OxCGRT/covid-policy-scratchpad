@@ -1,3 +1,8 @@
+| Update: July 2022 |
+| --- |
+| On 27 July 2022 we updated our main repository ([OxCGRT/covid-policy-tracker](https://github.com/OxCGRT/covid-policy-tracker)) to launch differentiated policies across our full suite of data products. </br>Users should no longer use the experimental data format contained in this folder, and instead use the comprehensive data files on our main repo. |
+
+
 # Differentiated vaccination policies
 
 ***OxCGRT 11 March 2022***
