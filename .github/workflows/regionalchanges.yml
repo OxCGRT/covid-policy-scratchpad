@@ -1,8 +1,8 @@
 name: An R workflow to automate regional changes outputs
 on:
 #  push
-  schedule:
-    - cron: '30 4 * * *'
+#  schedule:
+#    - cron: '30 4 * * *'
 
 jobs:
   build:
