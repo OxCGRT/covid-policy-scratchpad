@@ -1,5 +1,5 @@
 # Import data
-OxCGRTData <- read.csv(url("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"))
+OxCGRTData <- read.csv(url("https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker-legacy/main/legacy_data_202207/OxCGRT_latest.csv"))
 
 # Change date format
 OxCGRTData$Date<- as.Date(as.character(OxCGRTData$Date),format = "%Y%m%d")
