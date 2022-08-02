@@ -262,9 +262,9 @@ OxCGRT_Coding_LastDate$`Flagged days (total)` <- rowSums(OxCGRT_Coding_LastDate[
 library(tidyr)
 OxCGRT_Coding_LastDate$ForgottenBoxes <- 0
 OxCGRT_Coding_LastDate$ForgottenBoxes <- (((OxCGRT_Coding_LastDate$`Missing days (avg.)`)-
-                                                (OxCGRT_Coding_LastDate$`Outdated coding in days (avg.)`))*16)
+                                             (OxCGRT_Coding_LastDate$`Outdated coding in days (avg.)`))*16)
 OxCGRT_Coding_LastDate <- separate(OxCGRT_Coding_LastDate, ForgottenBoxes,
-                                      sep = " ", into = c("Forgotten boxes (total)", "days"))
+                                   sep = " ", into = c("Forgotten boxes (total)", "days"))
 
 # Organize the spreadsheet
 OxCGRT_Coding_LastDate <- select(OxCGRT_Coding_LastDate, c(4, 3, 25:26, 30:31, 5:24, 27))
@@ -309,4 +309,3 @@ write.table(US_OxCGRT_Coding_LastDate, file ="AUS_OxCGRT_coverage_status.csv", r
 US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "India" )
 US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:27))
 write.table(US_OxCGRT_Coding_LastDate, file ="IND_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
-
