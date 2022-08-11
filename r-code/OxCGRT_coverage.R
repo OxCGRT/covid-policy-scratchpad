@@ -95,7 +95,7 @@ date <- Sys.Date()
 file_path_nat <- paste0("https://oxcgrtportal.azurewebsites.net/api/statscsv?Provisional=false&Confirmed=false&ToRecode=false&Flagged=true&Nat=true&FromDate=2020-01-01&ToDate=", date)
 flagNat <- read.csv(file_path_nat, header = TRUE, sep = ",")
 flagNat$flagcount <-rowSums(flagNat[c(2:11, 14:16, 19:21)], na.rm = TRUE)
-flagNat <- select(flagNat, c(1,26))
+flagNat <- select(flagNat, c(1,27))
 names(flagNat) = c("CountryCode", "Flagged data")
 
 # Flagged data points (subnational policies)
@@ -104,7 +104,7 @@ flagSubNat <- read.csv(file_path_subnat, header = TRUE, sep = ",")
 flagSubNat$flagcount <-rowSums(flagSubNat[c(4:13, 16:18, 21:23)], na.rm = TRUE)
 
 flagSubNat <- subset(flagSubNat, Country %in% c("BRA", "CAN", "CHN", "GBR", "USA", "AUS", "IND"))
-flagSubNat <- select(flagSubNat, c(2,28))
+flagSubNat <- select(flagSubNat, c(2,29))
 names(flagSubNat) = c("RegionCode", "Flagged data")
 flagSubNat <- flagSubNat%>%group_by(RegionCode)%>%summarise_all(funs(sum))
 
@@ -266,8 +266,10 @@ OxCGRT_Coding_LastDate$ForgottenBoxes <- (((OxCGRT_Coding_LastDate$`Missing days
 OxCGRT_Coding_LastDate <- separate(OxCGRT_Coding_LastDate, ForgottenBoxes,
                                    sep = " ", into = c("Forgotten boxes (total)", "days"))
 
+
+
 # Organize the spreadsheet
-OxCGRT_Coding_LastDate <- select(OxCGRT_Coding_LastDate, c(4, 3, 25:26, 30:31, 5:24, 27))
+OxCGRT_Coding_LastDate <- select(OxCGRT_Coding_LastDate, c(4, 3, 26, 30:31, 5:24))
 OxCGRT_Coding_LastDate <- OxCGRT_Coding_LastDate[order(OxCGRT_Coding_LastDate$CountryName,
                                                        -OxCGRT_Coding_LastDate$`Outdated coding in days (avg.)`),]
 names(OxCGRT_Coding_LastDate) [1] = "Country"
@@ -277,35 +279,35 @@ write.table(OxCGRT_Coding_LastDate, file ="OxCGRT_coverage_status.csv", row.name
 
 ### For the Brazil tab
 BRA_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "Brazil" )
-BRA_OxCGRT_Coding_LastDate <- select(BRA_OxCGRT_Coding_LastDate, c(2:27))
+BRA_OxCGRT_Coding_LastDate <- select(BRA_OxCGRT_Coding_LastDate, c(2:25))
 write.table(BRA_OxCGRT_Coding_LastDate, file ="BRA_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
 ### For the Canada tab
 CAN_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "Canada" )
-CAN_OxCGRT_Coding_LastDate <- select(CAN_OxCGRT_Coding_LastDate, c(2:27))
+CAN_OxCGRT_Coding_LastDate <- select(CAN_OxCGRT_Coding_LastDate, c(2:25))
 write.table(CAN_OxCGRT_Coding_LastDate, file ="CAN_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
 ### For the China tab
 CHN_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "China" )
-CHN_OxCGRT_Coding_LastDate <- select(CHN_OxCGRT_Coding_LastDate, c(2:27))
+CHN_OxCGRT_Coding_LastDate <- select(CHN_OxCGRT_Coding_LastDate, c(2:25))
 write.table(CHN_OxCGRT_Coding_LastDate, file ="CHN_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
 ### For the UK tab
 UK_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "United Kingdom" )
-UK_OxCGRT_Coding_LastDate <- select(UK_OxCGRT_Coding_LastDate, c(2:27))
+UK_OxCGRT_Coding_LastDate <- select(UK_OxCGRT_Coding_LastDate, c(2:25))
 write.table(UK_OxCGRT_Coding_LastDate, file ="UK_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
 ### For the US tab
 US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "United States" )
-US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:27))
+US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:25))
 write.table(US_OxCGRT_Coding_LastDate, file ="US_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
 ### For the Australia tab
 US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "Australia" )
-US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:27))
+US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:25))
 write.table(US_OxCGRT_Coding_LastDate, file ="AUS_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
 ### For the India tab
 US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "India" )
-US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:27))
+US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:25))
 write.table(US_OxCGRT_Coding_LastDate, file ="IND_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
