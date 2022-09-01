@@ -351,15 +351,12 @@ OxCGRT_Coding_LastDate <- merge(OxCGRT_Coding_LastDate, confSubNat, by = c("Regi
 
 
 
-##### TO BE DONE:
-
-
 #Flagged and confirmed days and dates: merge nat and subnat
-OxCGRT_Coding_LastDate$`Flagged days (total)` <- rowSums(OxCGRT_Coding_LastDate[c(32,34)], na.rm = TRUE)
-OxCGRT_Coding_LastDate$`% Flagged days (total)` <- rowSums(OxCGRT_Coding_LastDate[c(33,35)], na.rm = TRUE)
+OxCGRT_Coding_LastDate$Flagged_days_total <- rowSums(OxCGRT_Coding_LastDate[c(32,34)], na.rm = TRUE)
+OxCGRT_Coding_LastDate$Pctg_flagged_days_total <- rowSums(OxCGRT_Coding_LastDate[c(33,35)], na.rm = TRUE)
 
-OxCGRT_Coding_LastDate$`Confirmed days (total)` <- rowSums(OxCGRT_Coding_LastDate[c(36,38)], na.rm = TRUE)
-OxCGRT_Coding_LastDate$`% Confirmed days (total)` <- rowSums(OxCGRT_Coding_LastDate[c(37,39)], na.rm = TRUE)
+OxCGRT_Coding_LastDate$Confirmed_days_total <- rowSums(OxCGRT_Coding_LastDate[c(36,38)], na.rm = TRUE)
+OxCGRT_Coding_LastDate$Pctg_confirmed_days_total <- rowSums(OxCGRT_Coding_LastDate[c(37,39)], na.rm = TRUE)
 
 
 
