@@ -129,12 +129,12 @@ flagSubNat$flagcount <-rowSums(flagSubNat[c(4:13, 16:18, 21:23, 25:28)], na.rm =
 #it now includes V1-V4 (Bernardo)
 flagSubNat <- subset(flagSubNat, Country %in% c("BRA", "CAN", "CHN", "GBR", "USA", "AUS", "IND"))
 flagSubNat <- select(flagSubNat, c(2,29))
-names(flagSubNat) = c("RegionCode", "Flagged data")
+names(flagSubNat) = c("RegionCode", "Flagged_data")
 flagSubNat <- flagSubNat%>%group_by(RegionCode)%>%summarise_all(funs(sum))
 
 flagSubNat$total_days <- diff_in_days*20
 flagSubNat$total_days <- as.numeric(flagSubNat$total_days)
-flagSubNat$pctg_flagged <- (flagSubNat$`Flagged data`/flagSubNat$total_days)*100
+flagSubNat$pctg_flagged <- (flagSubNat$Flagged_data/flagSubNat$total_days)*100
 flagSubNat <- select(flagSubNat, c(1,2,4))
 names(flagSubNat) = c("RegionCode", "Flagged data", "% of Flagged data")
 
@@ -157,12 +157,12 @@ confSubNat$flagcount <-rowSums(confSubNat[c(4:13, 16:18, 21:23, 25:28)], na.rm =
 #it now includes V1-V4 (Bernardo)
 confSubNat <- subset(confSubNat, Country %in% c("BRA", "CAN", "CHN", "GBR", "USA", "AUS", "IND"))
 confSubNat <- select(confSubNat, c(2,29))
-names(confSubNat) = c("RegionCode", "Confirmed data")
+names(confSubNat) = c("RegionCode", "Confirmed_data")
 confSubNat <- confSubNat%>%group_by(RegionCode)%>%summarise_all(funs(sum))
 
 confSubNat$total_days <- diff_in_days*20
 confSubNat$total_days <- as.numeric(confSubNat$total_days)
-confSubNat$pctg_confirmed <- (confSubNat$`Confirmed data`/confSubNat$total_days)*100
+confSubNat$pctg_confirmed <- (confSubNat$Confirmed_data/confSubNat$total_days)*100
 confSubNat <- select(confSubNat, c(1,2,4))
 names(confSubNat) = c("RegionCode", "Confirmed data", "% of Confirmed data")
 
@@ -349,6 +349,9 @@ OxCGRT_Coding_LastDate <- merge(OxCGRT_Coding_LastDate, flagSubNat, by = c("Regi
 OxCGRT_Coding_LastDate <- merge(OxCGRT_Coding_LastDate, confNat, by = c("CountryCode","Jurisdiction"), all.x = TRUE)
 OxCGRT_Coding_LastDate <- merge(OxCGRT_Coding_LastDate, confSubNat, by = c("RegionCode"), all.x = TRUE)
 
+
+
+##### TO BE DONE:
 
 
 #Flagged and confirmed days and dates: merge nat and subnat
