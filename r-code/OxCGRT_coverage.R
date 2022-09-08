@@ -505,11 +505,11 @@ UK_OxCGRT_Coding_LastDate <- select(UK_OxCGRT_Coding_LastDate, c(2:33))
 write.table(UK_OxCGRT_Coding_LastDate, file ="UK_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
 ### For the Australia tab
-US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "Australia" )
-US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:33))
-write.table(US_OxCGRT_Coding_LastDate, file ="AUS_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
+AUS_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "Australia" )
+AUS_OxCGRT_Coding_LastDate <- select(AUS_OxCGRT_Coding_LastDate, c(2:33))
+write.table(AUS_OxCGRT_Coding_LastDate, file ="AUS_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
 ### For the India tab
-US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "India" )
-US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:33))
-write.table(US_OxCGRT_Coding_LastDate, file ="IND_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
+IND_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "India" )
+IND_OxCGRT_Coding_LastDate <- select(IND_OxCGRT_Coding_LastDate, c(2:33))
+write.table(IND_OxCGRT_Coding_LastDate, file ="IND_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
