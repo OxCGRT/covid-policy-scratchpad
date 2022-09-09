@@ -13,123 +13,123 @@ library(dplyr)
 c1 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(C1_School.closing)) %>% 
-  summarise(max(Date))
+  summarise(C1 = max(Date))
 
 c2 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(C2_Workplace.closing)) %>% 
-  summarise(max(Date))
+  summarise(C2 = max(Date))
 
 c3 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(C3_Cancel.public.events)) %>% 
-  summarise(max(Date))
+  summarise(C3 = max(Date))
 
 c4 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(C4_Restrictions.on.gatherings)) %>% 
-  summarise(max(Date))
+  summarise(C4 = max(Date))
 
 c5 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(C5_Close.public.transport!="NA")) %>% 
-  summarise(max(Date))
+  summarise(C5 = max(Date))
 
 
 c6 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(C6_Stay.at.home.requirements!="NA")) %>% 
-  summarise(max(Date))
+  summarise(C6 = max(Date))
 
 c7 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(C7_Restrictions.on.internal.movement!="NA")) %>% 
-  summarise(max(Date))
+  summarise(C7 = max(Date))
 
 c8 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(C8_International.travel.controls!="NA")) %>% 
-  summarise(max(Date))
+  summarise(C8 = max(Date))
 
 e1 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(E1_Income.support!="NA")) %>% 
-  summarise(max(Date))
+  summarise(E1 = max(Date))
 
 e2 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(E2_Debt.contract.relief!="NA")) %>% 
-  summarise(max(Date))
+  summarise(E2 = max(Date))
 
 e3 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(E3_Fiscal.measures!="NA")) %>% 
-  summarise(max(Date))
+  summarise(E3 = max(Date))
 
 e4 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(E4_International.support!="NA")) %>% 
-  summarise(max(Date))
+  summarise(E4 = max(Date))
 
 h1 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(H1_Public.information.campaigns!="NA")) %>% 
-  summarise(max(Date))
+  summarise(H1 = max(Date))
 
 h2 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na(H2_Testing.policy!="NA")) %>% 
-  summarise(max(Date))
+  summarise(H2 = max(Date))
 
 h3 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na((H3_Contact.tracing!="NA")!="NA")) %>% 
-  summarise(max(Date))
+  summarise(H3 = max(Date))
 
 h4 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na((H4_Emergency.investment.in.healthcare!="NA")!="NA")) %>% 
-  summarise(max(Date))
+  summarise(H4 = max(Date))
 
 h5 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na((H5_Investment.in.vaccines!="NA")!="NA")) %>% 
-  summarise(max(Date))
+  summarise(H5 = max(Date))
 
 h6 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na((H6_Facial.Coverings!="NA")!="NA")) %>% 
-  summarise(max(Date))
+  summarise(H6 = max(Date))
 
 h7 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na((H7_Vaccination.policy!="NA")!="NA")) %>% 
-  summarise(max(Date))
+  summarise(H7 = max(Date))
 
 h8 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na((H8_Protection.of.elderly.people!="NA")!="NA")) %>% 
-  summarise(max(Date))
+  summarise(H8 = max(Date))
 
 v1 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na((V1_Vaccine.Prioritisation..summary.!="NA")!="NA")) %>% 
-  summarise(max(Date))
+  summarise(V1 = max(Date))
 
 v2 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na((V2A_Vaccine.Availability..summary.!="NA")!="NA")) %>% 
-  summarise(max(Date))
+  summarise(V2 = max(Date))
 
 v3 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na((V3_Vaccine.Financial.Support..summary.!="NA")!="NA")) %>% 
-  summarise(max(Date))
+  summarise(V3 = max(Date))
 
 v4 <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
   filter(!is.na((V4_Mandatory.Vaccination..summary.!="NA")!="NA")) %>% 
-  summarise(max(Date))
+  summarise(V4 = max(Date))
 
 # Flagged data points (national-level policies)
 date <- Sys.Date()
@@ -297,83 +297,83 @@ OxCGRT_Coding_LastDate$outdate_days_c_h <-((OxCGRT_Coding_LastDate$current_date 
 # Identify how many days are missing for each indicator.
 c1_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(C1_School.closing)))
+  summarise(c1 = sum(count = is.na(C1_School.closing)))
 
 c2_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(C2_Workplace.closing)))
+  summarise(c2 = sum(count = is.na(C2_Workplace.closing)))
 
 c3_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(C3_Cancel.public.events)))
+  summarise(c3 = sum(count = is.na(C3_Cancel.public.events)))
 
 c4_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(C4_Restrictions.on.gatherings)))
+  summarise(c4 = sum(count = is.na(C4_Restrictions.on.gatherings)))
 
 c5_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(C5_Close.public.transport)))
+  summarise(c5 = sum(count = is.na(C5_Close.public.transport)))
 
 c6_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(C6_Stay.at.home.requirements)))
+  summarise(c6 = sum(count = is.na(C6_Stay.at.home.requirements)))
 
 c7_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(C7_Restrictions.on.internal.movement)))
+  summarise(c7 = sum(count = is.na(C7_Restrictions.on.internal.movement)))
 
 c8_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(C8_International.travel.controls)))
+  summarise(c8 = sum(count = is.na(C8_International.travel.controls)))
 
 e1_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(E1_Income.support)))
+  summarise(e1 = sum(count = is.na(E1_Income.support)))
 
 e2_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(E2_Debt.contract.relief)))
+  summarise(e2 = sum(count = is.na(E2_Debt.contract.relief)))
 
 h1_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(H1_Public.information.campaigns)))
+  summarise(h1 = sum(count = is.na(H1_Public.information.campaigns)))
 
 h2_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(H2_Testing.policy)))
+  summarise(h2 = sum(count = is.na(H2_Testing.policy)))
 
 h3_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(H3_Contact.tracing)))
+  summarise(h3 = sum(count = is.na(H3_Contact.tracing)))
 
 h6_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(H6_Facial.Coverings)))
+  summarise(h6 = sum(count = is.na(H6_Facial.Coverings)))
 
 h7_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(H7_Vaccination.policy)))
+  summarise(h7 = sum(count = is.na(H7_Vaccination.policy)))
 
 h8_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(H8_Protection.of.elderly.people)))
+  summarise(h8 = sum(count = is.na(H8_Protection.of.elderly.people)))
 
 v1_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(V1_Vaccine.Prioritisation..summary.)))
+  summarise(v1 = sum(count = is.na(V1_Vaccine.Prioritisation..summary.)))
 
 v2_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(V2A_Vaccine.Availability..summary.)))
+  summarise(v2 = sum(count = is.na(V2A_Vaccine.Availability..summary.)))
 
 v3_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(V3_Vaccine.Financial.Support..summary.)))
+  summarise(v3 = sum(count = is.na(V3_Vaccine.Financial.Support..summary.)))
 
 v4_missing <-OxCGRTData %>%
   group_by(CountryName, RegionName, CountryCode, RegionCode) %>%
-  summarise(column = sum(count = is.na(V4_Mandatory.Vaccination..summary.)))
+  summarise(v4 = sum(count = is.na(V4_Mandatory.Vaccination..summary.)))
 
 
 OxCGRT_missing <- merge(c1_missing, c2_missing, by = c("CountryName","RegionName", "CountryCode", "RegionCode"))
@@ -505,11 +505,11 @@ UK_OxCGRT_Coding_LastDate <- select(UK_OxCGRT_Coding_LastDate, c(2:33))
 write.table(UK_OxCGRT_Coding_LastDate, file ="UK_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
 ### For the Australia tab
-AUS_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "Australia" )
-AUS_OxCGRT_Coding_LastDate <- select(AUS_OxCGRT_Coding_LastDate, c(2:33))
-write.table(AUS_OxCGRT_Coding_LastDate, file ="AUS_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
+US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "Australia" )
+US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:33))
+write.table(US_OxCGRT_Coding_LastDate, file ="AUS_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
 
 ### For the India tab
-IND_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "India" )
-IND_OxCGRT_Coding_LastDate <- select(IND_OxCGRT_Coding_LastDate, c(2:33))
-write.table(IND_OxCGRT_Coding_LastDate, file ="IND_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
+US_OxCGRT_Coding_LastDate <- filter(OxCGRT_Coding_LastDate, Country == "India" )
+US_OxCGRT_Coding_LastDate <- select(US_OxCGRT_Coding_LastDate, c(2:33))
+write.table(US_OxCGRT_Coding_LastDate, file ="IND_OxCGRT_coverage_status.csv", row.names = F, sep = ",", na="")
