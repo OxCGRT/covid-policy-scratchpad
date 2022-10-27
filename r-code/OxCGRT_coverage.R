@@ -234,31 +234,6 @@ OxCGRT_Coding_LastDate$current_date <- Sys.Date()
 
 
 OxCGRT_Coding_LastDate$outdate_days_all <-((OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C1: School closing`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C2: Workplace closing`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C3: Cancel public events`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C4: Restrictions on gatherings`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C5: Close public transport`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C6: Stay at home requirements`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C7: Restrictions on internal movement`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C8: International travel controls`) +
-                                          
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`E1: Income support`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`E2: Debt/contract relief`) +
-                                          
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H1: Public information campaigns`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H2: Testing policy`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H3: Contact tracing`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H6: Facial Coverings`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H7: Vaccination policy`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H8: Protection of elderly people`) +
-                                        
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`V1: Vaccine prioritisation`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`V2: Vaccine availability`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`V3: Vaccine financial support`) +
-                                          (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`V4: Mandatory vaccination`)) / 20
-                                        
-                                        
-OxCGRT_Coding_LastDate$outdate_days_c_e_h <-((OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C1: School closing`) +
                                              (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C2: Workplace closing`) +
                                              (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C3: Cancel public events`) +
                                              (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C4: Restrictions on gatherings`) +
@@ -275,9 +250,15 @@ OxCGRT_Coding_LastDate$outdate_days_c_e_h <-((OxCGRT_Coding_LastDate$current_dat
                                              (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H3: Contact tracing`) +
                                              (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H6: Facial Coverings`) +
                                              (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H7: Vaccination policy`) +
-                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H8: Protection of elderly people`)) / 16
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H8: Protection of elderly people`) +
                                              
-OxCGRT_Coding_LastDate$outdate_days_c_h <-((OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C1: School closing`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`V1: Vaccine prioritisation`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`V2: Vaccine availability`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`V3: Vaccine financial support`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`V4: Mandatory vaccination`)) / 20
+
+
+OxCGRT_Coding_LastDate$outdate_days_c_e_h <-((OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C1: School closing`) +
                                                (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C2: Workplace closing`) +
                                                (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C3: Cancel public events`) +
                                                (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C4: Restrictions on gatherings`) +
@@ -286,12 +267,31 @@ OxCGRT_Coding_LastDate$outdate_days_c_h <-((OxCGRT_Coding_LastDate$current_date 
                                                (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C7: Restrictions on internal movement`) +
                                                (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C8: International travel controls`) +
                                                
+                                               (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`E1: Income support`) +
+                                               (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`E2: Debt/contract relief`) +
+                                               
                                                (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H1: Public information campaigns`) +
                                                (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H2: Testing policy`) +
                                                (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H3: Contact tracing`) +
                                                (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H6: Facial Coverings`) +
                                                (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H7: Vaccination policy`) +
-                                               (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H8: Protection of elderly people`)) / 14
+                                               (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H8: Protection of elderly people`)) / 16
+
+OxCGRT_Coding_LastDate$outdate_days_c_h <-((OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C1: School closing`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C2: Workplace closing`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C3: Cancel public events`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C4: Restrictions on gatherings`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C5: Close public transport`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C6: Stay at home requirements`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C7: Restrictions on internal movement`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C8: International travel controls`) +
+                                             
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H1: Public information campaigns`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H2: Testing policy`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H3: Contact tracing`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H6: Facial Coverings`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H7: Vaccination policy`) +
+                                             (OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`H8: Protection of elderly people`)) / 14
 
 
 # Identify how many days are missing for each indicator.
@@ -397,12 +397,12 @@ OxCGRT_missing <- merge(OxCGRT_missing, v3_missing, by = c("CountryName","Region
 OxCGRT_missing <- merge(OxCGRT_missing, v4_missing, by = c("CountryName","RegionName", "CountryCode", "RegionCode"))
 
 OxCGRT_missing$missing_days_all <- ((OxCGRT_missing[,5]) + (OxCGRT_missing[,6]) + (OxCGRT_missing[,7]) + 
-                                          (OxCGRT_missing[,8]) + (OxCGRT_missing[,9]) + (OxCGRT_missing[,10]) + 
-                                          (OxCGRT_missing[,11]) + (OxCGRT_missing[,12]) + (OxCGRT_missing[,13]) + 
-                                          (OxCGRT_missing[,14]) + (OxCGRT_missing[,15]) + (OxCGRT_missing[,16]) + 
-                                          (OxCGRT_missing[,17]) + (OxCGRT_missing[,18]) + (OxCGRT_missing[,19]) + 
-                                          (OxCGRT_missing[,20]) + (OxCGRT_missing[,21]) + (OxCGRT_missing[,22]) + 
-                                          (OxCGRT_missing[,23]) + (OxCGRT_missing[,24])) / 20
+                                      (OxCGRT_missing[,8]) + (OxCGRT_missing[,9]) + (OxCGRT_missing[,10]) + 
+                                      (OxCGRT_missing[,11]) + (OxCGRT_missing[,12]) + (OxCGRT_missing[,13]) + 
+                                      (OxCGRT_missing[,14]) + (OxCGRT_missing[,15]) + (OxCGRT_missing[,16]) + 
+                                      (OxCGRT_missing[,17]) + (OxCGRT_missing[,18]) + (OxCGRT_missing[,19]) + 
+                                      (OxCGRT_missing[,20]) + (OxCGRT_missing[,21]) + (OxCGRT_missing[,22]) + 
+                                      (OxCGRT_missing[,23]) + (OxCGRT_missing[,24])) / 20
 
 OxCGRT_missing$missing_days_c_e_h <- ((OxCGRT_missing[,5]) + (OxCGRT_missing[,6]) + (OxCGRT_missing[,7]) + 
                                         (OxCGRT_missing[,8]) + (OxCGRT_missing[,9]) + (OxCGRT_missing[,10]) + 
@@ -410,12 +410,12 @@ OxCGRT_missing$missing_days_c_e_h <- ((OxCGRT_missing[,5]) + (OxCGRT_missing[,6]
                                         (OxCGRT_missing[,14]) + (OxCGRT_missing[,15]) + (OxCGRT_missing[,16]) + 
                                         (OxCGRT_missing[,17]) + (OxCGRT_missing[,18]) + (OxCGRT_missing[,19]) + 
                                         (OxCGRT_missing[,20])) / 16  
-                                         
+
 OxCGRT_missing$missing_days_c_h <- ((OxCGRT_missing[,5]) + (OxCGRT_missing[,6]) + (OxCGRT_missing[,7]) + 
-                                        (OxCGRT_missing[,8]) + (OxCGRT_missing[,9]) + (OxCGRT_missing[,10]) + 
-                                        (OxCGRT_missing[,11]) + (OxCGRT_missing[,12]) + (OxCGRT_missing[,15]) + 
-                                        (OxCGRT_missing[,16]) + (OxCGRT_missing[,17]) + (OxCGRT_missing[,18]) + 
-                                        (OxCGRT_missing[,19]) +  (OxCGRT_missing[,20])) / 14  
+                                      (OxCGRT_missing[,8]) + (OxCGRT_missing[,9]) + (OxCGRT_missing[,10]) + 
+                                      (OxCGRT_missing[,11]) + (OxCGRT_missing[,12]) + (OxCGRT_missing[,15]) + 
+                                      (OxCGRT_missing[,16]) + (OxCGRT_missing[,17]) + (OxCGRT_missing[,18]) + 
+                                      (OxCGRT_missing[,19]) +  (OxCGRT_missing[,20])) / 14  
 
 OxCGRT_missing <- select(OxCGRT_missing, c(1, 4, 25, 26, 27))
 #OxCGRT_missing <- subset(OxCGRT_missing, OxCGRT_missing$RegionName != "Distrito Federal")
