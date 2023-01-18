@@ -230,7 +230,7 @@ names(OxCGRT_Coding_LastDate) = c("CountryName", "Jurisdiction", "CountryCode", 
                                   "V3: Vaccine financial support", "V4: Mandatory vaccination")
 
 # Identify how many days are out of date for each indicator:
-OxCGRT_Coding_LastDate$current_date <- Sys.Date()
+OxCGRT_Coding_LastDate$current_date <- as.Date("2022-12-31")
 
 
 OxCGRT_Coding_LastDate$outdate_days_all <-((OxCGRT_Coding_LastDate$current_date - OxCGRT_Coding_LastDate$`C1: School closing`) +
