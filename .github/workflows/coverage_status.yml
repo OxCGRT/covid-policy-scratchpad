@@ -1,8 +1,8 @@
 name: An R workflow to automate a status check of OxCGRT coverage
 on:
-  #push
-  schedule:
-    - cron: '10 9 * * *'
+  push
+  # schedule:
+  #  - cron: '10 9 * * *'
 
 jobs:
   build:
@@ -37,8 +37,17 @@ jobs:
           cd master
           ls
           cd OxCGRT_coverage_status
-          chmod +x '../r-code/OxCGRT_coverage.R'
+          chmod +x '../r-code/overall.R'
           Rscript '../r-code/OxCGRT_coverage.R'
+
+      - name: Run overall stats script
+        run: |
+          ls
+          cd master
+          ls
+          cd OxCGRT_coverage_status
+          chmod +x '../r-code/overall_stats.R'
+          Rscript '../r-code/overall_stats.R'
 
       - name: Commit changes
         run: |
