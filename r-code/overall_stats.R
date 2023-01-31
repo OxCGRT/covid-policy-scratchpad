@@ -80,15 +80,15 @@ OxCGRTconfirmed <- full_join(OxCGRTconfirmed_nat, OxCGRTconfirmed_subnat) %>%
   summarise(confirmed = sum(confirmed_count),
             n_confirmed = n(),
             pct_confirmed = (confirmed*100) / (n_confirmed*20824),
-            jurisdictions_over_50 = sum(confirmed_count >= (20824/2)))
+            jurisdictions_over_50_pct_confirmed = sum(confirmed_count >= (20824/2)))
 
 
 ## FULL REPORT
 
 report <- full_join(OxCGRTcoverage, full_join(OxCGRTflags, OxCGRTconfirmed, by = c("Team")), by = c("Team")) %>%
-  select(Team, complete_jurisdictions, n_coverage, empty_cells, flag_count, jurisdictions_over_50, pct_confirmed) %>%
+  select(Team, complete_jurisdictions, n_coverage, empty_cells, flag_count, jurisdictions_over_50_pct_confirmed, pct_confirmed) %>%
   mutate(complete_jurisdictions = paste(as.character(complete_jurisdictions), as.character(n_coverage), sep = "/"),
-         jurisdictions_over_50 = paste(as.character(jurisdictions_over_50), as.character(n_coverage), sep = "/")) %>%
+         jurisdictions_over_50_pct_confirmed = paste(as.character(jurisdictions_over_50_pct_confirmed), as.character(n_coverage), sep = "/")) %>%
   select(!n_coverage)
 
 write.csv(report, "overall_stats.csv")
