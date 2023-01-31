@@ -31,14 +31,14 @@ jobs:
           chmod +x ./r-code/sysrequirements.sh
           ./r-code/sysrequirements.sh
 
-      - name: Run coverage status script
-        run: |
-          ls
-          cd master
-          ls
-          cd OxCGRT_coverage_status
-          chmod +x '../r-code/overall.R'
-          Rscript '../r-code/OxCGRT_coverage.R'
+#      - name: Run coverage status script
+#        run: |
+#          ls
+#          cd master
+#          ls
+#          cd OxCGRT_coverage_status
+#          chmod +x '../r-code/OxCGRT_coverage.R'
+#          Rscript '../r-code/OxCGRT_coverage.R'
 
       - name: Run overall stats script
         run: |
