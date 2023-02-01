@@ -30,7 +30,8 @@ OxCGRTcoverage <- full_join(OxCGRTcoverage_nat, OxCGRTcoverage_subnat) %>%
   summarise(coverage_sum = sum(coverage_count),
             n_coverage = n(),
             complete_jurisdictions = sum(coverage_count >= 20824),
-            empty_cells = sum(missing))
+            empty_cells = sum(missing)) %>%
+  mutate(empty_cells = ifelse(empty_cells < 0, 0, empty_cells))
 
 
 ## Red flags
@@ -80,7 +81,7 @@ OxCGRTconfirmed <- full_join(OxCGRTconfirmed_nat, OxCGRTconfirmed_subnat) %>%
   group_by(Team) %>%
   summarise(confirmed = sum(confirmed_count),
             n_confirmed = n(),
-            pct_confirmed = (confirmed*100) / (n_confirmed*21920),
+            pct_confirmed = round((confirmed*100) / (n_confirmed*21920), 2),
             jurisdictions_over_50_pct_confirmed = sum(confirmed_count >= (21920/2)))
 
 
