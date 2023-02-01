@@ -1,7 +1,8 @@
 library(dplyr)
 
 country_excludes <- c("XXX", "ARM", "ASM", "ATG", "COM", "FSM", "GNB", "GNQ", "GRD", "KNA", "LCA", "MDV", "MHL", "MKD", "MNE", "NCL", "NRU", "PLW", "PRK", "PYF", "STP", "TUV", "VCT", "WSM")
-indicator_includes <- c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "E1", "E2", "H1", "H2", "H3", "H6", "H7", "H8", "V1", "V2", "V3")
+indicator_includes <- c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "E1", "E2", "H1", "H2", "H3", "H6", "H7", "H8", "V1", "V2", "V3", "V4")
+indicator_includes_noV4 <- c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "E1", "E2", "H1", "H2", "H3", "H6", "H7", "H8", "V1", "V2", "V3")
 
 
 ## Overall coverage
@@ -22,8 +23,8 @@ OxCGRTcoverage_subnat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/ap
   rename(Team = Country)
 
 OxCGRTcoverage <- full_join(OxCGRTcoverage_nat, OxCGRTcoverage_subnat) %>%
-  select(Team, Country, Region, City, indicator_includes) %>%
-  mutate(coverage_count = rowSums(select(., indicator_includes), na.rm = TRUE),
+  select(Team, Country, Region, City, indicator_includes_noV4) %>%
+  mutate(coverage_count = rowSums(select(., indicator_includes_noV4), na.rm = TRUE),
          missing = 20824 - coverage_count) %>%
   group_by(Team) %>%
   summarise(coverage_sum = sum(coverage_count),
@@ -71,7 +72,7 @@ OxCGRTconfirmed_subnat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/a
          !(Country == "IND" & City == "STATE_GOV"),
          !(Country == "ITA" & City == "STATE_GOV"),
          !(Country == "USA" & Region != "NAT_GOV" & City != "STATE_WIDE")) %>%
-  rename(Team = Country)  
+  rename(Team = Country)
 
 OxCGRTconfirmed <- full_join(OxCGRTconfirmed_nat, OxCGRTconfirmed_subnat) %>%
   select(Team, Country, Region, City, indicator_includes) %>%
@@ -79,8 +80,8 @@ OxCGRTconfirmed <- full_join(OxCGRTconfirmed_nat, OxCGRTconfirmed_subnat) %>%
   group_by(Team) %>%
   summarise(confirmed = sum(confirmed_count),
             n_confirmed = n(),
-            pct_confirmed = (confirmed*100) / (n_confirmed*20824),
-            jurisdictions_over_50_pct_confirmed = sum(confirmed_count >= (20824/2)))
+            pct_confirmed = (confirmed*100) / (n_confirmed*21920),
+            jurisdictions_over_50_pct_confirmed = sum(confirmed_count >= (21920/2)))
 
 
 ## FULL REPORT
