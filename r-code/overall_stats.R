@@ -85,10 +85,65 @@ OxCGRTconfirmed <- full_join(OxCGRTconfirmed_nat, OxCGRTconfirmed_subnat) %>%
             jurisdictions_over_50_pct_confirmed = sum(confirmed_count >= (21920/2)))
 
 
+
+## Reviewed cells
+
+last_change_nat <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=data_status_last_change") %>%
+  filter(!CountryCode %in% country_excludes) %>%
+  mutate(Team = "National", .before = CountryName)
+
+last_change_subnat <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=data_status_last_change_subnat") %>%
+  filter(!(Jurisdiction == "NAT_GOV" & CityCode == "STATE_WIDE"),
+         !(CountryCode == "AUS" & Jurisdiction == "STATE_WIDE"),
+         !(CountryCode == "BRA" & CityCode %in% c("STATE_WIDE", "BR_1200203", "BR_2700300", "BR_1600279", "BR_1303403", "BR_2910800", "BR_2303709", "BR_3205200", "BR_5201405", "BR_2105302", "BR_5107602", "BR_5003702", "BR_3170206", "BR_2504009", "BR_4113700", "BR_2607901", "BR_2207702", "BR_3304904", "BR_2408003", "BR_4305108", "BR_1100122", "BR_1400472", "BR_4209102", "BR_3518800", "BR_2803500", "BR_1702109", "BR_1506807", "BR_1500800")),
+         !(CountryCode == "CAN" & Jurisdiction == "STATE_GOV"),
+         !(CountryCode == "CHN" & Jurisdiction != "NAT_GOV" & Jurisdiction != "STATE_WIDE"),
+         !(CountryCode == "IND" & Jurisdiction == "STATE_GOV"),
+         !(CountryCode == "ITA" & Jurisdiction == "STATE_GOV"),
+         !(CountryCode == "USA" & Jurisdiction != "NAT_GOV" & Jurisdiction != "STATE_WIDE")) %>%
+  rename(Team = CountryCode)
+
+OxCGRT_last_change <- full_join(last_change_nat, last_change_subnat) %>%
+  mutate(C1_check = (C1_RawStatus == 2 | C1_PreviousCount > 0),
+         C2_check = (C2_RawStatus == 2 | C2_PreviousCount > 0),
+         C3_check = (C3_RawStatus == 2 | C3_PreviousCount > 0),
+         C4_check = (C4_RawStatus == 2 | C4_PreviousCount > 0),
+         C5_check = (C5_RawStatus == 2 | C5_PreviousCount > 0),
+         C6_check = (C6_RawStatus == 2 | C6_PreviousCount > 0),
+         C7_check = (C7_RawStatus == 2 | C7_PreviousCount > 0),
+         C8_check = (C8_RawStatus == 2 | C8_PreviousCount > 0),
+         E1_check = (E1_RawStatus == 2 | E1_PreviousCount > 0),
+         E2_check = (E2_RawStatus == 2 | E2_PreviousCount > 0),
+         H1_check = (H1_RawStatus == 2 | H1_PreviousCount > 0),
+         H2_check = (H2_RawStatus == 2 | H2_PreviousCount > 0),
+         H3_check = (H3_RawStatus == 2 | H3_PreviousCount > 0),
+         H6_check = (H6_RawStatus == 2 | H6_PreviousCount > 0),
+         H7_check = (H7_RawStatus == 2 | H7_PreviousCount > 0),
+         H8_check = (H8_RawStatus == 2 | H8_PreviousCount > 0),
+         V1_check = (V1_RawStatus == 2 | V1_PreviousCount > 0),
+         V2_check = (V2_RawStatus == 2 | V2_PreviousCount > 0),
+         V3_check = (V3_RawStatus == 2 | V3_PreviousCount > 0)) %>%
+  select(Team, CountryCode, RegionCode, CityCode, Jurisdiction, Date,
+         C1_check, C2_check, C3_check, C4_check, C5_check, C6_check, C7_check, C8_check, 
+         E1_check, E2_check,
+         H1_check, H2_check, H3_check, H6_check, H7_check, H8_check,
+         V1_check, V2_check, V3_check) 
+OxCGRT_last_change <- OxCGRT_last_change %>%
+  mutate(reviewed = rowSums(OxCGRT_last_change[, c(7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25)], na.rm = TRUE)) %>%
+  select(Team, CountryCode, RegionCode, CityCode, Jurisdiction, Date, reviewed) %>%
+  group_by(Team, CountryCode, RegionCode, CityCode, Jurisdiction) %>%
+  summarise(reviewed = sum(reviewed),
+            total = n()) %>%
+  ungroup() %>%
+  group_by(Team) %>%
+  summarise(pct_reviewed = round(((100*sum(reviewed)) / (19*sum(total))), 2),
+            jurisdictions_over_80_pct_reviewed = paste(as.character(sum(reviewed >= total*19*0.8)), as.character(n()), sep = "/"))
+
+
 ## FULL REPORT
 
-report <- full_join(OxCGRTcoverage, full_join(OxCGRTflags, OxCGRTconfirmed, by = c("Team")), by = c("Team")) %>%
-  select(Team, complete_jurisdictions, n_coverage, empty_cells, flag_count, jurisdictions_over_50_pct_confirmed, pct_confirmed) %>%
+report <- full_join(OxCGRTcoverage, full_join(OxCGRTflags, full_join(OxCGRTconfirmed, OxCGRT_last_change, by = c("Team")), by = c("Team")), by = c("Team")) %>%
+  select(Team, complete_jurisdictions, n_coverage, empty_cells, flag_count, jurisdictions_over_80_pct_reviewed, pct_reviewed, jurisdictions_over_50_pct_confirmed, pct_confirmed) %>%
   mutate(complete_jurisdictions = paste(as.character(complete_jurisdictions), as.character(n_coverage), sep = "/"),
          jurisdictions_over_50_pct_confirmed = paste(as.character(jurisdictions_over_50_pct_confirmed), as.character(n_coverage), sep = "/")) %>%
   select(!n_coverage)
