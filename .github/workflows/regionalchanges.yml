@@ -1,5 +1,5 @@
 name: An R workflow to automate regional changes outputs
-on:
+# on:
 #  push
 #  schedule:
 #    - cron: '30 4 * * *'
