@@ -4,7 +4,7 @@ library(readr)
 country_excludes <- c("XXX", "ARM", "ASM", "ATG", "COM", "FSM", "GNB", "GNQ", "GRD", "KNA", "LCA", "MDV", "MHL", "MKD", "MNE", "NCL", "NRU", "PLW", "PRK", "PYF", "STP", "TUV", "VCT", "WSM")
 indicator_includes <- c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "E1", "E2", "H1", "H2", "H3", "H6", "H7", "H8", "V1", "V2", "V3", "V4")
 indicator_includes_noV4 <- c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "E1", "E2", "H1", "H2", "H3", "H6", "H7", "H8", "V1", "V2", "V3")
-
+italy_indicator <- c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "H1", "H2", "H3", "H6", "H7", "H8")
 
 ## Overall coverage
 
@@ -19,12 +19,27 @@ OxCGRTcoverage_subnat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/ap
          !(Country == "CAN" & City == "STATE_GOV"),
          !(Country == "CHN" & Region != "NAT_GOV" & City != "STATE_WIDE"),
          !(Country == "IND" & City == "STATE_GOV"),
-         !(Country == "ITA" & City == "STATE_GOV"),
+         !(Country == "ITA"),
          !(Country == "USA" & Region != "NAT_GOV" & City != "STATE_WIDE")) %>%
   rename(Team = Country)
 
+OxCGRTcoverage_Italy <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/statscsv?Provisional=true&Confirmed=true&ToRecode=true&Flagged=true&SubNat=true&FromDate=2020-01-01&ToDate=2021-12-31")) %>%
+  filter(!(Region == "NAT_GOV" & City == "STATE_WIDE"),
+         Country == "ITA",
+         !(City == "STATE_GOV")) %>%
+  rename(Team = Country) %>%
+  select(Team, Region, City, all_of(italy_indicator)) %>%
+  mutate(coverage_count = rowSums(select(., italy_indicator), na.rm = TRUE),
+         missing = 10234 - coverage_count) %>%
+  group_by(Team) %>%
+  summarise(coverage_sum = sum(coverage_count),
+            n_coverage = n(),
+            complete_jurisdictions = sum(coverage_count >= 10234),
+            empty_cells = sum(missing)) %>%
+  mutate(empty_cells = ifelse(empty_cells < 0, 0, empty_cells))
+
 OxCGRTcoverage <- full_join(OxCGRTcoverage_nat, OxCGRTcoverage_subnat) %>%
-  select(Team, Country, Region, City, indicator_includes_noV4) %>%
+  select(Team, Country, Region, City, all_of(indicator_includes_noV4)) %>%
   mutate(coverage_count = rowSums(select(., indicator_includes_noV4), na.rm = TRUE),
          missing = 20824 - coverage_count) %>%
   group_by(Team) %>%
@@ -32,7 +47,8 @@ OxCGRTcoverage <- full_join(OxCGRTcoverage_nat, OxCGRTcoverage_subnat) %>%
             n_coverage = n(),
             complete_jurisdictions = sum(coverage_count >= 20824),
             empty_cells = sum(missing)) %>%
-  mutate(empty_cells = ifelse(empty_cells < 0, 0, empty_cells))
+  mutate(empty_cells = ifelse(empty_cells < 0, 0, empty_cells)) %>%
+  full_join(OxCGRTcoverage_Italy)
 
 
 ## Red flags
@@ -86,11 +102,11 @@ OxCGRTconfirmed <- full_join(OxCGRTconfirmed_nat, OxCGRTconfirmed_subnat) %>%
             jurisdictions_over_50_pct_confirmed = sum(confirmed_count >= (21920/2)))
 
 
-
 ## Reviewed cells
 
 last_change_nat <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=data_status_last_change") %>%
   filter(!CountryCode %in% country_excludes) %>%
+  filter(Date <= 20221231) %>%
   mutate(Team = "National", .before = CountryName)
 
 last_change_subnat <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=data_status_last_change_subnat") %>%
@@ -102,7 +118,9 @@ last_change_subnat <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdo
          !(CountryCode == "IND" & Jurisdiction == "STATE_GOV"),
          !(CountryCode == "ITA" & Jurisdiction == "STATE_GOV"),
          !(CountryCode == "USA" & Jurisdiction != "NAT_GOV" & Jurisdiction != "STATE_WIDE")) %>%
+  filter(Date <= 20221231) %>%
   rename(Team = CountryCode)
+
 
 OxCGRT_last_change <- full_join(last_change_nat, last_change_subnat) %>%
   mutate(C1_check = (C1_RawStatus == 2 | C1_PreviousCount > 0),
@@ -140,6 +158,7 @@ OxCGRT_last_change <- OxCGRT_last_change %>%
   summarise(pct_reviewed = round(((100*sum(reviewed)) / (19*sum(total))), 2),
             jurisdictions_over_80_pct_reviewed = paste(as.character(sum(reviewed >= total*19*0.8)), as.character(n()), sep = "/"))
 
+  
 
 ## FULL REPORT
 
@@ -148,5 +167,6 @@ report <- full_join(OxCGRTcoverage, full_join(OxCGRTflags, full_join(OxCGRTconfi
   mutate(complete_jurisdictions = paste(as.character(complete_jurisdictions), as.character(n_coverage), sep = "/"),
          jurisdictions_over_50_pct_confirmed = paste(as.character(jurisdictions_over_50_pct_confirmed), as.character(n_coverage), sep = "/")) %>%
   select(!n_coverage)
+
 
 write.csv(report, "overall_stats.csv")
