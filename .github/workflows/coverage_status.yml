@@ -1,8 +1,8 @@
 name: An R workflow to automate a status check of OxCGRT coverage
 on:
-  push
-#   schedule:
-#    - cron: '0 7 * * *'
+#  push
+   schedule:
+    - cron: '0 7 * * *'
 
 jobs:
   build:
