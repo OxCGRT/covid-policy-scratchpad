@@ -17,11 +17,26 @@ OxCGRTcoverage_subnat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/ap
          !(Country == "AUS" & City == "STATE_WIDE"),
          !(Country == "BRA" & City %in% c("STATE_WIDE", "BR_1200203", "BR_2700300", "BR_1600279", "BR_1303403", "BR_2910800", "BR_2303709", "BR_3205200", "BR_5201405", "BR_2105302", "BR_5107602", "BR_5003702", "BR_3170206", "BR_2504009", "BR_4113700", "BR_2607901", "BR_2207702", "BR_3304904", "BR_2408003", "BR_4305108", "BR_1100122", "BR_1400472", "BR_4209102", "BR_3518800", "BR_2803500", "BR_1702109", "BR_1506807", "BR_1500800")),
          !(Country == "CAN" & City == "STATE_GOV"),
-         !(Country == "CHN" & Region != "NAT_GOV" & City != "STATE_WIDE"),
+         !(Country == "CHN"),
          !(Country == "IND" & City == "STATE_GOV"),
          !(Country == "ITA"),
          !(Country == "USA" & Region != "NAT_GOV" & City != "STATE_WIDE")) %>%
   rename(Team = Country)
+
+OxCGRTcoverage_China <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/statscsv?Provisional=true&Confirmed=true&ToRecode=true&Flagged=true&SubNat=true&FromDate=2020-01-01&ToDate=2023-02-28")) %>%
+  filter((Country == "CHN"),
+         !(Region == "NAT_GOV" & City == "STATE_WIDE"),
+         !(Country == "CHN" & Region != "NAT_GOV" & City != "STATE_WIDE")) %>%
+  rename(Team = Country) %>%
+  select(Team, Region, City, all_of(indicator_includes_noV4)) %>%
+  mutate(coverage_count = rowSums(select(., indicator_includes_noV4), na.rm = TRUE),
+         missing = 21954 - coverage_count) %>%
+  group_by(Team) %>%
+  summarise(coverage_sum = sum(coverage_count),
+            n_coverage = n(),
+            complete_jurisdictions = sum(coverage_count >= 21954),
+            empty_cells = sum(missing)) %>%
+  mutate(empty_cells = ifelse(empty_cells < 0, 0, empty_cells))
 
 OxCGRTcoverage_Italy <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/statscsv?Provisional=true&Confirmed=true&ToRecode=true&Flagged=true&SubNat=true&FromDate=2020-01-01&ToDate=2021-12-31")) %>%
   filter(!(Region == "NAT_GOV" & City == "STATE_WIDE"),
@@ -48,7 +63,8 @@ OxCGRTcoverage <- full_join(OxCGRTcoverage_nat, OxCGRTcoverage_subnat) %>%
             complete_jurisdictions = sum(coverage_count >= 20824),
             empty_cells = sum(missing)) %>%
   mutate(empty_cells = ifelse(empty_cells < 0, 0, empty_cells)) %>%
-  full_join(OxCGRTcoverage_Italy)
+  full_join(OxCGRTcoverage_Italy) %>%
+  full_join(OxCGRTcoverage_China)
 
 
 ## Red flags
@@ -66,7 +82,7 @@ OxCGRTflags_subnat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/s
          !(Country == "IND" & City == "STATE_GOV"),
          !(Country == "ITA" & City == "STATE_GOV"),
          !(Country == "USA" & Region != "NAT_GOV" & City != "STATE_WIDE")) %>%
-  rename(Team = Country)  
+  rename(Team = Country)
 
 OxCGRTflags <- full_join(OxCGRTflags_nat, OxCGRTflags_subnat) %>%
   select(Team, Country, Region, City, indicator_includes) %>%
@@ -114,15 +130,23 @@ last_change_subnat <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdo
          !(CountryCode == "AUS" & Jurisdiction == "STATE_WIDE"),
          !(CountryCode == "BRA" & CityCode %in% c("STATE_WIDE", "BR_1200203", "BR_2700300", "BR_1600279", "BR_1303403", "BR_2910800", "BR_2303709", "BR_3205200", "BR_5201405", "BR_2105302", "BR_5107602", "BR_5003702", "BR_3170206", "BR_2504009", "BR_4113700", "BR_2607901", "BR_2207702", "BR_3304904", "BR_2408003", "BR_4305108", "BR_1100122", "BR_1400472", "BR_4209102", "BR_3518800", "BR_2803500", "BR_1702109", "BR_1506807", "BR_1500800")),
          !(CountryCode == "CAN" & Jurisdiction == "STATE_GOV"),
-         !(CountryCode == "CHN" & Jurisdiction != "NAT_GOV" & Jurisdiction != "STATE_WIDE"),
+         !(CountryCode == "CHN"),
          !(CountryCode == "IND" & Jurisdiction == "STATE_GOV"),
          !(CountryCode == "ITA" & Jurisdiction == "STATE_GOV"),
          !(CountryCode == "USA" & Jurisdiction != "NAT_GOV" & Jurisdiction != "STATE_WIDE")) %>%
   filter(Date <= 20221231) %>%
   rename(Team = CountryCode)
 
+last_change_subnat_china <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=data_status_last_change_subnat") %>%
+  filter(!(Jurisdiction == "NAT_GOV" & CityCode == "STATE_WIDE"),
+         (CountryCode == "CHN"),
+         !(CountryCode == "CHN" & Jurisdiction != "NAT_GOV" & Jurisdiction != "STATE_WIDE")) %>%
+  filter(Date <= 20230228) %>%
+  rename(Team = CountryCode)
+
 
 OxCGRT_last_change <- full_join(last_change_nat, last_change_subnat) %>%
+  full_join(last_change_subnat_china) %>%
   mutate(C1_check = (C1_RawStatus == 2 | C1_PreviousCount > 0),
          C2_check = (C2_RawStatus == 2 | C2_PreviousCount > 0),
          C3_check = (C3_RawStatus == 2 | C3_PreviousCount > 0),
