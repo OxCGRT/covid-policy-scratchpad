@@ -26,7 +26,8 @@ OxCGRTcoverage_subnat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/ap
 OxCGRTcoverage_China <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/statscsv?Provisional=true&Confirmed=true&ToRecode=true&Flagged=true&SubNat=true&FromDate=2020-01-01&ToDate=2023-02-28")) %>%
   filter((Country == "CHN"),
          !(Region == "NAT_GOV" & City == "STATE_WIDE"),
-         !(Country == "CHN" & Region != "NAT_GOV" & City != "STATE_WIDE")) %>%
+         !(Country == "CHN" & Region != "NAT_GOV" & City != "STATE_WIDE"),
+         !(Region == "NAT_TOTAL")) %>%
   rename(Team = Country) %>%
   select(Team, Region, City, all_of(indicator_includes_noV4)) %>%
   mutate(coverage_count = rowSums(select(., indicator_includes_noV4), na.rm = TRUE),
