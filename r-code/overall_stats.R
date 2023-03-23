@@ -31,11 +31,11 @@ OxCGRTcoverage_China <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api
   rename(Team = Country) %>%
   select(Team, Region, City, all_of(indicator_includes_noV4)) %>%
   mutate(coverage_count = rowSums(select(., indicator_includes_noV4), na.rm = TRUE),
-         missing = 21954 - coverage_count) %>%
+         missing = 21945 - coverage_count) %>%
   group_by(Team) %>%
   summarise(coverage_sum = sum(coverage_count),
             n_coverage = n(),
-            complete_jurisdictions = sum(coverage_count >= 21954),
+            complete_jurisdictions = sum(coverage_count >= 21945),
             empty_cells = sum(missing)) %>%
   mutate(empty_cells = ifelse(empty_cells < 0, 0, empty_cells))
 
