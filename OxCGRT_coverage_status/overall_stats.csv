@@ -1,6 +1,6 @@
 "","Team","complete_jurisdictions","empty_cells","flag_count","jurisdictions_over_80_pct_reviewed","pct_reviewed","jurisdictions_over_50_pct_confirmed","pct_confirmed"
 "1","AUS","23/23",0,0,"6/22",68.64,"11/23",63.05
-"2","BRA","54/54",0,1,"22/65",59.71,"48/54",69.65
+"2","BRA","54/54",0,NA,"22/65",59.71,"48/54",69.65
 "3","CAN","14/14",0,NA,"5/13",80.22,"13/14",71.39
 "4","GBR","5/5",0,NA,"0/4",32.81,"0/5",15.13
 "5","IND","3/37",30040,122,"0/36",19.09,"1/37",18.14
