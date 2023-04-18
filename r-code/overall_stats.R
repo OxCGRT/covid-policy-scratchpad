@@ -65,7 +65,12 @@ OxCGRTcoverage <- full_join(OxCGRTcoverage_nat, OxCGRTcoverage_subnat) %>%
             empty_cells = sum(missing)) %>%
   mutate(empty_cells = ifelse(empty_cells < 0, 0, empty_cells)) %>%
   full_join(OxCGRTcoverage_Italy) %>%
-  full_join(OxCGRTcoverage_China)
+  full_join(OxCGRTcoverage_China) %>%
+  add_row(Team = "EVERYTHING",
+          coverage_sum = sum(.$coverage_sum),
+          n_coverage = sum(.$n_coverage),
+          complete_jurisdictions = sum(.$complete_jurisdictions),
+          empty_cells = sum(.$empty_cells))
 
 
 ## Red flags
@@ -86,10 +91,12 @@ OxCGRTflags_subnat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/s
   rename(Team = Country)
 
 OxCGRTflags <- full_join(OxCGRTflags_nat, OxCGRTflags_subnat) %>%
-  select(Team, Country, Region, City, indicator_includes) %>%
-  mutate(flag_count = rowSums(select(., indicator_includes), na.rm = TRUE)) %>%
+  select(Team, Country, Region, City, all_of(indicator_includes)) %>%
+  mutate(flag_count = rowSums(select(., all_of(indicator_includes)), na.rm = TRUE)) %>%
   group_by(Team) %>%
-  summarise(flag_count = sum(flag_count))
+  summarise(flag_count = sum(flag_count)) %>%
+  add_row(Team = "EVERYTHING",
+          flag_count = sum(.$flag_count))
 
 
 ## Confirmed cells
@@ -115,8 +122,12 @@ OxCGRTconfirmed <- full_join(OxCGRTconfirmed_nat, OxCGRTconfirmed_subnat) %>%
   group_by(Team) %>%
   summarise(confirmed = sum(confirmed_count),
             n_confirmed = n(),
-            pct_confirmed = round((confirmed*100) / (n_confirmed*21920), 2),
-            jurisdictions_over_50_pct_confirmed = sum(confirmed_count >= (21920/2)))
+            jurisdictions_over_50_pct_confirmed = sum(confirmed_count >= (21920/2))) %>%
+  add_row(Team = "EVERYTHING",
+          confirmed = sum(.$confirmed),
+          n_confirmed = sum(.$n_confirmed),
+          jurisdictions_over_50_pct_confirmed = sum(.$jurisdictions_over_50_pct_confirmed)) %>%
+  mutate(pct_confirmed = round((confirmed*100) / (n_confirmed*21920), 2))
 
 
 ## Reviewed cells
@@ -172,6 +183,7 @@ OxCGRT_last_change <- full_join(last_change_nat, last_change_subnat) %>%
          E1_check, E2_check,
          H1_check, H2_check, H3_check, H6_check, H7_check, H8_check,
          V1_check, V2_check, V3_check) 
+
 OxCGRT_last_change <- OxCGRT_last_change %>%
   mutate(reviewed = rowSums(OxCGRT_last_change[, c(7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25)], na.rm = TRUE)) %>%
   select(Team, CountryCode, RegionCode, CityCode, Jurisdiction, Date, reviewed) %>%
@@ -180,17 +192,28 @@ OxCGRT_last_change <- OxCGRT_last_change %>%
             total = n()) %>%
   ungroup() %>%
   group_by(Team) %>%
-  summarise(pct_reviewed = round(((100*sum(reviewed)) / (19*sum(total))), 2),
-            jurisdictions_over_80_pct_reviewed = paste(as.character(sum(reviewed >= total*19*0.8)), as.character(n()), sep = "/"))
+  summarise(jurisdictions_over_80_pct_reviewed = sum(reviewed >= total*19*0.8),
+            reviewed = sum(reviewed),
+            n_reviewed = n(),
+            total = sum(total)) %>%
+  add_row(Team = "EVERYTHING",
+          reviewed = sum(.$reviewed),
+          n_reviewed = sum(.$n_reviewed),
+          jurisdictions_over_80_pct_reviewed = sum(.$jurisdictions_over_80_pct_reviewed),
+          total = sum(.$total)) %>%
+  mutate(pct_reviewed = round((reviewed*100) / (total*19), 2))
 
-  
+# summarise(pct_reviewed = round(((100*sum(reviewed)) / (19*sum(total))), 2),
+#          jurisdictions_over_80_pct_reviewed = paste(as.character(sum(reviewed >= total*19*0.8)), as.character(n()), sep = "/"))
+
 
 ## FULL REPORT
 
 report <- full_join(OxCGRTcoverage, full_join(OxCGRTflags, full_join(OxCGRTconfirmed, OxCGRT_last_change, by = c("Team")), by = c("Team")), by = c("Team")) %>%
   select(Team, complete_jurisdictions, n_coverage, empty_cells, flag_count, jurisdictions_over_80_pct_reviewed, pct_reviewed, jurisdictions_over_50_pct_confirmed, pct_confirmed) %>%
   mutate(complete_jurisdictions = paste(as.character(complete_jurisdictions), as.character(n_coverage), sep = "/"),
-         jurisdictions_over_50_pct_confirmed = paste(as.character(jurisdictions_over_50_pct_confirmed), as.character(n_coverage), sep = "/")) %>%
+         jurisdictions_over_50_pct_confirmed = paste(as.character(jurisdictions_over_50_pct_confirmed), as.character(n_coverage), sep = "/"),
+         jurisdictions_over_80_pct_reviewed = paste(as.character(jurisdictions_over_80_pct_reviewed), as.character(n_coverage), sep = "/")) %>%
   select(!n_coverage)
 
 
