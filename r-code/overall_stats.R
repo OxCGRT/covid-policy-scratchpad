@@ -15,7 +15,7 @@ OxCGRTcoverage_nat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/s
 OxCGRTcoverage_subnat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/statscsv?Provisional=true&Confirmed=true&ToRecode=true&Flagged=true&SubNat=true&FromDate=2020-01-01&ToDate=2022-12-31")) %>%
   filter(!(Region == "NAT_GOV" & City == "STATE_WIDE"),
          !(Country == "AUS" & City == "STATE_WIDE"),
-         !(Country == "BRA" & City %in% c("STATE_WIDE", "BR_1200203", "BR_2700300", "BR_1600279", "BR_1303403", "BR_2910800", "BR_2303709", "BR_3205200", "BR_5201405", "BR_2105302", "BR_5107602", "BR_5003702", "BR_3170206", "BR_2504009", "BR_4113700", "BR_2607901", "BR_2207702", "BR_3304904", "BR_2408003", "BR_4305108", "BR_1100122", "BR_1400472", "BR_4209102", "BR_3518800", "BR_2803500", "BR_1702109", "BR_1506807", "BR_1500800")),
+         !(Country == "BRA" & City == "STATE_WIDE"),
          !(Country == "CAN" & City == "STATE_GOV"),
          !(Country == "CHN"),
          !(Country == "IND" & City == "STATE_GOV"),
@@ -82,7 +82,7 @@ OxCGRTflags_nat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/stat
 OxCGRTflags_subnat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/statscsv?Provisional=false&Confirmed=false&ToRecode=false&Flagged=true&SubNat=true&FromDate=2020-01-01&ToDate=2022-12-31")) %>%
   filter(!(Region == "NAT_GOV" & City == "STATE_WIDE"),
          !(Country == "AUS" & City == "STATE_WIDE"),
-         !(Country == "BRA" & City %in% c("STATE_WIDE", "BR_1200203", "BR_2700300", "BR_1600279", "BR_1303403", "BR_2910800", "BR_2303709", "BR_3205200", "BR_5201405", "BR_2105302", "BR_5107602", "BR_5003702", "BR_3170206", "BR_2504009", "BR_4113700", "BR_2607901", "BR_2207702", "BR_3304904", "BR_2408003", "BR_4305108", "BR_1100122", "BR_1400472", "BR_4209102", "BR_3518800", "BR_2803500", "BR_1702109", "BR_1506807", "BR_1500800")),
+         !(Country == "BRA" & City == "STATE_WIDE"),
          !(Country == "CAN" & City == "STATE_GOV"),
          !(Country == "CHN" & Region != "NAT_GOV" & City != "STATE_WIDE"),
          !(Country == "IND" & City == "STATE_GOV"),
@@ -108,7 +108,7 @@ OxCGRTconfirmed_nat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/
 OxCGRTconfirmed_subnat <- read.csv(url("https://oxcgrtportal.azurewebsites.net/api/statscsv?Provisional=false&Confirmed=true&ToRecode=false&Flagged=false&SubNat=true&FromDate=2020-01-01&ToDate=2022-12-31")) %>%
   filter(!(Region == "NAT_GOV" & City == "STATE_WIDE"),
          !(Country == "AUS" & City == "STATE_WIDE"),
-         !(Country == "BRA" & City %in% c("STATE_WIDE", "BR_1200203", "BR_2700300", "BR_1600279", "BR_1303403", "BR_2910800", "BR_2303709", "BR_3205200", "BR_5201405", "BR_2105302", "BR_5107602", "BR_5003702", "BR_3170206", "BR_2504009", "BR_4113700", "BR_2607901", "BR_2207702", "BR_3304904", "BR_2408003", "BR_4305108", "BR_1100122", "BR_1400472", "BR_4209102", "BR_3518800", "BR_2803500", "BR_1702109", "BR_1506807", "BR_1500800")),
+         !(Country == "BRA" & City == "STATE_WIDE"),
          !(Country == "CAN" & City == "STATE_GOV"),
          !(Country == "CHN" & Region != "NAT_GOV" & City != "STATE_WIDE"),
          !(Country == "IND" & City == "STATE_GOV"),
@@ -140,7 +140,7 @@ last_change_nat <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdownl
 last_change_subnat <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=data_status_last_change_subnat") %>%
   filter(!(Jurisdiction == "NAT_GOV" & CityCode == "STATE_WIDE"),
          !(CountryCode == "AUS" & Jurisdiction == "STATE_WIDE"),
-         !(CountryCode == "BRA" & CityCode %in% c("STATE_WIDE", "BR_1200203", "BR_2700300", "BR_1600279", "BR_1303403", "BR_2910800", "BR_2303709", "BR_3205200", "BR_5201405", "BR_2105302", "BR_5107602", "BR_5003702", "BR_3170206", "BR_2504009", "BR_4113700", "BR_2607901", "BR_2207702", "BR_3304904", "BR_2408003", "BR_4305108", "BR_1100122", "BR_1400472", "BR_4209102", "BR_3518800", "BR_2803500", "BR_1702109", "BR_1506807", "BR_1500800")),
+         !(Country == "BRA" & City == "STATE_WIDE"),
          !(CountryCode == "CAN" & Jurisdiction == "STATE_GOV"),
          !(CountryCode == "CHN"),
          !(CountryCode == "IND" & Jurisdiction == "STATE_GOV"),
