@@ -140,7 +140,7 @@ last_change_nat <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdownl
 last_change_subnat <- read_csv("https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=data_status_last_change_subnat") %>%
   filter(!(Jurisdiction == "NAT_GOV" & CityCode == "STATE_WIDE"),
          !(CountryCode == "AUS" & Jurisdiction == "STATE_WIDE"),
-         !(Country == "BRA" & City == "STATE_WIDE"),
+         !(CountryCode == "BRA" & Jurisdiction == "STATE_WIDE"),
          !(CountryCode == "CAN" & Jurisdiction == "STATE_GOV"),
          !(CountryCode == "CHN"),
          !(CountryCode == "IND" & Jurisdiction == "STATE_GOV"),
