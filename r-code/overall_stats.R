@@ -192,19 +192,19 @@ OxCGRT_last_change <- OxCGRT_last_change %>%
             total = n()) %>%
   ungroup() %>%
   group_by(Team) %>%
-  summarise(jurisdictions_over_80_pct_reviewed = sum(reviewed >= total*19*0.8),
+  summarise(jurisdictions_over_70_pct_reviewed = sum(reviewed >= total*19*0.7),
             reviewed = sum(reviewed),
             n_reviewed = n(),
             total = sum(total)) %>%
   add_row(Team = "EVERYTHING",
           reviewed = sum(.$reviewed),
           n_reviewed = sum(.$n_reviewed),
-          jurisdictions_over_80_pct_reviewed = sum(.$jurisdictions_over_80_pct_reviewed),
+          jurisdictions_over_70_pct_reviewed = sum(.$jurisdictions_over_70_pct_reviewed),
           total = sum(.$total)) %>%
   mutate(pct_reviewed = round((reviewed*100) / (total*19), 2))
 
 # summarise(pct_reviewed = round(((100*sum(reviewed)) / (19*sum(total))), 2),
-#          jurisdictions_over_80_pct_reviewed = paste(as.character(sum(reviewed >= total*19*0.8)), as.character(n()), sep = "/"))
+#          jurisdictions_over_70_pct_reviewed = paste(as.character(sum(reviewed >= total*19*0.7)), as.character(n()), sep = "/"))
 
 
 ## FULL REPORT
@@ -213,7 +213,7 @@ report <- full_join(OxCGRTcoverage, full_join(OxCGRTflags, full_join(OxCGRTconfi
   select(Team, complete_jurisdictions, n_coverage, empty_cells, flag_count, jurisdictions_over_80_pct_reviewed, pct_reviewed, jurisdictions_over_50_pct_confirmed, pct_confirmed) %>%
   mutate(complete_jurisdictions = paste(as.character(complete_jurisdictions), as.character(n_coverage), sep = "/"),
          jurisdictions_over_50_pct_confirmed = paste(as.character(jurisdictions_over_50_pct_confirmed), as.character(n_coverage), sep = "/"),
-         jurisdictions_over_80_pct_reviewed = paste(as.character(jurisdictions_over_80_pct_reviewed), as.character(n_coverage), sep = "/")) %>%
+         jurisdictions_over_70_pct_reviewed = paste(as.character(jurisdictions_over_70_pct_reviewed), as.character(n_coverage), sep = "/")) %>%
   select(!n_coverage)
 
 
