@@ -210,7 +210,7 @@ OxCGRT_last_change <- OxCGRT_last_change %>%
 ## FULL REPORT
 
 report <- full_join(OxCGRTcoverage, full_join(OxCGRTflags, full_join(OxCGRTconfirmed, OxCGRT_last_change, by = c("Team")), by = c("Team")), by = c("Team")) %>%
-  select(Team, complete_jurisdictions, n_coverage, empty_cells, flag_count, jurisdictions_over_80_pct_reviewed, pct_reviewed, jurisdictions_over_50_pct_confirmed, pct_confirmed) %>%
+  select(Team, complete_jurisdictions, n_coverage, empty_cells, flag_count, jurisdictions_over_70_pct_reviewed, pct_reviewed, jurisdictions_over_50_pct_confirmed, pct_confirmed) %>%
   mutate(complete_jurisdictions = paste(as.character(complete_jurisdictions), as.character(n_coverage), sep = "/"),
          jurisdictions_over_50_pct_confirmed = paste(as.character(jurisdictions_over_50_pct_confirmed), as.character(n_coverage), sep = "/"),
          jurisdictions_over_70_pct_reviewed = paste(as.character(jurisdictions_over_70_pct_reviewed), as.character(n_coverage), sep = "/")) %>%
