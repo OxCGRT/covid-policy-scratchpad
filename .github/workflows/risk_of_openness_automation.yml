@@ -1,11 +1,11 @@
-name: An R workflow to automate risk index analysis
-#on:
+# name: An R workflow to automate risk index analysis
+on:
 #  push
 #  schedule:
 #    - cron: '30 1 * * *'
 
-jobs:
-        build:
+ jobs:
+         build:
                 name: R github actions
                 runs-on: ubuntu-latest
                 steps:
